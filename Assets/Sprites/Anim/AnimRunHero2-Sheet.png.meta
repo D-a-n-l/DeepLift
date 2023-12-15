@@ -1,0 +1,510 @@
+fileFormatVersion: 2
+guid: 9efd7aefc1ca9c44387f2a6173dd03a1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2842542596321980610
+    second: AnimRunHero2-Sheet_0
+  - first:
+      213: 1049092352928486259
+    second: AnimRunHero2-Sheet_1
+  - first:
+      213: -1674977560536347961
+    second: AnimRunHero2-Sheet_2
+  - first:
+      213: -1365902095090586342
+    second: AnimRunHero2-Sheet_3
+  - first:
+      213: -7622485839549732213
+    second: AnimRunHero2-Sheet_4
+  - first:
+      213: -841731125218927947
+    second: AnimRunHero2-Sheet_5
+  - first:
+      213: -1696807729687820271
+    second: AnimRunHero2-Sheet_6
+  - first:
+      213: 4271047799940034015
+    second: AnimRunHero2-Sheet_7
+  - first:
+      213: 3442582738047028823
+    second: AnimRunHero2-Sheet_8
+  - first:
+      213: 4680688759540889717
+    second: AnimRunHero2-Sheet_9
+  - first:
+      213: -5957346749417588994
+    second: AnimRunHero2-Sheet_10
+  - first:
+      213: -2524448132200713172
+    second: AnimRunHero2-Sheet_11
+  - first:
+      213: 2326001601407591084
+    second: AnimRunHero2-Sheet_12
+  - first:
+      213: 87203205668869008
+    second: AnimRunHero2-Sheet_13
+  - first:
+      213: 8504496124942170829
+    second: AnimRunHero2-Sheet_14
+  - first:
+      213: -2585168674952364663
+    second: AnimRunHero2-Sheet_15
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AnimRunHero2-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 25
+        width: 22
+        height: 8
+      alignment: 9
+      pivot: {x: 0.09, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3fcf4fa1924d88d0800000000000000
+      internalID: -2842542596321980610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimRunHero2-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 0
+        width: 19
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37391e8cfef1f8e00800000000000000
+      internalID: 1049092352928486259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimRunHero2-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 26
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ca0b7978c841c8e0800000000000000
+      internalID: -1674977560536347961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimRunHero2-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 0
+        width: 19
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1de92808475b0de0800000000000000
+      internalID: -1365902095090586342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimRunHero2-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 25
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8a613cb38d773690800000000000000
+      internalID: -7622485839549732213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimRunHero2-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 0
+        width: 19
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ba9fe450029154f0800000000000000
+      internalID: -841731125218927947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimRunHero2-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 24
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11802d32c5ab378e0800000000000000
+      internalID: -1696807729687820271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimRunHero2-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 0
+        width: 19
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdda326585fc54b30800000000000000
+      internalID: 4271047799940034015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimRunHero2-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 25
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75e4f2bb2c286cf20800000000000000
+      internalID: 3442582738047028823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimRunHero2-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 0
+        width: 19
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5783990a0a525f040800000000000000
+      internalID: 4680688759540889717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimRunHero2-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 27
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef6f22dd1b0435da0800000000000000
+      internalID: -5957346749417588994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimRunHero2-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 0
+        width: 19
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2437428ccb57fcd0800000000000000
+      internalID: -2524448132200713172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimRunHero2-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 26
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca2a3eef12e974020800000000000000
+      internalID: 2326001601407591084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimRunHero2-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 0
+        width: 19
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0931b218adec53100800000000000000
+      internalID: 87203205668869008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimRunHero2-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 25
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dca3dd8ba2a060670800000000000000
+      internalID: 8504496124942170829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimRunHero2-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 0
+        width: 19
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98d3ff479c2af1cd0800000000000000
+      internalID: -2585168674952364663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      AnimRunHero2-Sheet_8: 3442582738047028823
+      AnimRunHero2-Sheet_5: -841731125218927947
+      AnimRunHero2-Sheet_12: 2326001601407591084
+      AnimRunHero2-Sheet_4: -7622485839549732213
+      AnimRunHero2-Sheet_15: -2585168674952364663
+      AnimRunHero2-Sheet_10: -5957346749417588994
+      AnimRunHero2-Sheet_0: -2842542596321980610
+      AnimRunHero2-Sheet_11: -2524448132200713172
+      AnimRunHero2-Sheet_14: 8504496124942170829
+      AnimRunHero2-Sheet_3: -1365902095090586342
+      AnimRunHero2-Sheet_1: 1049092352928486259
+      AnimRunHero2-Sheet_2: -1674977560536347961
+      AnimRunHero2-Sheet_7: 4271047799940034015
+      AnimRunHero2-Sheet_13: 87203205668869008
+      AnimRunHero2-Sheet_6: -1696807729687820271
+      AnimRunHero2-Sheet_9: 4680688759540889717
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
