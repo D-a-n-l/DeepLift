@@ -3,7 +3,8 @@ using UnityEngine.EventSystems;
 
 public class LongPress : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    [SerializeField] private JohnWickController johnWick;
+    [SerializeField] 
+    private JohnWickController johnWick;
 
     private bool isDown;
 
