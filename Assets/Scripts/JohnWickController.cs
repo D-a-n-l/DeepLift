@@ -13,7 +13,7 @@ public class JohnWickController : MonoBehaviour
 
     [SerializeField, Tooltip("Есть ли фонарик"), Space(5)] private bool isFlashlight;
 
-    [SerializeField, Tooltip("Джойстик управления"), Space(5)] private VariableJoystick joystick;
+    [SerializeField, Tooltip("Джойстик управления"), Space(5)] private FixedJoystick joystick;
 
     private Rigidbody2D rigibody;
 

@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
+    <Compile Include="Assets\Scripts\ToggleChanging.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\HealthBar.cs" />
     <Compile Include="Assets\Scripts\ControllerCameraSize.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Assets\Scripts\ChangeLanguages.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Scripts\LightIntesivity.cs" />
+    <Compile Include="Assets\Scripts\SliderChanging.cs" />
     <Compile Include="Assets\Scripts\Task.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\Canvasmove.cs" />

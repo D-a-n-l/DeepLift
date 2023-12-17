@@ -7,50 +7,83 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    [Header("Вкладки меню")]
-    [SerializeField] private GameObject canvas;
-    [SerializeField] private GameObject mainmenu;
-    [SerializeField] private GameObject settings;
+    [Header("Mixer managment volume")]
+    [SerializeField] 
+    private AudioMixerGroup mixerMusic;
 
-    [Header("Кнопки управления меню")]
-    [SerializeField] private GameObject btOn;
-    [SerializeField] private GameObject btOff;
+    [SerializeField] 
+    private AudioMixerGroup mixerSounds;
 
-    [Header("Микшер управления громкостью")]
-    [SerializeField] private AudioMixerGroup mixerMusic;
-    [SerializeField] private AudioMixerGroup mixerSounds;
-    [SerializeField] private AudioMixerGroup mixerSoundsUI;
+    [SerializeField] 
+    private AudioMixerGroup mixerSoundsUI;
 
     [Header("Image для работы с ними")]
-    [SerializeField] private Image bgJoyStick;
-    [SerializeField] private Image pointJoyStick;
-    [SerializeField] private Image shootBtBg;
-    [SerializeField] private Image bulletBt;
-    [SerializeField] private Image lungeBtBg;
-    [SerializeField] private Image lungeBt;
+    [SerializeField] 
+    private Image bgJoyStick;
+
+    [SerializeField] 
+    private Image pointJoyStick;
+
+    [SerializeField] 
+    private Image shootBtBg;
+
+    [SerializeField] 
+    private Image bulletBt;
+
+    [SerializeField] 
+    private Image lungeBtBg;
+
+    [SerializeField] 
+    private Image lungeBt;
 
     [Header("Изменение чего-либо")]
-    [SerializeField] private Slider changeMaster;
-    [SerializeField] private Slider changeSounds;
+    [SerializeField] 
+    private Slider changeMaster;
+
+    [SerializeField] 
+    private Slider changeSounds;
+
     [Space(20)]
-    [SerializeField] private Toggle changeSoundsUI;
+    [SerializeField] 
+    private Toggle changeSoundsUI;
+
     [Space(20)]
-    [SerializeField] private Slider changeTransperentBg;
-    [SerializeField] private Slider changeTransperentPoint;
+    [SerializeField] 
+    private Slider changeTransperentBg;
+
+    [SerializeField] 
+    private Slider changeTransperentPoint;
+
     [Space(20)]
-    [SerializeField] private Slider changeTransperentShootBtBg;
-    [SerializeField] private Slider changeTransperentShootBt;
+    [SerializeField] 
+    private Slider changeTransperentShootBtBg;
+
+    [SerializeField] 
+    private Slider changeTransperentShootBt;
+
     [Space(20)]
-    [SerializeField] private Slider changeTransperentLungeBtBg;
-    [SerializeField] private Slider changeTransperentLungeBt;
+    [SerializeField] 
+    private Slider changeTransperentLungeBtBg;
+
+    [SerializeField] 
+    private Slider changeTransperentLungeBt;
+
     [Space(20)]
-    [SerializeField] private Slider changeSizeJoystick;
-    [SerializeField] private Slider changeSizeShootBt;
-    [SerializeField] private Slider changeSizeLungeBt;
+    [SerializeField] 
+    private Slider changeSizeJoystick;
+
+    [SerializeField] 
+    private Slider changeSizeShootBt;
+
+    [SerializeField] 
+    private Slider changeSizeLungeBt;
 
     [Header("Начльная анимация")]
-    [SerializeField] private Animator shotButtons;
-    [SerializeField] private Animator shotButtons2;
+    [SerializeField] 
+    private Animator shotButtons;
+
+    [SerializeField] 
+    private Animator shotButtons2;
 
     private void Start()
     {
@@ -75,20 +108,7 @@ public class Menu : MonoBehaviour
         LoadSlider(changeSizeLungeBt, "LungeSize", 166f);
     }
 
-    public void enableMenu()
-    {
-        canvas.SetActive(true);
-        Time.timeScale = 0;
-        btOn.SetActive(false);
-        btOff.SetActive(true);
-    }
-    public void disableMenu()
-    {
-        canvas.SetActive(false);
-        Time.timeScale = 1;
-        btOn.SetActive(true);
-        btOff.SetActive(false);
-    }
+    public void ChangeTimeScale(int value) => Time.timeScale = value;
 
     //Change volume
     public void SliderMaster(float volumeM)
@@ -170,7 +190,7 @@ public class Menu : MonoBehaviour
     }
 
     //Refactoring
-    private void SaveFloat(string name, float dynamicFloat)
+    public void SaveFloat(string name, float dynamicFloat)
     {
         PlayerPrefs.SetFloat(name, dynamicFloat);
     }
@@ -180,7 +200,7 @@ public class Menu : MonoBehaviour
         PlayerPrefs.SetInt(name, dynamicInt);
     }
 
-    private void LoadSlider(Slider slider, string name, float dynamicFloat)
+    public void LoadSlider(Slider slider, string name, float dynamicFloat)
     {
         slider.value = PlayerPrefs.GetFloat(name, dynamicFloat);
     }
@@ -190,7 +210,7 @@ public class Menu : MonoBehaviour
         toggle.isOn = PlayerPrefs.GetInt(name) == 1;
     }
 
-    private void TransperentBt(Image image, Slider slider)
+    public void TransperentBt(Image image, Slider slider)
     {
         image.color = new Color(1f, 1f, 1f, slider.value);
     }
