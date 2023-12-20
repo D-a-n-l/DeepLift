@@ -89,23 +89,23 @@ public class Menu : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "Menu") { shotButtons.SetTrigger("Go"); shotButtons2.SetTrigger("Go2"); }
 
-        LoadSlider(changeMaster, "MusicVolume", 1f);
-        LoadSlider(changeSounds, "SoundsVolume", 1f);
+        //LoadSlider(changeMaster, "MusicVolume", 1f);
+        //LoadSlider(changeSounds, "SoundsVolume", 1f);
 
-        LoadToggle(changeSoundsUI, "SoundUI");
+        //LoadToggle(changeSoundsUI, "SoundUI");
 
-        LoadSlider(changeTransperentBg, "TransperentBg", 1f);
-        LoadSlider(changeTransperentPoint, "TransperentPoint", 1f);
+        //LoadSlider(changeTransperentBg, "TransperentBg", 1f);
+        //LoadSlider(changeTransperentPoint, "TransperentPoint", 1f);
 
-        LoadSlider(changeTransperentShootBtBg, "TransperentShootBtBg", 1f);
-        LoadSlider(changeTransperentShootBt, "TransperentShootBt", 1f);
+        //LoadSlider(changeTransperentShootBtBg, "TransperentShootBtBg", 1f);
+        //LoadSlider(changeTransperentShootBt, "TransperentShootBt", 1f);
 
-        LoadSlider(changeTransperentLungeBtBg, "TransperentLungeBtBg", 1f);
-        LoadSlider(changeTransperentLungeBt, "TransperentLungeBt", 1f);
+        //LoadSlider(changeTransperentLungeBtBg, "TransperentLungeBtBg", 1f);
+        //LoadSlider(changeTransperentLungeBt, "TransperentLungeBt", 1f);
 
-        LoadSlider(changeSizeJoystick, "JoystickSize", 350f);
-        LoadSlider(changeSizeShootBt, "ShootSize", 225f);
-        LoadSlider(changeSizeLungeBt, "LungeSize", 166f);
+        //LoadSlider(changeSizeJoystick, "JoystickSize", 350f);
+        //LoadSlider(changeSizeShootBt, "ShootSize", 225f);
+        //LoadSlider(changeSizeLungeBt, "LungeSize", 166f);
     }
 
     public void ChangeTimeScale(int value) => Time.timeScale = value;

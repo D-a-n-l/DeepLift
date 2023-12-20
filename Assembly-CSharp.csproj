@@ -72,7 +72,6 @@
     <Compile Include="Assets\Scripts\InitAd.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\Scripts\GoogleRewardedAd.cs" />
-    <Compile Include="Assets\Scripts\Training.cs" />
     <Compile Include="Assets\Scripts\ParallaxEffect.cs" />
     <Compile Include="Assets\Scripts\BulletEnemy.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
@@ -90,6 +89,7 @@
     <Compile Include="Assets\Scripts\SliderChanging.cs" />
     <Compile Include="Assets\Scripts\Task.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Learning.cs" />
     <Compile Include="Assets\Scripts\Canvasmove.cs" />
     <Compile Include="Assets\Scripts\CameraTransition.cs" />
     <Compile Include="Assets\Packs\YagirLib\Lang\LangListObjects.cs" />

@@ -26,17 +26,10 @@ MonoBehaviour:
     hide: 0
   - phrases:
     - langName: English
-      phrase: "\rFurther"
+      phrase: Next
     - langName: Russian
       phrase: "\u0414\u0430\u043B\u0435\u0435"
-    key: Suka
-    hide: 0
-  - phrases:
-    - langName: English
-      phrase: Lunge button
-    - langName: Russian
-      phrase: "\u041A\u043D\u043E\u043F\u043A\u0430 \u0440\u044B\u0432\u043A\u0430"
-    key: _TrainingLunge
+    key: _Next
     hide: 0
   - phrases:
     - langName: English
@@ -47,10 +40,17 @@ MonoBehaviour:
     hide: 0
   - phrases:
     - langName: English
-      phrase: Joystick interaction zone
+      phrase: Lunge button
     - langName: Russian
-      phrase: "\u0417\u043E\u043D\u0430 \u0432\u0437\u0430\u0438\u043C\u043F\u043E\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044F
-        \u0441 \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A\u043E\u043C"
+      phrase: "\u041A\u043D\u043E\u043F\u043A\u0430 \u0440\u044B\u0432\u043A\u0430"
+    key: _TrainingLunge
+    hide: 0
+  - phrases:
+    - langName: English
+      phrase: The joystick controls the player
+    - langName: Russian
+      phrase: "\u0414\u0436\u043E\u0439\u0441\u0442\u0438\u043A \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F
+        \u0438\u0433\u0440\u043E\u043A\u043E\u043C"
     key: _TrainingJoy
     hide: 0
   - phrases:
