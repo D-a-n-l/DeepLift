@@ -4,53 +4,54 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using GoogleMobileAds.Api;
 
+[RequireComponent(typeof(Animator), typeof(Rigidbody2D))]
 public class JohnWickController : MonoBehaviour
 {
     [Header("Настройки Джона")]
-    [SerializeField] private float speed;
+    [SerializeField] 
+    private float speed;
 
-    [SerializeField, Tooltip("Пистолет/Ак"), Space(5)] private bool isAk;
+    [SerializeField, Tooltip("Пистолет/Ак"), Space(5)] 
+    private bool isAk;
 
-    [SerializeField, Tooltip("Есть ли фонарик"), Space(5)] private bool isFlashlight;
+    [SerializeField, Tooltip("Есть ли фонарик"), Space(5)] 
+    private bool isFlashlight;
 
-    [SerializeField, Tooltip("Джойстик управления"), Space(5)] private FixedJoystick joystick;
+    [SerializeField, Tooltip("Джойстик управления"), Space(5)] 
+    private FixedJoystick joystick;
 
     private Rigidbody2D rigibody;
 
     private Animator animator;
 
-    [HideInInspector] public float health = 1;
+    [HideInInspector] 
+    public float health = 1;
 
     [Header("Настройки рук Джона")]
-    [SerializeField] private GameObject hand;
-    [SerializeField] private Animator animatorHand;
+    [SerializeField] 
+    private GameObject hand;
 
-    [SerializeField, Space(10)] private float xHand;
-    [SerializeField] private float yHand;
+    [SerializeField] 
+    private Animator animatorHand;
 
-    [Header("Объект для отображения получения урона")]
-    [SerializeField, Tooltip("Канвас, на котором анимация ниже")] GameObject blood;
+    [SerializeField, Space(10)] 
+    private float xHand;
+    [SerializeField] 
+    private float yHand;
 
-    [Header("Анимация получения урона")]
-    [SerializeField] private Animator animBlood1;
-    [SerializeField] private Animator animBlood2;
-    [SerializeField] private Animator animBlood3;
-    [SerializeField] private Animator animBlood4;
+    [SerializeField]
+    private CanvasBlood blood;
 
     [Header("Тряска камеры")]
-    [SerializeField] private Camera mainCam;
+    [SerializeField]
+    private CinemachineVirtualCamera virtualCamera;
 
-    [SerializeField] private CinemachineVirtualCamera vCamera;
-
-    [SerializeField, Tooltip("Сила тряски"), Space(10)] private float amplitude;
-    [SerializeField, Tooltip("Частота тряски")] private float frequency;
+    private CinemachineBasicMultiChannelPerlin virtualCameraNoisePerlin;
 
     [Header("Выстрел")]
     [SerializeField, Tooltip("Время перезарядки")] private float cooldownTime = 0;
 
     private float nextFire = 0;
-
-    [SerializeField, Tooltip("Кнопка выстрела"), Space(10)] private GameObject attackButton;
 
     [SerializeField, Tooltip("image кнопка выстрела")] private Animator imageButtonAttack;
 
@@ -76,7 +77,8 @@ public class JohnWickController : MonoBehaviour
     [SerializeField] private Animator elevator;
     [SerializeField] private GameObject elev;
 
-    [SerializeField, Space(10)] private GameObject secondLife;
+    [SerializeField, Space(10)] 
+    private Canvas secondLife;
 
     [SerializeField] private SpriteRenderer[] spriteJohn;
 
@@ -99,8 +101,14 @@ public class JohnWickController : MonoBehaviour
 
     private RewardedAd _rewardedAd;
 
+    private float moveX;
+
+    private float moveY;
+
     private void Start()
     {
+        virtualCameraNoisePerlin = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+
         MoveRefactoring(bulletEffectLeft, -90);
 
         animator = GetComponent<Animator>();
@@ -118,42 +126,33 @@ public class JohnWickController : MonoBehaviour
 
     private void Run()
     {
-        var MoveX = joystick.Horizontal;
-        var MoveY = joystick.Vertical;
+        rigibody.velocity = new Vector2(moveX * speed * Time.fixedDeltaTime, moveY * speed * Time.fixedDeltaTime);
 
-        rigibody.velocity = new Vector2(MoveX * speed * Time.fixedDeltaTime, MoveY * speed * Time.fixedDeltaTime);
-
-        animationInterpolation = Mathf.Lerp(animationInterpolation, 1.5f, Time.deltaTime * 3);
-        animator.SetFloat("x", MoveX * animationInterpolation);
-        animator.SetFloat("y", MoveY * animationInterpolation);
-
-        animatorHand.SetFloat("x", MoveX * animationInterpolation);
-        animatorHand.SetFloat("y", MoveY * animationInterpolation);
-
-
-        if (MoveX > 0 && !facingRight) { Flip(); }
-        else if (MoveX < 0 && facingRight) { Flip(); }
+        if (moveX > 0 && !facingRight) { Flip(); }
+        else if (moveX < 0 && facingRight) { Flip(); }
     }
 
     private void Flip()
     {
         facingRight = !facingRight;
-        xHand *= -1;
-        hand.transform.Rotate(0f, 180f, 0f);
         transform.Rotate(0f, 180f, 0f);
     }
 
     private void Update()
     {
-        hand.transform.position = new Vector2(transform.position.x + xHand, transform.position.y + yHand) ;
+        moveX = joystick.Horizontal;
+        moveY = joystick.Vertical;
 
-        var MoveX = joystick.Horizontal;
+        animationInterpolation = Mathf.Lerp(animationInterpolation, 1.5f, Time.deltaTime * 3);
 
-        if (MoveX > 0)
+        animator.SetFloat("x", moveX * animationInterpolation);
+        animatorHand.SetFloat("x", moveX * animationInterpolation);
+
+        if (moveX > 0)
         {
             MoveRefactoring(bulletEffectLeft, -90);
         }
-        else if (MoveX < 0)
+        else if (moveX < 0)
         {
             MoveRefactoring(bulletEffectRight, 90);
         }
@@ -177,24 +176,21 @@ public class JohnWickController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("EnemyBullet")) { StartCoroutine(setBlood()); }
-        if (col.CompareTag("Enemy") || col.CompareTag("Shield")) { health -= .25f; StartCoroutine(setBlood()); }
+        //if (col.CompareTag("EnemyBullet")) { StartCoroutine(setBlood()); }
+        //if (col.CompareTag("Enemy") || col.CompareTag("Shield")) { health -= .25f; StartCoroutine(setBlood()); }
     }
 
-    public IEnumerator setBlood()
+    public void EnableBlood()
     {
         Handheld.Vibrate();
-        blood.SetActive(true);
-        animBlood1.SetTrigger("blood");
-        animBlood2.SetTrigger("blood");
-        animBlood3.SetTrigger("blood");
-        animBlood4.SetTrigger("blood");
-        StartCoroutine(Shake());
-        yield return new WaitForSeconds(.4f);
-        StopCoroutine(Shake());
-        blood.SetActive(false);
-        if (health <= 0) { Time.timeScale = 0;  secondLife.SetActive(true); }
+        blood.PlayAnimation(1);
+        StartCoroutine(ManagementVirtualCamera.Shake(virtualCameraNoisePerlin, 4f, 4f, .2f));
     }
+
+    //public IEnumerator setBlood()
+    //{
+    //    if (health <= 0) { Time.timeScale = 0;  secondLife.SetActive(true); }
+    //}
 
     private void OnEnable()
     {
@@ -208,7 +204,7 @@ public class JohnWickController : MonoBehaviour
     {
         health = +1;
         Time.timeScale = 1;
-        secondLife.SetActive(false);
+        secondLife.enabled = false;
     }
 
     public void ShowAd()
@@ -220,14 +216,16 @@ public class JohnWickController : MonoBehaviour
     public void ContinuePlayInGame()
     {
         StartCoroutine(deadJohn());
-        secondLife.SetActive(false);
+        secondLife.enabled = true;
     }
 
     private IEnumerator deadJohn()
     {
         elev.SetActive(true);
         elevator.SetTrigger("dead");
+
         yield return new WaitForSecondsRealtime(3f);
+
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex - 1);
         Time.timeScale = 1;
@@ -249,8 +247,6 @@ public class JohnWickController : MonoBehaviour
             {
                 shotManagment(1.5f, "slow");
             }
-
-            //animatorHand.SetTrigger("NotShoot");
         }
 
         yield return null;
@@ -323,14 +319,5 @@ public class JohnWickController : MonoBehaviour
         animatorHand.SetTrigger("Shoot");
         imageButtonAttack.SetTrigger(slowOrFast);
         Instantiate(bulletEffect, bulletEffectPosition.position, flipShootEffect);
-    }
-
-    private IEnumerator Shake()
-    {
-        vCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = amplitude;
-        vCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = frequency;
-        yield return new WaitForSeconds(.2f);
-        vCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
-        vCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0;
     }
 }

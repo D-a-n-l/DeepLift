@@ -4,10 +4,10 @@ using Cinemachine;
 public class ControllerCameraSize : MonoBehaviour
 {
     [SerializeField] 
-    private Vector2 defaultResolution;
+    private Vector2 defaultResolution = new(1920, 1080);
 
     [SerializeField, Range(0, 1)]
-    private float widthOrHeight = 0;
+    private float widthOrHeight = .5f;
 
     private CinemachineVirtualCamera componentCamera;
 

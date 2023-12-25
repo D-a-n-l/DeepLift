@@ -3,8 +3,11 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField] private Image healthBar;
-    [SerializeField] private Image healtBarEffect;
+    [SerializeField] 
+    private Image healthBar;
+
+    [SerializeField] 
+    private Image healtBarEffect;
 
     private float healthSpeed = 0.003f;
 
@@ -19,6 +22,7 @@ public class HealthBar : MonoBehaviour
     private void Update()
     {
         healthBar.fillAmount = jonh.health;
+
         if (healthBar.fillAmount >= 1f)
         {
             ChoiceColor(0f, 1f, 0f, .8f);
