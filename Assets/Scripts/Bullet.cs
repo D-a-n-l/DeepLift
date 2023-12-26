@@ -2,13 +2,15 @@
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    private Rigidbody2D rb;
+    [SerializeField] 
+    private float speed;
+
+    private Rigidbody2D rigidbody;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        rb.velocity = transform.right * speed;
+        rigidbody = GetComponent<Rigidbody2D>();
+        rigidbody.velocity = transform.right * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D col)

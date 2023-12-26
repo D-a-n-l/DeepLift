@@ -146,7 +146,10 @@ public class JohnWickController : MonoBehaviour
         animationInterpolation = Mathf.Lerp(animationInterpolation, 1.5f, Time.deltaTime * 3);
 
         animator.SetFloat("x", moveX * animationInterpolation);
+        animator.SetFloat("y", moveY * animationInterpolation);
+
         animatorHand.SetFloat("x", moveX * animationInterpolation);
+        animatorHand.SetFloat("y", moveY * animationInterpolation);
 
         if (moveX > 0)
         {
