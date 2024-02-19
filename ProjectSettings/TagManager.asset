@@ -10,11 +10,12 @@ TagManager:
   - Shield
   - BulletPistol
   - BulletAk
+  - Bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Roof
   - Water
   - UI
   - Jonh
@@ -47,6 +48,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: UpLift
+  - name: City
     uniqueID: 2489698781
     locked: 0

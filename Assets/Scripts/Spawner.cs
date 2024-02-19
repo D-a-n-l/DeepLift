@@ -1,58 +1,99 @@
-using System.Collections;
+using NTC.Pool;
 using UnityEngine;
+using System.Collections;
 
 public class Spawner : MonoBehaviour
 {
-    [Header("Объект спавна")]
-    [SerializeField] GameObject[] enemyPrefab;
-    [Header("Настройки спавна")]
-    [SerializeField, Tooltip("Скорость объекта")] float speedMove;
-    [Space(10)]
-    [SerializeField, Tooltip("Первое число в Random.Range")] float fromSpeedSpawner;
-    [SerializeField, Tooltip("Второе число в Random.Range")] float beforeSpeedSpawner;
-    [Space(10)]
-    [SerializeField, Tooltip("Позиция появления по X")] float positionX;
-    [SerializeField, Tooltip("Появление от Y")] float fromPositionY;
-    [SerializeField, Tooltip("Появление до Y")] float beforePositionY;
-    [Space(10)]
-    [SerializeField, Range(1, 2), Tooltip("1 - Враги с двух сторон, 2 - Враги слева")] int leftOrRight = 1;
+    public static Spawner instance;
 
+    [SerializeField]
     private bool loop = true;
+
+    [Range(0, 2)]
+    [Tooltip("0 - Left side 1 - Both sides 2 - Right side")]
+    [SerializeField]
+    private int sideSpawn;
+
+    [SerializeField]
+    private GameObject[] enemyPrefab;
+
+    [SerializeField]
+    private Vector2 timeSpawn;
+
+    [SerializeField]
+    private PositionPreset leftSide;
+
+    [SerializeField]
+    private PositionPreset rightSide;
+
+    private Vector2 direction;
+
+    public Vector2 Direction => direction;
+    
+    private float x;
+
+    private float y;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogError("More than one Spawner");
+            return;
+        }
+
+        instance = this;
+    }
 
     private IEnumerator Start()
     {
         do
         {
-            yield return StartCoroutine(GeneratorEnemy());
+            yield return StartCoroutine(Generate());
         }
         while (loop);
     }
-    private IEnumerator GeneratorEnemy()
+
+    private IEnumerator Generate()
     {
-        yield return new WaitForSeconds(Random.Range(fromSpeedSpawner, beforeSpeedSpawner));
+        yield return new WaitForSeconds(Random.Range(timeSpawn.x, timeSpawn.y));
 
         int numberEnemy = Random.Range(0, enemyPrefab.Length);
 
-        GameObject Enemy = Instantiate(enemyPrefab[numberEnemy]);
+        GameObject Enemy = NightPool.Spawn(enemyPrefab[numberEnemy]);
 
-        bool EnemyLookLeft = Random.Range(0, 2) == leftOrRight;
+        bool EnemyLookLeft = true;
 
-        float x;
-        float y = Random.Range(-fromPositionY, -beforePositionY);
-        
-
-        if (EnemyLookLeft)
+        if (sideSpawn == 1)
         {
-            x = positionX;
-            Enemy.GetComponent<Enemy>().movement.x = -speedMove;
-            Enemy.GetComponent<Transform>().position = new Vector3(x, y, -.5f);
+            EnemyLookLeft = Random.Range(0, 2) == 0 ? true : false;
         }
-        else
+
+        if (sideSpawn == 0 || (sideSpawn == 1 && EnemyLookLeft == true))
         {
-            x = -positionX;
-            Enemy.GetComponent<Enemy>().movement.x = speedMove;
-            Enemy.GetComponent<Transform>().Rotate(0f, 180f, 0f);
-            Enemy.GetComponent<Transform>().position = new Vector3(x, y, .5f);
+            SetPositions(Enemy, Vector2.right, rightSide.positionX, rightSide.positionY);
+        }
+        else if (sideSpawn == 2 || (sideSpawn == 1 && EnemyLookLeft == false))
+        {
+            SetPositions(Enemy, Vector2.left, leftSide.positionX, leftSide.positionY);
         }
     }
+
+    private void SetPositions(GameObject entity, Vector2 directionMove, Vector2 positionX, Vector2 positionY)
+    {
+        x = Random.Range(positionX.x, positionX.y);
+        y = Random.Range(positionY.x, positionY.y);
+
+        entity.transform.position = new Vector3(x, y, 1f);
+
+        direction = directionMove;
+    }
+}
+
+[System.Serializable]
+public struct PositionPreset
+{
+    public Vector2 positionX;
+
+    public Vector2 positionY;
 }

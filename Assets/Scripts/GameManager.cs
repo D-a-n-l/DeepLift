@@ -1,27 +1,31 @@
-using System.Collections;
 using UnityEngine;
+using System.Collections;
 
+[RequireComponent(typeof(Animator))]
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
-    private float timeLevel = 0;
+    private float timeLevel = 5f;
 
     [Space(10)]
     [SerializeField]
-    private AudioSource audioSourceLift;
+    private AudioSource lift;
 
     [SerializeField]
     private TransitionLevel transitionLevel;
 
-    [Header("Player")]
+    [Header("Triggers")]
     [SerializeField]
-    private Animator JohnWick;
+    private Animator player;
 
     [SerializeField]
-    private GameObject LegsJohnWick;
+    private string namePlayerLift;
 
     [SerializeField]
-    private GameObject HandJohnWick;
+    private string nameOpen;
+
+    [SerializeField]
+    private string nameClose;
 
     [Space(10)]
     [SerializeField]
@@ -36,27 +40,29 @@ public class GameManager : MonoBehaviour
         StartCoroutine(Open());
     }
 
-    private void OnTriggerEnter2D(Collider2D col) { 
-        if (col.GetComponent<JohnWickController>()) animator.SetTrigger("Close"); }
-
     private IEnumerator Open()
     {
         yield return new WaitForSeconds(timeLevel);
 
-        animator.SetTrigger("Open");
+        animator.SetTrigger(nameOpen);
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.GetComponent<PlayerMovement>())
+        {
+            animator.SetTrigger(nameClose);
+
+            player.SetTrigger(namePlayerLift);
+
+            buttons.enabled = false;
+        }
     }
 
     public void Close()
     {
-        buttons.enabled = false;
-
-        HandJohnWick.SetActive(false);
-        LegsJohnWick.SetActive(false);
-
-        JohnWick.SetTrigger("idleLift");
+        transitionLevel.LoadLevel(true);
     }
 
-    public void PlaySound(AudioClip clip) => audioSourceLift.PlayOneShot(clip);
-
-    public void TransitionLevel() => transitionLevel.Enable();
+    public void PlaySound(AudioClip clip) => lift.PlayOneShot(clip);
 }

@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 public class LongPress : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] 
-    private JohnWickController johnWick;
+    private PlayerMovement johnWick;
 
     private bool isDown;
 
@@ -21,6 +21,6 @@ public class LongPress : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private void Update()
     {
         if (!this.isDown) return;
-        johnWick.Shoot();
+        //johnWick.Shoot();
     }
 }

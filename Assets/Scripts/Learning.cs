@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Canvas))]
 public class Learning : MonoBehaviour
 {
     [SerializeField]
@@ -21,7 +22,7 @@ public class Learning : MonoBehaviour
 
     public void NextPresetLearning()
     {
-        if(amountClick >= presetLearning.Length)
+        if (amountClick >= presetLearning.Length)
         {
             GetComponent<Canvas>().enabled = false;
 

@@ -1,49 +1,46 @@
-using System.Collections;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ChangeLevelManager : MonoBehaviour
 {
-    [Header("Кнопки")]
-    [SerializeField] private Button[] buttons;
-    [Header("Анимация перехода на уровень")]
-    [SerializeField] private Animator animTransitionNextLvl;
-    [SerializeField] private GameObject gameObjectTransitionNextLvl;
-    [Header("Затенение меню")]
-    [SerializeField] private Animator animTransperent;
-    [SerializeField] private GameObject panelTransperent;
-    private int _unlockLevel;
+    [SerializeField]
+    private ButtonPreset[] buttons;
+
+    [SerializeField]
+    private TransitionLevel transitionLevel;
+
+    [SerializeField]
+    private float delayStartTransitionLevel;
+
+    private int unlockLevels;
 
     private void Start()
     {
-        _unlockLevel = PlayerPrefs.GetInt("scene", 1);
+        unlockLevels = PlayerPrefs.GetInt("Level", 1);
+
+        for (int i = unlockLevels; i < buttons.Length; i++)
+        {
+            buttons[i].button.interactable = false;
+
+            if (buttons[i].image != null)
+                buttons[i].image.color = Colors.disabledColor;
+        }
 
         for (int i = 0; i < buttons.Length; i++)
         {
-            buttons[i].interactable = false;
-        }
+            int index = i;
 
-        for (int i = 0; i < _unlockLevel; i++)
-        {
-            buttons[i].interactable = true;
+            buttons[index].button.onClick.AddListener(() => transitionLevel.LoadLevelChoice(buttons[index].numberLevel, delayStartTransitionLevel));
         }
     }
+}
 
-    public void ChoiceLevel(int lvl)
-    {
-        StartCoroutine(GameStart(lvl));
-    }
+[System.Serializable]
+public struct ButtonPreset
+{
+    public Button button;
 
-    private IEnumerator GameStart(int lvl)
-    {
-        yield return new WaitForSecondsRealtime(.5f);
-        panelTransperent.SetActive(true);
-        animTransperent.SetTrigger("next");
-        yield return new WaitForSecondsRealtime(1.1f);
-        gameObjectTransitionNextLvl.SetActive(true);
-        animTransitionNextLvl.SetTrigger("next");
-        yield return new WaitForSecondsRealtime(2f);
-        SceneManager.LoadScene(lvl);
-    }
+    public Image image;
+
+    public int numberLevel;
 }
