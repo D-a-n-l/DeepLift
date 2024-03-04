@@ -1,5 +1,4 @@
 using UnityEngine;
-using GoogleMobileAds.Api;
 
 [RequireComponent(typeof(Animator), typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
@@ -17,11 +16,6 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
 
     private Rigidbody2D rigidbod;
-
-    //Реклама
-    private string rewardedId = "ca-app-pub-3940256099942544/5224354917";
-
-    private RewardedAd _rewardedAd;
 
     private float moveX;
 
@@ -77,24 +71,24 @@ public class PlayerMovement : MonoBehaviour
 
     public void SetSpeed(float value) => speed = value;
 
-    private void OnEnable()
-    {
-        _rewardedAd = new RewardedAd(rewardedId);
-        AdRequest adRequest = new AdRequest.Builder().Build();
-        _rewardedAd.LoadAd(adRequest);
-        _rewardedAd.OnUserEarnedReward += HandleUserEarnedReward;
-    }
+    //private void OnEnable()
+    //{
+    //    _rewardedAd = new RewardedAd(rewardedId);
+    //    AdRequest adRequest = new AdRequest.Builder().Build();
+    //    _rewardedAd.LoadAd(adRequest);
+    //    _rewardedAd.OnUserEarnedReward += HandleUserEarnedReward;
+    //}
 
-    private void HandleUserEarnedReward(object sender, Reward e)
-    {
-        //HealthControl.instance.GetHeal(1);
-        Time.timeScale = 1;
-        //secondLife.enabled = false;
-    }
+    //private void HandleUserEarnedReward(object sender, Reward e)
+    //{
+    //    //HealthControl.instance.GetHeal(1);
+    //    Time.timeScale = 1;
+    //    //secondLife.enabled = false;
+    //}
 
-    public void ShowAd()
-    {
-        if (_rewardedAd.IsLoaded())
-            _rewardedAd.Show();
-    }
+    //public void ShowAd()
+    //{
+    //    if (_rewardedAd.IsLoaded())
+    //        _rewardedAd.Show();
+    //}
 }

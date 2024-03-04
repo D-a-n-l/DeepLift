@@ -104,7 +104,11 @@ public class LangsList : MonoBehaviour
         {
             print("Set Translation Asset!");
         }
-        //SetLanguage(1);
+
+        if (Application.systemLanguage == SystemLanguage.Russian)
+            SetLanguage(1);
+        else
+            SetLanguage(0);
     }
 
     public static string GetWord(string key)

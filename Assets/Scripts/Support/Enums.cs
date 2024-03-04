@@ -13,10 +13,4 @@ namespace Enums
         Music,
         Image
     }
-
-    public enum TypeCamera
-    {
-        Camera,
-        Cinemachine
-    }
 }

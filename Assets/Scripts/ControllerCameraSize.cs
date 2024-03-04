@@ -3,9 +3,6 @@ using Cinemachine;
 
 public class ControllerCameraSize : MonoBehaviour
 {
-    [SerializeField]
-    private Enums.TypeCamera typeCamera;
-
     [SerializeField] 
     private Vector2 defaultResolution = new(1920, 1080);
 
@@ -20,37 +17,22 @@ public class ControllerCameraSize : MonoBehaviour
 
     private float targetAspect;
 
-    private float aspectRatio;
-
     private void Awake()
     {
-        if (typeCamera == Enums.TypeCamera.Camera)
-        {
-            mainCamera = GetComponent<Camera>();
-
-            SetSizeAndAspect(mainCamera.orthographicSize, mainCamera.aspect);
-        }
-        else
-        {
+        if (GetComponent<CinemachineVirtualCamera>())
             cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
 
-            SetSizeAndAspect(cinemachineVirtualCamera.m_Lens.OrthographicSize, cinemachineVirtualCamera.m_Lens.Aspect);
-        }
+        mainCamera = Camera.main;
+
+        initialSize = mainCamera.orthographicSize;
 
         targetAspect = defaultResolution.x / defaultResolution.y;
 
-        float constantWidthSize = initialSize * (targetAspect / aspectRatio);
+        float constantWidthSize = initialSize * (targetAspect / mainCamera.aspect);
 
-        if (typeCamera == Enums.TypeCamera.Camera)
+        if (cinemachineVirtualCamera == null)
             mainCamera.orthographicSize = Mathf.Lerp(constantWidthSize, initialSize, widthOrHeight);
         else
             cinemachineVirtualCamera.m_Lens.OrthographicSize = Mathf.Lerp(constantWidthSize, initialSize, widthOrHeight);
-    }
-
-    private void SetSizeAndAspect(float size, float aspect)
-    {
-        initialSize = size;
-
-        aspectRatio = aspect;
     }
 }

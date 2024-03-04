@@ -37,30 +37,28 @@ public class SliderChanging : MonoBehaviour
         LoadValue(nameKey, slider.value / 2);
     }
 
-    public void ChangeVolume(float volumeM)
+    public void ChangeVolume(float volume)
     {
         if (type == Enums.TypeSliderChanging.Music)
-            mixer.audioMixer.SetFloat(nameKey, Mathf.Lerp(minValue, maxValue, volumeM));
+            mixer.audioMixer.SetFloat(nameKey, Mathf.Lerp(minValue, maxValue, volume));//this nameKey - change in settings Mixer
 
-        SaveValueF(nameKey, volumeM);
+        SaveValueF(nameKey, volume);
     }
 
     public void ChangeTransperent(float transperent)
     {
         if(type == Enums.TypeSliderChanging.Image)
-            mainImage.color = new Color(1f, 1f, 1f, slider.value);
+            mainImage.color = new Color(1f, 1f, 1f, transperent);
 
         SaveValueF(nameKey, transperent);
     }
 
-    public void ChangeSize(float dynamicFloat)
+    public void ChangeSize(float size)
     {
         if(type == Enums.TypeSliderChanging.Image)
-            mainImage.rectTransform.sizeDelta = new Vector2(dynamicFloat, dynamicFloat);
+            mainImage.rectTransform.sizeDelta = new Vector2(size, size);
 
-        dynamicFloat = slider.value;
-
-        SaveValueF(nameKey, dynamicFloat);
+        SaveValueF(nameKey, size);
     }
 
     private void LoadValue(string name, float value)

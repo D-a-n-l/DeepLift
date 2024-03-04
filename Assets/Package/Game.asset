@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 028f6fd4b5648da408750b332adcc576, type: 3}
-  m_Name: Text
+  m_Name: Game
   m_EditorClassIdentifier: 
   languages:
   - English
@@ -21,30 +21,16 @@ MonoBehaviour:
       phrase: 'Task: Enter the elevator'
     - langName: Russian
       phrase: "\u0426\u0435\u043B\u044C: \u0412\u043E\u0439\u0434\u0438\u0442\u0435
-        \u0432 \u043B\u0438\u0444\u0442\r"
-    key: _Task1
-    hide: 0
+        \u0432 \u043B\u0438\u0444\u0442 "
+    key: _TaskRoof
+    hide: 1
   - phrases:
     - langName: English
-      phrase: "\rTask: Hold on until the elevator comes"
+      phrase: ' Task: Hold on until the elevator comes'
     - langName: Russian
       phrase: "\u0426\u0435\u043B\u044C: \u041F\u0440\u043E\u0434\u0435\u0440\u0436\u0438\u0442\u0435\u0441\u044C
         \u0434\u043E \u043F\u0440\u0438\u0431\u044B\u0442\u0438\u044F \u043B\u0438\u0444\u0442\u0430"
-    key: _Task2
-    hide: 0
-  - phrases:
-    - langName: English
-      phrase: Next
-    - langName: Russian
-      phrase: "\u0414\u0430\u043B\u0435\u0435"
-    key: _Next
-    hide: 0
-  - phrases:
-    - langName: English
-      phrase: Back
-    - langName: Russian
-      phrase: "\u041D\u0430\u0437\u0430\u0434"
-    key: _Back
+    key: _TaskInside
     hide: 1
   - phrases:
     - langName: English
@@ -53,7 +39,14 @@ MonoBehaviour:
       phrase: "\u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u044E, \u0432\u044B
         \u043F\u0440\u043E\u0448\u043B\u0438 \u0438\u0433\u0440\u0443"
     key: _Complete
-    hide: 0
+    hide: 1
+  - phrases:
+    - langName: English
+      phrase: You lose
+    - langName: Russian
+      phrase: "\u0412\u044B \u043F\u0440\u043E\u0438\u0433\u0440\u0430\u043B\u0438"
+    key: _Lose
+    hide: 1
   - phrases:
     - langName: English
       phrase: Continue
@@ -63,31 +56,10 @@ MonoBehaviour:
     hide: 1
   - phrases:
     - langName: English
-      phrase: Second Life
+      phrase: Second life
     - langName: Russian
       phrase: "\u0412\u0442\u043E\u0440\u0430\u044F \u0436\u0438\u0437\u043D\u044C"
     key: _SecondLife
-    hide: 1
-  - phrases:
-    - langName: English
-      phrase: You Lose
-    - langName: Russian
-      phrase: "\u0412\u044B \u043F\u0440\u043E\u0438\u0433\u0440\u0430\u043B\u0438"
-    key: _Lose
-    hide: 1
-  - phrases:
-    - langName: English
-      phrase: Play
-    - langName: Russian
-      phrase: "\u0418\u0433\u0440\u0430\u0442\u044C"
-    key: _Play
-    hide: 1
-  - phrases:
-    - langName: English
-      phrase: Settings
-    - langName: Russian
-      phrase: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
-    key: _Settings
     hide: 1
   - phrases:
     - langName: English
@@ -95,22 +67,96 @@ MonoBehaviour:
     - langName: Russian
       phrase: "\u041A\u043D\u043E\u043F\u043A\u0430 \u0432\u044B\u0441\u0442\u0440\u0435\u043B\u0430"
     key: _TrainingShot
-    hide: 0
+    hide: 1
   - phrases:
     - langName: English
       phrase: Sprint button
     - langName: Russian
       phrase: "\u041A\u043D\u043E\u043F\u043A\u0430 \u0440\u044B\u0432\u043A\u0430"
     key: _TrainingSprint
-    hide: 0
+    hide: 1
   - phrases:
     - langName: English
       phrase: The joystick controls the player
     - langName: Russian
       phrase: "\u0414\u0436\u043E\u0439\u0441\u0442\u0438\u043A \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F
         \u0438\u0433\u0440\u043E\u043A\u043E\u043C"
-    key: _TrainingJoy
-    hide: 0
+    key: _TrainingJoystick
+    hide: 1
+  - phrases:
+    - langName: English
+      phrase: Next
+    - langName: Russian
+      phrase: "\u0414\u0430\u043B\u0435\u0435"
+    key: _Next
+    hide: 1
+  - phrases:
+    - langName: English
+      phrase: Back
+    - langName: Russian
+      phrase: "\u041D\u0430\u0437\u0430\u0434"
+    key: _Back
+    hide: 1
+  - phrases:
+    - langName: English
+      phrase: Master volume
+    - langName: Russian
+      phrase: "\u041E\u0441\u043D\u043E\u0432\u043D\u0430\u044F \u0433\u0440\u043E\u043C\u043A\u043E\u0441\u0442\u044C"
+    key: _MasterVolume
+    hide: 1
+  - phrases:
+    - langName: English
+      phrase: Music volume
+    - langName: Russian
+      phrase: "\u0413\u0440\u043E\u043C\u043A\u043E\u0441\u0442\u044C \u043C\u0443\u0437\u044B\u043A\u0438"
+    key: _MusicVolume
+    hide: 1
+  - phrases:
+    - langName: English
+      phrase: Sound volume
+    - langName: Russian
+      phrase: "\u0413\u0440\u043E\u043C\u043A\u043E\u0441\u0442\u044C \u0437\u0432\u0443\u043A\u043E\u0432"
+    key: _SoundVolume
+    hide: 1
+  - phrases:
+    - langName: English
+      phrase: UI volume
+    - langName: Russian
+      phrase: "\u0413\u0440\u043E\u043C\u043A\u043E\u0441\u0442\u044C \u0438\u043D\u0442\u0435\u0440\u0444\u0435\u0439\u0441\u0430"
+    key: _UIVolume
+    hide: 1
+  - phrases:
+    - langName: English
+      phrase: Transparency of the joystick
+    - langName: Russian
+      phrase: "\u041F\u0440\u043E\u0437\u0440\u0430\u0447\u043D\u043E\u0441\u0442\u044C
+        \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A\u0430"
+    key: _TransparencyJoystick
+    hide: 1
+  - phrases:
+    - langName: English
+      phrase: Transparency of the point joystick
+    - langName: Russian
+      phrase: "\u041F\u0440\u043E\u0437\u0440\u0430\u0447\u043D\u043E\u0441\u0442\u044C
+        \u0442\u043E\u0447\u043A\u0438 \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A\u0430"
+    key: _TransparencyPoint
+    hide: 1
+  - phrases:
+    - langName: English
+      phrase: Transparency of the shot button
+    - langName: Russian
+      phrase: "\u041F\u0440\u043E\u0437\u0440\u0430\u0447\u043D\u043E\u0441\u0442\u044C
+        \u043A\u043D\u043E\u043F\u043A\u0438 \u0432\u044B\u0441\u0442\u0440\u0435\u043B\u0430"
+    key: _TransparencyShoot
+    hide: 1
+  - phrases:
+    - langName: English
+      phrase: Transparency of the sprint button
+    - langName: Russian
+      phrase: "\u041F\u0440\u043E\u0437\u0440\u0430\u0447\u043D\u043E\u0441\u0442\u044C
+        \u043A\u043D\u043E\u043F\u043A\u0438 \u0440\u044B\u0432\u043A\u0430"
+    key: _TransparencySprint
+    hide: 1
   - phrases:
     - langName: English
       phrase: Size of the joystick
@@ -120,18 +166,11 @@ MonoBehaviour:
     hide: 1
   - phrases:
     - langName: English
-      phrase: Volume UI
+      phrase: Size of the point joystick
     - langName: Russian
-      phrase: "\u0413\u0440\u043E\u043C\u043A\u043E\u0441\u0442\u044C \u0438\u043D\u0442\u0435\u0440\u0444\u0435\u0439\u0441\u0430"
+      phrase: "\u0420\u0430\u0437\u043C\u0435\u0440 \u0442\u043E\u0447\u043A\u0438
+        \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A\u0430"
     key: _SizePoint
-    hide: 1
-  - phrases:
-    - langName: English
-      phrase: Size of the sprint button
-    - langName: Russian
-      phrase: "\u0420\u0430\u0437\u043C\u0435\u0440 \u043A\u043D\u043E\u043F\u043A\u0438
-        \u0440\u044B\u0432\u043A\u0430"
-    key: _SizeSprint
     hide: 1
   - phrases:
     - langName: English
@@ -143,54 +182,9 @@ MonoBehaviour:
     hide: 1
   - phrases:
     - langName: English
-      phrase: Joystick transparency
+      phrase: Size of the sprint button
     - langName: Russian
-      phrase: "\u041F\u0440\u043E\u0437\u0440\u0430\u0447\u043D\u043E\u0441\u0442\u044C
-        \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A\u0430"
-    key: _TranspencyJoystick
-    hide: 1
-  - phrases:
-    - langName: English
-      phrase: Joystick point transparency
-    - langName: Russian
-      phrase: "\u041F\u0440\u043E\u0437\u0440\u0430\u0447\u043D\u043E\u0441\u0442\u044C
-        \u0442\u043E\u0447\u043A\u0438 \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A\u0430"
-    key: _TranspencyPoint
-    hide: 1
-  - phrases:
-    - langName: English
-      phrase: Transparency of the shot button
-    - langName: Russian
-      phrase: "\u041F\u0440\u043E\u0437\u0440\u0430\u0447\u043D\u043E\u0441\u0442\u044C
-        \u043A\u043D\u043E\u043F\u043A\u0438 \u0432\u044B\u0441\u0442\u0440\u0435\u043B\u0430"
-    key: _TranspencyShoot
-    hide: 1
-  - phrases:
-    - langName: English
-      phrase: Transparency of the sprint button
-    - langName: Russian
-      phrase: "\u041F\u0440\u043E\u0437\u0440\u0430\u0447\u043D\u043E\u0441\u0442\u044C
-        \u043A\u043D\u043E\u043F\u043A\u0438 \u0440\u044B\u0432\u043A\u0430"
-    key: _TranspencySprint
-    hide: 1
-  - phrases:
-    - langName: English
-      phrase: Volume music
-    - langName: Russian
-      phrase: "\u0413\u0440\u043E\u043C\u043A\u043E\u0441\u0442\u044C \u043C\u0443\u0437\u044B\u043A\u0438"
-    key: _VolumeMusic
-    hide: 1
-  - phrases:
-    - langName: English
-      phrase: Volume sounds
-    - langName: Russian
-      phrase: "\u0413\u0440\u043E\u043C\u043A\u043E\u0441\u0442\u044C \u0437\u0432\u0443\u043A\u043E\u0432"
-    key: _VolumeSounds
-    hide: 1
-  - phrases:
-    - langName: English
-      phrase: Volume UI
-    - langName: Russian
-      phrase: "\u0413\u0440\u043E\u043C\u043A\u043E\u0441\u0442\u044C \u0438\u043D\u0442\u0435\u0440\u0444\u0435\u0439\u0441\u0430"
-    key: _VolumeSoundsUI
+      phrase: "\u0420\u0430\u0437\u043C\u0435\u0440 \u043A\u043D\u043E\u043F\u043A\u0438
+        \u0440\u044B\u0432\u043A\u0430"
+    key: _SizeSprint
     hide: 1

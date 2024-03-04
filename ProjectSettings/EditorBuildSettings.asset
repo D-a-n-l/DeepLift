@@ -11,34 +11,34 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Roof.unity
     guid: 2594145305aecd04f8cc55c5eaee211c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Floor1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Floor2.unity
     guid: a2efb41bd28a1c34d8c7886350cb1f81
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Floor3.unity
     guid: b3bba93598b98264395a385a0a666d83
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Floor4.unity
     guid: 158354422cdf47941b07a5e04c4427fd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Floor5.unity
     guid: acd3e2ec7ba3d4c46b24b60d2627c91e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Floor6.unity
     guid: 8b6495ea3899e3f49bb8af323d959b90
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Floor7.unity
     guid: cda08c3bbd82f0747aa1d00929d036b9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Floor8.unity
     guid: 265e575e39aaaaa40ba6fd2abac6fcf8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Floor9.unity
     guid: 1a33f1465cbe0bc46b35a3b2e91ba12f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Floor10.unity
     guid: 84c50681c13a303499d37f1cab54ea16
   - enabled: 0
