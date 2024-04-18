@@ -2,44 +2,66 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(RandomAnimations))]
 public class TransitionLevel : MonoBehaviour
 {
     [SerializeField]
     private Canvas canvasTransitionNextLevel;
 
+    [SerializeField]
+    private Canvas canvasComplete;
+
+    [SerializeField]
+    private Animator counter;
+
     [Header("Triggers")]
     [SerializeField]
-    private string nameNextLevel;
+    private string nameAnimation;
 
     [SerializeField]
-    private string namePastLevel;
+    private string nameCounterUp;
 
-    private Animator animator;
+    [SerializeField]
+    private string nameCounterDown;
+
+    private RandomAnimations animator;
 
     private int currentLevel;
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponent<RandomAnimations>();
     }
 
     public void LoadLevel(bool isNext)
     {
         canvasTransitionNextLevel.enabled = true;
 
+        SetTrigger(isNext);
+
         if (isNext == true)
         {
-            animator.SetTrigger(nameNextLevel);
-
             currentLevel = SceneManager.GetActiveScene().buildIndex + 1;
+
+            if (currentLevel >= SceneManager.sceneCountInBuildSettings)
+            {
+                canvasComplete.enabled = true;
+
+                ChangeTime.Set(0);
+            }
         }
         else
         {
-            animator.SetTrigger(namePastLevel);
-
-            currentLevel = SceneManager.GetActiveScene().buildIndex - 1;
+            if (SceneManager.GetActiveScene().buildIndex - 1 == 1)
+                currentLevel = SceneManager.GetActiveScene().buildIndex;
+            else
+                currentLevel = SceneManager.GetActiveScene().buildIndex - 1;
         }
+    }
+
+    public void LoadLevelChoiceNoDelay(int level)
+    {
+        StartCoroutine(LevelChoice(level));
     }
 
     public void LoadLevelChoice(int level, float delay = 0)
@@ -53,7 +75,7 @@ public class TransitionLevel : MonoBehaviour
 
         canvasTransitionNextLevel.enabled = true;
 
-        animator.SetTrigger(nameNextLevel);
+        SetTrigger(false);
 
         currentLevel = level;
     }
@@ -62,8 +84,23 @@ public class TransitionLevel : MonoBehaviour
     {
         SceneManager.LoadScene(currentLevel);
 
-        if (currentLevel < PlayerPrefs.GetInt("scene"))
-            PlayerPrefs.SetInt("scene", currentLevel);
+        if (currentLevel > PlayerPrefs.GetInt("Level"))
+            PlayerPrefs.SetInt("Level", currentLevel);
+
+        if (Time.timeScale == 0)
+            ChangeTime.Set(1);
+    }
+
+    private void SetTrigger(bool isNext)
+    {
+        int index = Random.Range(0, animator.AnimatorOverrideControllers.Length);
+
+        animator.SetRandomTrigger(nameAnimation, index);
+
+        if (isNext == false)
+            counter.SetBool(nameCounterUp, true);
+        else
+            counter.SetBool(nameCounterDown, true);
     }
 
     //public void TransitionNext(int isGoMenu)

@@ -1,16 +1,34 @@
+using UnityEngine.Events;
+using UnityEngine;
+
 namespace Enums
 {
     public enum TypeAnimationManagement
     {
-        player,
-        button,
-        playerAndButton
+        Player,
+        Button,
+        PlayerAndButton
+    }
+
+    public enum TypeMovingButton
+    {
+        Joystick,
+        Shoot,
+        Sprint
     }
 
     public enum TypeSliderChanging
     {
         JustComponent,
         Music,
-        Image
+        Image,
+        FrameRate
+    }
+
+    public enum TypeEventHealthControl
+    {
+        GetHeal,
+        GetDamage,
+        Dead
     }
 }

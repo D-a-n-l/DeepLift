@@ -1,13 +1,11 @@
 using UnityEngine;
-using UnityEngine.UI;
 using NaughtyAttributes;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(Button))]
 public class MovingButton : MonoBehaviour, IDragHandler, ISelectHandler, IDeselectHandler
 {
-    [SerializeField]
-    private bool isJoystick;
+    public Enums.TypeMovingButton type;
 
     [SerializeField]
     private GameObject supportButtons;
@@ -26,9 +24,17 @@ public class MovingButton : MonoBehaviour, IDragHandler, ISelectHandler, IDesele
 
     public string KeyPositionY => keyPositionY;
 
-    private Button button;
+    [HideInInspector]
+    public FixedJoystick fixedJoystick;
 
-    private FixedJoystick fixedJoystick;
+    [HideInInspector]
+    public Button button;
+
+    [HideInInspector]
+    public Shooting shooting;
+
+    [HideInInspector]
+    public Sprint sprint;
 
     private Camera mainCamera;
 
@@ -46,17 +52,30 @@ public class MovingButton : MonoBehaviour, IDragHandler, ISelectHandler, IDesele
 
         rectTransform = GetComponent<RectTransform>();
 
-        button = GetComponent<Button>();
-
-        if (isJoystick == true)
-            fixedJoystick = GetComponent<FixedJoystick>();
+        switch (type)
+        {
+            case Enums.TypeMovingButton.Joystick:
+                button = GetComponent<Button>();
+                fixedJoystick = GetComponent<FixedJoystick>();
+                break;
+            case Enums.TypeMovingButton.Shoot:
+                shooting = GetComponent<Shooting>();
+                break;
+            case Enums.TypeMovingButton.Sprint:
+                sprint = GetComponent<Sprint>();
+                break;
+            default:
+                button = GetComponent<Button>();
+                fixedJoystick = GetComponent<FixedJoystick>();
+                break;
+        }
 
         UpdatePosition();
     }
 
     public void CheckJoystick(bool isEnable)
     {
-        if (isJoystick == true)
+        if (type == Enums.TypeMovingButton.Joystick)
         {
             button.enabled = !isEnable;
 
@@ -78,15 +97,11 @@ public class MovingButton : MonoBehaviour, IDragHandler, ISelectHandler, IDesele
 
     public void OnSelect(BaseEventData eventData)
     {
-        button.enabled = false;
-
         supportButtons.SetActive(true);
     }
 
     public void OnDeselect(BaseEventData eventData)
     {
-        button.enabled = true;
-
         supportButtons.SetActive(false);
 
         PlayerPrefs.SetFloat(keyPositionX, rectTransform.anchoredPosition.x);

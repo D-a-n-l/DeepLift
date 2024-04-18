@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ParticleManagement : MonoBehaviour
 {
@@ -9,10 +10,20 @@ public class ParticleManagement : MonoBehaviour
     [SerializeField]
     private PresetActions actions;
 
+    [HideInInspector]
+    public UnityEvent OnSpawn;
+
     private void Start()
     {
         if (actions.healthControl != null)
-            actions.healthControl.OnGetDamage.AddListener(Spawn);
+        {
+            if (actions.eventHealthControl == Enums.TypeEventHealthControl.GetHeal)
+                actions.healthControl.OnGetHeal.AddListener(Spawn);
+            else if (actions.eventHealthControl == Enums.TypeEventHealthControl.GetDamage)
+                actions.healthControl.OnGetDamage.AddListener(Spawn);
+            else
+                actions.healthControl.OnDead.AddListener(Spawn);
+        }
 
         if (actions.shooting != null)
             actions.shooting.OnShot.AddListener(Spawn);
@@ -30,6 +41,8 @@ public class ParticleManagement : MonoBehaviour
             else
                 Instantiate(particles[i].particle, particles[i].dynamicSpawnPosition, Quaternion.Euler(particles[i].dynamicSpawnRotation));
         }
+
+        OnSpawn?.Invoke();
     }
 
     public void SetPositionAndRotation(Vector2 newPosition, float newRotation)

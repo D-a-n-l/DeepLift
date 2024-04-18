@@ -6,11 +6,11 @@ public class AnimationManagement : MonoBehaviour
     [SerializeField]
     private Enums.TypeAnimationManagement typeAnimation;
 
-    [HideIf(nameof(typeAnimation), Enums.TypeAnimationManagement.button)]
+    [HideIf(nameof(typeAnimation), Enums.TypeAnimationManagement.Button)]
     [SerializeField]
     private PresetAnimator player;
 
-    [HideIf(nameof(typeAnimation), Enums.TypeAnimationManagement.player)]
+    [HideIf(nameof(typeAnimation), Enums.TypeAnimationManagement.Player)]
     [SerializeField]
     private PresetAnimator button;
 
@@ -30,13 +30,23 @@ public class AnimationManagement : MonoBehaviour
     private void Start()
     {
         if (actions.healthControl != null)
-            actions.healthControl.OnGetDamage.AddListener(Play);
+        {
+            if (actions.eventHealthControl == Enums.TypeEventHealthControl.GetHeal)
+                actions.healthControl.OnGetHeal.AddListener(Play);
+            else if (actions.eventHealthControl == Enums.TypeEventHealthControl.GetDamage)
+                actions.healthControl.OnGetDamage.AddListener(Play);
+            else
+                actions.healthControl.OnDead.AddListener(Play);
+        }
 
         if (actions.shooting != null)
             actions.shooting.OnShot.AddListener(Play);
 
         if (actions.sprint != null)
             actions.sprint.OnSprint.AddListener(Play);
+
+        if (actions.particle != null)
+            actions.particle.OnSpawn.AddListener(Play);
     }
 
     public void Play()
@@ -62,9 +72,13 @@ public struct PresetAnimator
 [System.Serializable]
 public struct PresetActions
 {
+    public Enums.TypeEventHealthControl eventHealthControl;
+
     public HealthControl healthControl;
 
     public Shooting shooting;
 
     public Sprint sprint;
+
+    public ParticleManagement particle;
 }

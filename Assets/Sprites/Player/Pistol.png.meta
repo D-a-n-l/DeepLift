@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 440b636af5b5fc647be8465ea8d0d729
+guid: e0d7b86f00d12d947965034e09b97a9d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -71,9 +71,9 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 32
     resizeAlgorithm: 1
-    textureFormat: 4
-    textureCompression: 1
-    compressionQuality: 50
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 100
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
@@ -110,12 +110,25 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 32
     resizeAlgorithm: 1
-    textureFormat: 48
+    textureFormat: 49
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -126,19 +139,19 @@ TextureImporter:
       name: Pistol_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 20
-        width: 15
-        height: 9
+        width: 17
+        height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d4a25aaabbec8444b7cdf8d66a538fb
-      internalID: -1639327003
+      spriteID: a58c16c57f3bb0848b7cebe7b84c4b3a
+      internalID: -16809650
       vertices: []
       indices: 
       edges: []
@@ -147,19 +160,19 @@ TextureImporter:
       name: Pistol_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 20
-        width: 15
-        height: 9
+        x: 15
+        y: 11
+        width: 17
+        height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6fe4ab8b7fb95c4aaa0e224db59f04c
-      internalID: -1416608354
+      spriteID: 1c0de6592f6175c478e9557fa555bf41
+      internalID: -1049956482
       vertices: []
       indices: 
       edges: []
@@ -168,19 +181,19 @@ TextureImporter:
       name: Pistol_2
       rect:
         serializedVersion: 2
-        x: 1
-        y: 2
-        width: 15
-        height: 9
+        x: 0
+        y: 1
+        width: 17
+        height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a173012ce9ca34e439b28db273d55db1
-      internalID: 1862486068
+      spriteID: 67ed300558f26d14e92616806fd5cb29
+      internalID: -792788005
       vertices: []
       indices: 
       edges: []
@@ -196,9 +209,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Pistol_0: -1639327003
-      Pistol_1: -1416608354
-      Pistol_2: 1862486068
+      Pistol_0: -16809650
+      Pistol_1: -1049956482
+      Pistol_2: -792788005
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

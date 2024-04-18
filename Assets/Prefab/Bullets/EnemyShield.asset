@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1675ca1885e647e88c4e999d1164b08c, type: 3}
+  m_Name: EnemyShield
+  m_EditorClassIdentifier: 
+  _poolPresets:
+  - _name: Enemy Shield
+    _enabled: 1
+    _prefab: {fileID: 3945567235718838301, guid: f3844db5f8d9e184faa9e63bc077d465, type: 3}
+    _behaviourOnCapacityReached: 3
+    _despawnType: 2
+    _callbacksType: 1
+    _capacity: 30
+    _preloadSize: 30
+    _dontDestroyOnLoad: 1
+    _warnings: 0
+  - _name: Bullet Player
+    _enabled: 1
+    _prefab: {fileID: 36841705693796694, guid: 58a6fe635c8e6fd46928dcf8dd7faf49, type: 3}
+    _behaviourOnCapacityReached: 3
+    _despawnType: 2
+    _callbacksType: 1
+    _capacity: 10
+    _preloadSize: 10
+    _dontDestroyOnLoad: 1
+    _warnings: 0

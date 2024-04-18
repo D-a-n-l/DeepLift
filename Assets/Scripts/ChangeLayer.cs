@@ -3,26 +3,14 @@ using UnityEngine;
 public class ChangeLayer : MonoBehaviour
 {
     [SerializeField]
-    private BoxCollider2D innerBox;
+    private Collider2D innerBox;
 
     [SerializeField]
-    private EdgeCollider2D externalBox;
+    private Collider2D externalBox;
 
-    [SerializeField]
-    private int newSortingOrder;
-
-    private SpriteRenderer spriteRenderer;
+    public PresetSpriteRenderer[] sprites;
 
     private PlayerMovement player;
-
-    private int defaultSortingOrder;
-
-    private void Start()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-
-        defaultSortingOrder = spriteRenderer.sortingOrder;
-    }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -30,26 +18,52 @@ public class ChangeLayer : MonoBehaviour
             player = col.GetComponent<PlayerMovement>();
 
         if (player != null && player.transform.position.y > transform.position.y)
-            SetSortingLayerAndCollider(newSortingOrder, true, false);
+            SetSortingLayerAndCollider(true, true, false);
     }
 
     private void OnTriggerStay2D(Collider2D col)
     {
         if (player != null && player.transform.position.y > transform.position.y)
-            SetSortingLayerAndCollider(newSortingOrder, true, false);
+            SetSortingLayerAndCollider(true, true, false);
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
         if (player != null)
-            SetSortingLayerAndCollider(defaultSortingOrder, false, true);
+            SetSortingLayerAndCollider(false, false, true);
     }
 
-    private void SetSortingLayerAndCollider(int sortingOrder, bool inner, bool external)
+    private void SetSortingLayerAndCollider(bool newSortingOrder, bool inner, bool external)
     {
-        spriteRenderer.sortingOrder = sortingOrder;
+        if (newSortingOrder == true)
+        {
+            for (int i = 0; i < sprites.Length; i++)
+            {
+                sprites[i].spriteRenderer.sortingOrder = sprites[i].newSortingOrder;
+            }
+        }
+        else
+        {
+            for (int i = 0; i < sprites.Length; i++)
+            {
+                sprites[i].spriteRenderer.sortingOrder = sprites[i].defaultSortingOrder;
+            }
+        }
 
-        innerBox.enabled = inner;
-        externalBox.enabled = external;
+        if (innerBox != null)
+            innerBox.enabled = inner;
+
+        if (externalBox != null)
+            externalBox.enabled = external;
     }
+}
+
+[System.Serializable]
+public struct PresetSpriteRenderer
+{
+    public SpriteRenderer spriteRenderer;
+
+    public int newSortingOrder;
+
+    public int defaultSortingOrder;
 }

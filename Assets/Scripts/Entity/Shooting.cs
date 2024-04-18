@@ -2,11 +2,17 @@ using NTC.Pool;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
+using NaughtyAttributes;
+using UnityEngine.EventSystems;
 
-public class Shooting : MonoBehaviour
+public class Shooting : MonoBehaviour, IUpdateSelectedHandler, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField]
     private bool loopShooting = true;
+
+    [ShowIf(nameof(loopShooting))]
+    [SerializeField]
+    private float distanceToPlayer;
 
     [SerializeField]
     private GameObject bullet;
@@ -24,9 +30,12 @@ public class Shooting : MonoBehaviour
 
     private WaitForSeconds wait;
 
+    private bool isPressed = false;
+
     private void Awake()
     {
-        wait = new WaitForSeconds(cooldown);
+        if (loopShooting == true)
+            wait = new WaitForSeconds(cooldown);
     }
 
     private IEnumerator Start()
@@ -41,18 +50,54 @@ public class Shooting : MonoBehaviour
     {
         yield return wait;
 
-        NightPool.Spawn(bullet, shootPosition.position, shootPosition.rotation);
+        if (distanceToPlayer != 0)
+        {
+            if (Vector2.Distance(LoseGame.Instance.Player.transform.position, transform.parent.position) < distanceToPlayer)
+            {
+                NightPool.Spawn(bullet, shootPosition.position, shootPosition.rotation);
+
+                OnShot?.Invoke();
+            }
+        }
+        else
+        {
+            NightPool.Spawn(bullet, shootPosition.position, shootPosition.rotation);
+
+            OnShot?.Invoke();
+        }
     }
 
-    public void Shoot(AnimationManagement animationManagement)
+    public void OnPointerDown(PointerEventData eventData)
     {
-        if (Time.time > nextFire && animationManagement.IsReady == true)
+        if (loopShooting == false)
+        {
+            isPressed = true;
+
+            Shoot();
+        }
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        if (loopShooting == false)
+            isPressed = false;
+    }
+
+    public void OnUpdateSelected(BaseEventData eventData)
+    {
+        if (loopShooting == false && isPressed == true)
+            Shoot();
+    }
+
+    private void Shoot()
+    {
+        if (Time.time > nextFire)
         {
             nextFire = Time.time + cooldown;
 
             NightPool.Spawn(bullet, shootPosition.position, shootPosition.rotation);
 
-            OnShot.Invoke();
+            OnShot?.Invoke();
         }
     }
 }

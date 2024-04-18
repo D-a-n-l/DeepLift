@@ -1,9 +1,9 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 using NaughtyAttributes;
 
-[RequireComponent(typeof(Slider))]
 public class SliderChanging : MonoBehaviour
 {
     [SerializeField]
@@ -25,6 +25,10 @@ public class SliderChanging : MonoBehaviour
     [SerializeField]
     private Image mainImage;
 
+    [ShowIf(nameof(type), Enums.TypeSliderChanging.FrameRate)]
+    [SerializeField]
+    private TMP_Text counterText;
+
     [SerializeField]
     protected string nameKey;
 
@@ -34,13 +38,20 @@ public class SliderChanging : MonoBehaviour
     {
         slider = GetComponent<Slider>();
 
-        LoadValue(nameKey, slider.value / 2);
+        if (type == Enums.TypeSliderChanging.FrameRate)
+        {
+            slider.maxValue = Screen.currentResolution.refreshRate;
+
+            LoadValueI(nameKey, (int)slider.maxValue);
+        }
+        else
+            LoadValueF(nameKey, slider.value / 2);
     }
 
     public void ChangeVolume(float volume)
     {
         if (type == Enums.TypeSliderChanging.Music)
-            mixer.audioMixer.SetFloat(nameKey, Mathf.Lerp(minValue, maxValue, volume));//this nameKey - change in settings Mixer
+            mixer.audioMixer.SetFloat(nameKey, Mathf.Log10(volume) * 20);//this nameKey - change in settings Mixer
 
         SaveValueF(nameKey, volume);
     }
@@ -61,9 +72,26 @@ public class SliderChanging : MonoBehaviour
         SaveValueF(nameKey, size);
     }
 
-    private void LoadValue(string name, float value)
+    public void ChangeFrameRate(float value)
+    {
+        if (type == Enums.TypeSliderChanging.FrameRate)
+        {
+            Application.targetFrameRate = (int)value;
+
+            counterText.text = value.ToString();
+        }
+
+        SaveValueI(nameKey, (int)value);
+    }
+
+    private void LoadValueF(string name, float value)
     {
         slider.value = PlayerPrefs.GetFloat(name, value);
+    }
+
+    private void LoadValueI(string name, int value)
+    {
+        slider.value = PlayerPrefs.GetInt(name, value);
     }
 
     protected void SaveValueF(string name, float value)

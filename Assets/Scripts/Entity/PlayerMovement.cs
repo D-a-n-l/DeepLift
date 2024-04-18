@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Animator), typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-    public static PlayerMovement instance;
+    public static PlayerMovement Instance;
 
     [SerializeField]
     private float speed;
@@ -25,15 +26,18 @@ public class PlayerMovement : MonoBehaviour
 
     public float animationInterpolation { get; set; }
 
+    [HideInInspector]
+    public UnityEvent OnFlip;
+
     private void Awake()
     {
-        if (instance != null)
+        if (Instance != null)
         {
             Debug.LogError("More than one Player");
             return;
         }
 
-        instance = this;
+        Instance = this;
     }
 
     private void Start()
@@ -64,31 +68,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Flip()
     {
+        OnFlip?.Invoke();
+
         facingRight = !facingRight;
 
         transform.Rotate(0f, 180f, 0f);
     }
 
     public void SetSpeed(float value) => speed = value;
-
-    //private void OnEnable()
-    //{
-    //    _rewardedAd = new RewardedAd(rewardedId);
-    //    AdRequest adRequest = new AdRequest.Builder().Build();
-    //    _rewardedAd.LoadAd(adRequest);
-    //    _rewardedAd.OnUserEarnedReward += HandleUserEarnedReward;
-    //}
-
-    //private void HandleUserEarnedReward(object sender, Reward e)
-    //{
-    //    //HealthControl.instance.GetHeal(1);
-    //    Time.timeScale = 1;
-    //    //secondLife.enabled = false;
-    //}
-
-    //public void ShowAd()
-    //{
-    //    if (_rewardedAd.IsLoaded())
-    //        _rewardedAd.Show();
-    //}
 }

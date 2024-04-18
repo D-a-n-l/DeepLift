@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Lift 3
+  m_Controller: {fileID: 9100000, guid: 856d560afe37d0c408e067c92325a19b, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 5bb2651d89af6534c866a971f78b4944, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 92851d2293fc4ed44a1e4a174ccc13aa, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1b6890079b8fe744bb0ff1404b95c51f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: aae3b888aae62524caf3eedd6b316954, type: 2}

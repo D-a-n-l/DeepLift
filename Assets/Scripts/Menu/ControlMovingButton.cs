@@ -8,7 +8,7 @@ public class ControlMovingButton : MonoBehaviour
     [SerializeField]
     private SupportMovingButton[] controlMovingButton;
 
-    private void Awake()
+    private void Start()
     {
         Enable(false);
     }
@@ -19,9 +19,23 @@ public class ControlMovingButton : MonoBehaviour
         {
             for (int i = 0; i < movingButtons.Length; i++)
             {
-                movingButtons[i].enabled = isEnable;
+                switch (movingButtons[i].type)
+                {
+                    case Enums.TypeMovingButton.Joystick:
+                        movingButtons[i].fixedJoystick.enabled = !isEnable;
+                        break;
+                    case Enums.TypeMovingButton.Shoot:
+                        movingButtons[i].shooting.enabled = !isEnable;
+                        break;
+                    case Enums.TypeMovingButton.Sprint:
+                        movingButtons[i].sprint.enabled = !isEnable;
+                        break;
+                    default:
+                        movingButtons[i].fixedJoystick.enabled = !isEnable;
+                        break;
+                }
 
-                movingButtons[i].CheckJoystick(!isEnable);
+                movingButtons[i].enabled = isEnable;
             }
         }
     }

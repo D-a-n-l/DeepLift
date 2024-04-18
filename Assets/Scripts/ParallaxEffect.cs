@@ -22,7 +22,7 @@ public class ParallaxEffect : MonoBehaviour
         targetPositon = followingTarget.position;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         var delta = followingTarget.position - targetPositon;
 

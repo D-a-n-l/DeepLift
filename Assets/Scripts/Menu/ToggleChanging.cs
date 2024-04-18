@@ -26,6 +26,11 @@ public class ToggleChanging : SliderChanging
         SaveValueF(nameKey, enabled ? 1 : 0);
     }
 
+    public void SaveValue(bool enabled)
+    {
+        SaveValueI(nameKey, enabled ? 1 : 0);
+    }
+
     private void LoadValue(string name)
     {
         toggle.isOn = PlayerPrefs.GetInt(name) == 1;

@@ -1,3 +1,4 @@
+using NTC.Pool;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,6 +7,9 @@ public class HealthControl : MonoBehaviour
     [SerializeField]
     private float maxHealth;
 
+    [SerializeField]
+    private bool despawnWhenDead = true;
+
     public float MaxHealth => maxHealth;
 
     private float health;
@@ -13,7 +17,7 @@ public class HealthControl : MonoBehaviour
     public float Health => health;
 
     [HideInInspector]
-    public UnityEvent<bool> OnDead;
+    public UnityEvent OnDead;
 
     [HideInInspector]
     public UnityEvent OnGetDamage;
@@ -24,7 +28,7 @@ public class HealthControl : MonoBehaviour
     [HideInInspector]
     public UnityEvent OnGetHeal;
 
-    private void Start()
+    private void Awake()
     {
         health = maxHealth;
     }
@@ -33,15 +37,18 @@ public class HealthControl : MonoBehaviour
     {
         health -= damage;
 
-        OnGetDamage.Invoke();
+        OnGetDamage?.Invoke();
 
         OnGetDamageInt.Invoke(1);
 
-        if (health < 0)
+        if (health <= 0f)
         {
+            OnDead?.Invoke();
+
             health = 0;
 
-            OnDead.Invoke(true);
+            if (despawnWhenDead == true)
+                NightPool.Despawn(gameObject);
         }
     }
 
@@ -49,7 +56,7 @@ public class HealthControl : MonoBehaviour
     {
         health += heal;
 
-        OnGetHeal.Invoke();
+        OnGetHeal?.Invoke();
 
         if (health > maxHealth)
             health = maxHealth;

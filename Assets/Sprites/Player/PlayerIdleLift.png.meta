@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 005f1f9ebd9c93846918f0569097fda6
+guid: 19acf6a0625cddf46bf8b7024c07e63c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -70,7 +70,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 128
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
@@ -108,6 +108,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 128
+    resizeAlgorithm: 1
+    textureFormat: 48
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -126,19 +139,19 @@ TextureImporter:
       name: PlayerIdleLift_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 6
         y: 6
-        width: 24
+        width: 22
         height: 47
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82ff874f9a8b1ab42b229f4d95788638
-      internalID: -1087304886
+      spriteID: a0aa4a7ad8e5b5749abc24e746db64fa
+      internalID: -261743994
       vertices: []
       indices: 
       edges: []
@@ -147,19 +160,19 @@ TextureImporter:
       name: PlayerIdleLift_1
       rect:
         serializedVersion: 2
-        x: 36
+        x: 38
         y: 6
-        width: 24
+        width: 22
         height: 47
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2575cce0a35e2f840a4ddef9b3ec746a
-      internalID: -1849344373
+      spriteID: 64d099e4cb48ebc43a701674f88ad31d
+      internalID: 1452089370
       vertices: []
       indices: 
       edges: []
@@ -168,19 +181,19 @@ TextureImporter:
       name: PlayerIdleLift_2
       rect:
         serializedVersion: 2
-        x: 68
+        x: 70
         y: 6
-        width: 24
+        width: 22
         height: 47
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5251e0cac7da8641bd7c5772bc87944
-      internalID: -1560702853
+      spriteID: cb84956613c32f34d831b96e8757be8d
+      internalID: -1231267332
       vertices: []
       indices: 
       edges: []
@@ -189,19 +202,19 @@ TextureImporter:
       name: PlayerIdleLift_3
       rect:
         serializedVersion: 2
-        x: 100
+        x: 102
         y: 6
-        width: 24
+        width: 22
         height: 47
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5916f2ee8bf6ea44c88f3c97f6ee1f6d
-      internalID: 725100586
+      spriteID: 6d4edbb124bf1834b966622bfd4cb42a
+      internalID: -1508721836
       vertices: []
       indices: 
       edges: []
@@ -217,10 +230,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PlayerIdleLift_0: -1087304886
-      PlayerIdleLift_1: -1849344373
-      PlayerIdleLift_2: -1560702853
-      PlayerIdleLift_3: 725100586
+      PlayerIdleLift_0: -261743994
+      PlayerIdleLift_1: 1452089370
+      PlayerIdleLift_2: -1231267332
+      PlayerIdleLift_3: -1508721836
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

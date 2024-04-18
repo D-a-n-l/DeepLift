@@ -22,4 +22,9 @@ public class StaticPath : MonoBehaviour
             .SetEase(ease))
             .SetLoops(-1);
     }
+
+    private void OnDestroy()
+    {
+        DOTween.KillAll();
+    }
 }

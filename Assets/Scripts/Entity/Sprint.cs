@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,26 +9,43 @@ public class Sprint : MonoBehaviour
     private float speed;
 
     [SerializeField]
+    private float cooldown;
+
+    [SerializeField]
     private PlayerMovement playerMovement;
 
     [HideInInspector]
     public UnityEvent OnSprint;
 
+    private WaitForSeconds waitForSeconds;
+
     private float defaultSpeed;
 
     private void Start()
     {
-        defaultSpeed = playerMovement.Speed;
+        if (playerMovement != null)
+            defaultSpeed = playerMovement.Speed;
+
+        waitForSeconds = new WaitForSeconds(cooldown);
     }
 
-    public void On(AnimationManagement animationManagement)
+    public void Onn(AnimationManagement animationManagement)
+    {
+        StartCoroutine(On(animationManagement));
+    }
+
+    private IEnumerator On(AnimationManagement animationManagement)
     {
         if(animationManagement.IsReady == true)
         {
+            OnSprint?.Invoke();
+
             playerMovement.SetSpeed(speed);
             playerMovement.animationInterpolation = 1.5f;
 
-            OnSprint.Invoke();
+            yield return waitForSeconds;
+
+            Off();
         }
     }
 

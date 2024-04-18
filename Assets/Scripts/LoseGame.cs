@@ -1,36 +1,81 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LoseGame : MonoBehaviour
 {
-    [SerializeField]
-    private HealthControl healthControl;
+    public static LoseGame Instance { get; private set;}
 
+    [SerializeField]
+    private RewardedAdsButton rewardedAdsButton;
+
+    [Space(5)]
+    [SerializeField]
+    private HealthControl player;
+
+    public HealthControl Player => player;
+
+    [SerializeField]
+    private SwitchOffColliders switchOffColliders;
+
+    [SerializeField]
+    private float delay = 3f;
+
+    [Space(5)]
     [SerializeField]
     private TransitionLevel transitionLevel;
 
     [SerializeField]
     private Canvas canvas;
 
+    [SerializeField]
+    private Canvas backgorund;
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
+    }
+
     private void Start()
     {
-        healthControl.OnDead.AddListener(value => canvas.enabled = value);
+        player.OnDead.AddListener(() => 
+        {
+            Time.timeScale = 0;
+
+            rewardedAdsButton.LoadAd();
+
+            switchOffColliders.Set(false);
+
+            canvas.enabled = true;
+
+            backgorund.enabled = true;
+        });
     }
 
     public void Continue()
     {
+        Time.timeScale = 1;
+
         canvas.enabled = false;
+
+        backgorund.enabled = false;
 
         transitionLevel.LoadLevel(false);
     }
 
     public void SecondLife()
     {
-        //showAd
-        //posle reklami healing
+        Time.timeScale = 1;
+
         canvas.enabled = false;
 
-        healthControl.GetHeal(healthControl.MaxHealth);
+        backgorund.enabled = false;
+
+        StartCoroutine(switchOffColliders.SetWithDelay(true, delay));
+
+        player.GetHeal(player.MaxHealth);
     }
 }

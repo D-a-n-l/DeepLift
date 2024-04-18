@@ -4,13 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
-  - EnemyHead
-  - EnemyBullet
-  - Shield
-  - BulletPistol
+  - DeathZone
   - BulletAk
-  - Bullet
+  - BulletPistol
   layers:
   - Default
   - TransparentFX
@@ -18,14 +14,14 @@ TagManager:
   - Roof
   - Water
   - UI
-  - Jonh
+  - Player
   - Enemy
   - PostProcessing
   - Blood
-  - LightFg
-  - LightBg
-  - 
-  - 
+  - Enemy Body
+  - Player Bullet
+  - Enemy Bullet
+  - Enemy Bullet2
   - 
   - 
   - 
