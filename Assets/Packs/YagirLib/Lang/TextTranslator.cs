@@ -1,5 +1,8 @@
-﻿using TMPro;
+﻿using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TextTranslator : MonoBehaviour
 {
@@ -15,11 +18,18 @@ public class TextTranslator : MonoBehaviour
     {
         LangsList.langs.activatedTexts.Remove(this);
     }
-
     public void ReTranslate()
     {
         var tmpT = GetComponent<TMP_Text>();
+        var T = GetComponent<Text>();
 
-        tmpT.text = LangsList.GetWord(key);
+        if (tmpT)
+        {
+            tmpT.text = LangsList.GetWord(key);
+        }
+        if (T)
+        {
+            T.text = LangsList.GetWord(key);
+        }
     }
 }

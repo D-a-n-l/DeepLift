@@ -18,28 +18,28 @@ MonoBehaviour:
     _prefab: {fileID: 3106572320392075313, guid: 257d30e984acc86429fb2c4f9c1f8e08, type: 3}
     _behaviourOnCapacityReached: 3
     _despawnType: 2
-    _callbacksType: 1
+    _callbacksType: 0
     _capacity: 30
     _preloadSize: 30
-    _dontDestroyOnLoad: 1
+    _dontDestroyOnLoad: 0
     _warnings: 0
   - _name: Bullet Enemy
     _enabled: 1
     _prefab: {fileID: 36841705693796694, guid: 8d5e61c139a702447a33fecf133fc3f7, type: 3}
     _behaviourOnCapacityReached: 3
     _despawnType: 2
-    _callbacksType: 1
+    _callbacksType: 0
     _capacity: 30
     _preloadSize: 30
-    _dontDestroyOnLoad: 1
+    _dontDestroyOnLoad: 0
     _warnings: 0
   - _name: Bullet Player
     _enabled: 1
     _prefab: {fileID: 36841705693796694, guid: 58a6fe635c8e6fd46928dcf8dd7faf49, type: 3}
     _behaviourOnCapacityReached: 3
     _despawnType: 2
-    _callbacksType: 1
+    _callbacksType: 0
     _capacity: 10
     _preloadSize: 10
-    _dontDestroyOnLoad: 1
+    _dontDestroyOnLoad: 0
     _warnings: 0

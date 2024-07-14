@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using TMPro;
 
 public class ControlAllButtons : MonoBehaviour
 {
@@ -15,7 +16,14 @@ public class ControlAllButtons : MonoBehaviour
             {
                 int index = i;
 
-                buttons[index].button.onClick.AddListener(() => buttons[index].unityEvent.Invoke());
+                if (buttons[i].button != null)
+                    buttons[index].button.onClick.AddListener(delegate{buttons[index].unityEvent.Invoke();});
+                else if (buttons[i].slider != null)
+                    buttons[index].slider.onValueChanged.AddListener(delegate{buttons[index].unityEvent.Invoke();});
+                else if (buttons[i].toggle != null)
+                    buttons[index].toggle.onValueChanged.AddListener(delegate{buttons[index].unityEvent.Invoke();});
+                else if (buttons[i].tmpDropdown != null)
+                    buttons[index].tmpDropdown.onValueChanged.AddListener(delegate{buttons[index].unityEvent.Invoke();});
             }
         }
     }
@@ -25,6 +33,12 @@ public class ControlAllButtons : MonoBehaviour
 public struct PresetBt
 {
     public Button button;
+
+    public Slider slider;
+
+    public Toggle toggle;
+
+    public TMP_Dropdown tmpDropdown;
 
     public UnityEvent unityEvent;
 }

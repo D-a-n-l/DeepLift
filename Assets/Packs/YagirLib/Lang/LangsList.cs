@@ -104,6 +104,7 @@ public class LangsList : MonoBehaviour
         {
             print("Set Translation Asset!");
         }
+        //SetLanguage(1);
     }
 
     public static string GetWord(string key)

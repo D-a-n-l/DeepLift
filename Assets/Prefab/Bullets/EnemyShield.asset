@@ -16,12 +16,12 @@ MonoBehaviour:
   - _name: Enemy Shield
     _enabled: 1
     _prefab: {fileID: 3945567235718838301, guid: f3844db5f8d9e184faa9e63bc077d465, type: 3}
-    _behaviourOnCapacityReached: 3
+    _behaviourOnCapacityReached: 4
     _despawnType: 2
     _callbacksType: 1
     _capacity: 30
     _preloadSize: 30
-    _dontDestroyOnLoad: 1
+    _dontDestroyOnLoad: 0
     _warnings: 0
   - _name: Bullet Player
     _enabled: 1
@@ -31,5 +31,5 @@ MonoBehaviour:
     _callbacksType: 1
     _capacity: 10
     _preloadSize: 10
-    _dontDestroyOnLoad: 1
+    _dontDestroyOnLoad: 0
     _warnings: 0

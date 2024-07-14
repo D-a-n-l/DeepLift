@@ -40,7 +40,7 @@ public class SliderChanging : MonoBehaviour
 
         if (type == Enums.TypeSliderChanging.FrameRate)
         {
-            slider.maxValue = Screen.currentResolution.refreshRate;
+            slider.maxValue = (float)Screen.currentResolution.refreshRateRatio.value;
 
             LoadValueI(nameKey, (int)slider.maxValue);
         }

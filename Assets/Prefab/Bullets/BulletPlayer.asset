@@ -21,5 +21,5 @@ MonoBehaviour:
     _callbacksType: 1
     _capacity: 10
     _preloadSize: 10
-    _dontDestroyOnLoad: 1
+    _dontDestroyOnLoad: 0
     _warnings: 0
