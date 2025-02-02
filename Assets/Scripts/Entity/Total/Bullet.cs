@@ -39,12 +39,12 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        rigidbod.velocity = transform.right * speed;
+        rigidbod.linearVelocity = transform.right * speed;
     }
 
     private void OnEnable()
     {
-        rigidbod.velocity = transform.right * speed;
+        rigidbod.linearVelocity = transform.right * speed;
 
         StartCoroutine(ResetPosition());
     }
@@ -53,7 +53,7 @@ public class Bullet : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
 
-        rigidbod.velocity = transform.right * speed;
+        rigidbod.linearVelocity = transform.right * speed;
     }
 
     private void OnCollisionEnter2D(Collision2D col)

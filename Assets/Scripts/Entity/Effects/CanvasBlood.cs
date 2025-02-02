@@ -1,5 +1,5 @@
 using UnityEngine;
-using Cinemachine;
+using Unity.Cinemachine;
 
 [RequireComponent (typeof(Animator))]
 public class CanvasBlood : MonoBehaviour

@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,11 +13,12 @@ public class ChangeLevelManager : MonoBehaviour
     [SerializeField]
     private float delayStartTransitionLevel;
 
-    private int unlockLevels;
+    public int unlockLevels = 0;
 
-    private void Start()
+    [Button]
+    public void AAA()
     {
-        unlockLevels = PlayerPrefs.GetInt("Level", 1);
+        //unlockLevels = PlayerPrefs.GetInt("Level", 1);
 
         for (int i = unlockLevels; i < buttons.Length; i++)
         {

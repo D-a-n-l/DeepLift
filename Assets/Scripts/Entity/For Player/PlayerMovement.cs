@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rigidbod.velocity = new Vector2(moveX * speed * Time.fixedDeltaTime, moveY * speed * Time.fixedDeltaTime);
+        rigidbod.linearVelocity = new Vector2(moveX * speed * Time.fixedDeltaTime, moveY * speed * Time.fixedDeltaTime);
 
         if (moveX > 0 && !facingRight) Flip();
         else if (moveX < 0 && facingRight) Flip();

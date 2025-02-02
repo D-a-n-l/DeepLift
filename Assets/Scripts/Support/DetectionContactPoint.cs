@@ -16,7 +16,7 @@ public static class DetectionContactPoint
 
     public static float Rotation(Rigidbody2D rigidbody)
     {
-        if (rigidbody.velocity.x > 0)
+        if (rigidbody.linearVelocity.x > 0)
             newRotation = 270f;
         else
             newRotation = 90f;

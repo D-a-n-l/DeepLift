@@ -43,6 +43,6 @@ public class EnemyMovement : MonoBehaviour
             transform.localScale = newLocalScale;
         }
 
-        rigidbody.velocity = direction * speed;
+        rigidbody.linearVelocity = direction * speed;
     }
 }

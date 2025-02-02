@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: fd003b1654b418048bd7d892f66661a7
+timeCreated: 1470015458
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 58337
+  packageName: Simple Firebase Unity (for Realtime-Database)
+  packageVersion: 1.1.1
+  assetPath: Assets/SimpleFirebaseUnity/Sample/MoveControl.cs
+  uploadId: 258753
