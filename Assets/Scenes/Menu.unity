@@ -1200,7 +1200,6 @@ MonoBehaviour:
     numberLevel: 10
   transitionLevel: {fileID: 1709392111}
   delayStartTransitionLevel: 1
-  unlockLevels: 0
 --- !u!114 &434416096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2546,6 +2545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a36010581e1a5f4d924c96304905baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelManager: {fileID: 434416095}
 --- !u!4 &1094511023
 Transform:
   m_ObjectHideFlags: 0
@@ -7471,7 +7471,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2836030155407299732, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -8428796
+      value: -8454806
       objectReference: {fileID: 0}
     - target: {fileID: 2906555578986774441, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchorMax.x

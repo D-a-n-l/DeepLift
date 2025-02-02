@@ -3,84 +3,107 @@ using System.Runtime.InteropServices;
 using System;
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.Tilemaps;
-using NaughtyAttributes;
-using Models;
 
 public class TelegramManager : MonoBehaviour
 {
-    private Firebase _database;
+    public static TelegramManager Instance;
+
+    [SerializeField]
+    private ChangeLevelManager levelManager;
+
+    private Firebase database;
+
+    private string tgUsers = "tg_users";
+
+    private int idCurrentUser;
+
+    private int levelCurrentUser;
 
     [DllImport("__Internal")]
     private static extern int GetTelegramUserId();
 
     private void Awake()
     {
-        _database = Firebase.CreateNew("https://webdeeplift-default-rtdb.europe-west1.firebasedatabase.app/", "AIzaSyBBXnBzxqUZ_H1sHF4fX34Mcm_e27bv0GY");
+        Instance = this;
 
-        _database.OnGetSuccess += GetOKHandler;
-        _database.OnGetFailed += GetFailHandler;
+        database = Firebase.CreateNew("https://webdeeplift-default-rtdb.europe-west1.firebasedatabase.app/", "AIzaSyBBXnBzxqUZ_H1sHF4fX34Mcm_e27bv0GY");
 
-        TelegramUser user = new TelegramUser(452357, 1);
-        string userJson = JsonUtility.ToJson(user);
-        _database.Child($"users/{452357}", true).GetValue();
-        //Debug.Log($"Пользователь: {user.id}");
-        //_database.Child($"users/{user.id}").SetValue(userJson, true);
+        Subscription();
+
+        InitTgUser();
+
+        DontDestroyOnLoad(this);
     }
 
-    [Button]
-    public void Gettt()
+    private void InitTgUser()
     {
-        _database.Child($"users/{452357}", true).GetValue();
+        //int id_user = GetTelegramUserId();
+        idCurrentUser = GetTelegramUserId();
+        database.Child($"{tgUsers}/{idCurrentUser}", true).GetValue();
+
+        //TelegramUser user = new TelegramUser(id_user, 0);
+
+        //string userJson = JsonUtility.ToJson(user);
+
+        //database.Child($"{tg_users}/{id_user}").SetValue(userJson, true);
     }
 
-    void GetFailHandler(Firebase sender, FirebaseError err)
+    private void OnDisable()
+    {
+        Unsubscription();
+    }
+
+    private void Subscription()
+    {
+        database.OnGetSuccess += GetOKHandler;
+        database.OnGetFailed += GetFailHandler;
+    }
+
+    private void Unsubscription()
+    {
+        database.OnGetSuccess -= GetOKHandler;
+        database.OnGetFailed -= GetFailHandler;
+    }
+
+    public void SaveLevel(int level)
+    {
+        database.Child($"{tgUsers}/{idCurrentUser}/level").SetValue(level);
+    }
+
+    public int GetLevel()
+    {
+        database.Child($"{tgUsers}/{idCurrentUser}/level").GetValue();
+
+        print("Get level " + levelCurrentUser);
+        return levelCurrentUser;
+    }
+
+    private void GetOKHandler(Firebase sender, DataSnapshot snapshot)
+    {
+        TelegramUser user = new TelegramUser(0, 0);
+
+        try
+        {
+            user = JsonUtility.FromJson<TelegramUser>(snapshot.RawJson);
+        }
+        catch
+        {
+            user = new TelegramUser(idCurrentUser, 1);
+
+            string userJson = JsonUtility.ToJson(user);
+
+            database.Child($"{tgUsers}/{idCurrentUser}").SetValue(userJson, true);
+        }
+
+        levelManager.UnlockLevels(user.level);
+
+        levelCurrentUser = user.level;
+        print("OK Handler " +levelCurrentUser);
+    }
+
+    private void GetFailHandler(Firebase sender, FirebaseError err)
     {
         Debug.Log("[ERR] Get from key: <" + sender.FullKey + ">,  " + err.Message + " (" + (int)err.Status + ")");
-    }
-
-    void GetOKHandler(Firebase sender, DataSnapshot snapshot)
-    {
-        Debug.Log("[OK] Get from key: <" + sender.FullKey + ">");
-        Debug.Log("[OK] Raw Json: " + snapshot.RawJson);
-        TelegramUser user = JsonUtility.FromJson<TelegramUser>(snapshot.RawJson);
-        ChangeLevelManager cha = FindAnyObjectByType<ChangeLevelManager>();
-        cha.unlockLevels = user.level;
-        Dictionary<string, object> dict = snapshot.Value<Dictionary<string, object>>();
-        List<string> keys = snapshot.Keys;
-
-        if (keys != null)
-            foreach (string key in keys)
-            {
-                Debug.Log(key + " = " + dict[key].ToString());
-            }
-    }
-
-    //private IEnumerator AAA()
-    //{
-    //    yield return new WaitForSeconds(5f);
-    //    string userDataJson = GetTelegramUserId().ToString();
-    //    Debug.Log("Получены данные из Telegram: " + userDataJson);
-    //    //userDataJson = "Loh";
-
-    //    // Парсим JSON
-    //    TelegramUser user = new TelegramUser(userDataJson, "0");
-    //    Debug.Log($"Пользователь: {userDataJson}");
-    //    _database.Child("users").Push(userDataJson);
-    //}
-
-    // Метод вызывается из JavaScript
-    public void DataReceived(string firstName)
-    {
-        //_database = Firebase.CreateNew("https://webdeeplift-default-rtdb.europe-west1.firebasedatabase.app/", "AIzaSyBBXnBzxqUZ_H1sHF4fX34Mcm_e27bv0GY");
-
-        //TelegramUser user = JsonUtility.FromJson<TelegramUser>(jsonData);
-
-        //string json = JsonUtility.ToJson(user);
-        Debug.Log(firstName);
-        //Debug.Log($"User ID: {user.id}, Username: {user.username}, First Name: {user.first_name}");
-
-        _database.Child("users").Push(firstName);
     }
 }
 

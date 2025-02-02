@@ -43,7 +43,7 @@ public class TransitionLevel : MonoBehaviour
 
             if (currentLevel >= SceneManager.sceneCountInBuildSettings)
             {
-                canvasComplete.enabled = true;
+                //canvasComplete.enabled = true;
 
                 ChangeTime.Set(0);
 
@@ -65,8 +65,11 @@ public class TransitionLevel : MonoBehaviour
     {
         SceneManager.LoadScene(level);
 
-        if (currentLevel > PlayerPrefs.GetInt("Level"))
-            PlayerPrefs.SetInt("Level", currentLevel);
+        if (currentLevel > TelegramManager.Instance.GetLevel())
+            TelegramManager.Instance.SaveLevel(currentLevel);
+
+        //if (currentLevel > PlayerPrefs.GetInt("Level"))
+        //    PlayerPrefs.SetInt("Level", currentLevel);
 
         if (Time.timeScale == 0)
             ChangeTime.Set(1);
@@ -100,8 +103,10 @@ public class TransitionLevel : MonoBehaviour
 
         SceneManager.LoadScene(currentLevel);
 
-        if (currentLevel > PlayerPrefs.GetInt("Level"))
-            PlayerPrefs.SetInt("Level", currentLevel);
+        if (currentLevel > TelegramManager.Instance.GetLevel())
+            TelegramManager.Instance.SaveLevel(currentLevel);
+        //if (currentLevel > PlayerPrefs.GetInt("Level"))
+        //    PlayerPrefs.SetInt("Level", currentLevel);
 
         if (Time.timeScale == 0)
             ChangeTime.Set(1);
