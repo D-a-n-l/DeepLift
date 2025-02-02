@@ -41,6 +41,8 @@ ExportedObj/
 *.userprefs
 *.pidb
 *.booproj
+*.keystore
+*.pem
 *.svd
 *.pdb
 *.mdb
