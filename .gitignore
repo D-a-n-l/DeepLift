@@ -5,6 +5,7 @@
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
+/keys_verifed/
 /[Bb]uild/
 /[Bb]uilds/
 /[Ll]ogs/
@@ -43,6 +44,8 @@ ExportedObj/
 *.booproj
 *.keystore
 *.pem
+*.zip
+*.rar
 *.svd
 *.pdb
 *.mdb
