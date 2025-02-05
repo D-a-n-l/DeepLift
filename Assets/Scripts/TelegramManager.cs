@@ -2,7 +2,6 @@
 using System.Runtime.InteropServices;
 using System;
 using UnityEngine;
-using System.Collections.Generic;
 
 public class TelegramManager : MonoBehaviour
 {
