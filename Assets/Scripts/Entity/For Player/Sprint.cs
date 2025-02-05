@@ -35,6 +35,30 @@ public class Sprint : MonoBehaviour,  IPointerDownHandler, IPointerUpHandler
         waitForSeconds = new WaitForSeconds(cooldown);
     }
 
+#if UNITY_WEBGL || UNITY_EDITOR
+    private void Update()
+    {
+        if (Application.isMobilePlatform == true)
+            return;
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            isPressed = true;
+
+            StartCoroutine(On());
+        }
+        else if (Input.GetMouseButton(1))
+        {
+            if (isPressed == true)
+                StartCoroutine(On());
+        }
+        else if (Input.GetMouseButtonUp(1))
+        {
+            isPressed = false;
+        }
+    }
+#endif
+
     public void OnPointerDown(PointerEventData eventData)
     {
         isPressed = true;

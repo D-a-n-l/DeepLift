@@ -73,6 +73,31 @@ public class Shooting : MonoBehaviour, IUpdateSelectedHandler, IPointerDownHandl
         StartCoroutine(ShootLoop());
     }
 
+#if UNITY_WEBGL || UNITY_EDITOR
+    private void Update()
+    {
+        if (Application.isMobilePlatform == true)
+            return;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            isPressed = true;
+
+            Shoot();
+        }
+        else if (Input.GetMouseButton(0))
+        {
+            if (loopShooting == false && isPressed == true)
+                Shoot();
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            if (loopShooting == false)
+                isPressed = false;
+        }
+    }
+#endif
+
     public void OnPointerDown(PointerEventData eventData)
     {
         if (loopShooting == false)

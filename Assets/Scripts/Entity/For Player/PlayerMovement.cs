@@ -59,9 +59,23 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+#if UNITY_WEBGL || UNITY_EDITOR
+        if (Application.isMobilePlatform == true)
+        {
+            moveX = joystick.Horizontal;
+            moveY = joystick.Vertical;
+        }
+        else
+        {
+            moveX = Input.GetAxis("Horizontal");
+            moveY = Input.GetAxis("Vertical");
+        }
+#endif
+
+#if UNITY_ANDROID
         moveX = joystick.Horizontal;
         moveY = joystick.Vertical;
-
+#endif
         animator.SetFloat("x", moveX * animationInterpolation);
         animator.SetFloat("y", moveY * animationInterpolation);
     }
