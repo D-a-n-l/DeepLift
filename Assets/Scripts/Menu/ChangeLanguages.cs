@@ -14,7 +14,7 @@ public class ChangeLanguages : MonoBehaviour
         dropdown = GetComponent<TMP_Dropdown>();
 
         if (PlayerPrefs.HasKey(nameKey) == true)
-            dropdown.value = PlayerPrefs.GetInt(nameKey, 0);
+            ChangeLang(PlayerPrefs.GetInt(nameKey, 0));
         else
         {
             if (Application.systemLanguage == SystemLanguage.Russian)
@@ -26,7 +26,9 @@ public class ChangeLanguages : MonoBehaviour
 
     public void ChangeLang(int value)
     {
-        LangsList.SetLanguage(dropdown.value, true);
+        LangsList.SetLanguage(value, true);
+
+        dropdown.value = value;
 
         PlayerPrefs.SetInt(nameKey, value);
     }
