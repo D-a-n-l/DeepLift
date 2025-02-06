@@ -10,6 +10,9 @@ public class CheckOrientation : MonoBehaviour
     [SerializeField]
     private string _nameScene;
 
+    [SerializeField]
+    private GameObject _icon;
+
     private bool _isApply = false;
 
     private void Awake()
@@ -28,6 +31,8 @@ public class CheckOrientation : MonoBehaviour
         {
             if (Screen.orientation == ScreenOrientation.Portrait || Screen.orientation == ScreenOrientation.PortraitUpsideDown)
                 return;
+
+            _icon.SetActive(false);
 
             _isApply = true;
 
