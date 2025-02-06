@@ -4,6 +4,9 @@ using UnityEngine.Events;
 public class ActionsByKeyCode : MonoBehaviour
 {
     [SerializeField]
+    private TypeActions _typeActions;
+
+    [SerializeField]
     private KeyCode _keyCode = KeyCode.Escape;
 
     [Space(10)]
@@ -18,14 +21,35 @@ public class ActionsByKeyCode : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(_keyCode))
+        if (_typeActions == TypeActions.ActionsByDown)
         {
-            _isPressed = !_isPressed;
 
-            if (_isPressed == true)
+            if (Input.GetKeyDown(_keyCode))
+            {
+                _isPressed = !_isPressed;
+
+                if (_isPressed == true)
+                    OnPressedFirst?.Invoke();
+                else
+                    OnPressedSecond?.Invoke();
+            }
+        }
+        else if (_typeActions == TypeActions.ActionsByDownUp)
+        {
+            if (Input.GetKeyDown(_keyCode))
+            {
                 OnPressedFirst?.Invoke();
-            else
+            }
+            else if (Input.GetKeyUp(_keyCode))
+            {
                 OnPressedSecond?.Invoke();
+            }
         }
     }
+}
+
+public enum TypeActions
+{
+    ActionsByDown,
+    ActionsByDownUp
 }

@@ -67,6 +67,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        if (Application.isMobilePlatform == false)
+            return;
+
         if (isStartGame == true)
             StartLift();
     }

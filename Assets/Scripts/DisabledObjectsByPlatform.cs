@@ -3,12 +3,43 @@ using UnityEngine;
 public class DisabledObjectsByPlatform : MonoBehaviour
 {
     [SerializeField]
-    private GameObject[] _gameObjects;
+    private PresetObjects[] _presetObjectsForMobile;
+
+    [Space(10)]
+    [SerializeField]
+    private PresetObjects[] _presetObjectsForPC;
 
     private void Awake()
     {
-        if (Application.isMobilePlatform == false)
-            for (int i = 0; i < _gameObjects.Length; i++)
-                _gameObjects[i].SetActive(false);
+        if (Application.isMobilePlatform == true)
+        {
+            ManagementObjects(_presetObjectsForMobile);
+        }
+        else if (Application.isMobilePlatform == false)
+        {
+            ManagementObjects(_presetObjectsForPC);
+        }
     }
+
+    private void ManagementObjects(PresetObjects[] presetObjects)
+    {
+        foreach (var obj in presetObjects)
+        {
+            if (obj.gameObject != null)
+                obj.gameObject.SetActive(obj.value);
+
+            if (obj.canvas != null)
+                obj.canvas.enabled = obj.value;
+        }
+    }
+}
+
+[System.Serializable]
+public struct PresetObjects
+{
+    public GameObject gameObject;
+
+    public Canvas canvas;
+
+    public bool value;
 }
