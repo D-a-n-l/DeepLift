@@ -241,3 +241,24 @@ MonoBehaviour:
       phrase: "\u0421\u0447\u0435\u0442:"
     key: _Score
     hide: 1
+  - phrases:
+    - langName: English
+      phrase: Movement
+    - langName: Russian
+      phrase: "\u041F\u0435\u0440\u0435\u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0435"
+    key: _Movement
+    hide: 1
+  - phrases:
+    - langName: English
+      phrase: Shoot
+    - langName: Russian
+      phrase: "\u0412\u044B\u0441\u0442\u0440\u0435\u043B"
+    key: _Shoot
+    hide: 1
+  - phrases:
+    - langName: English
+      phrase: Sprint
+    - langName: Russian
+      phrase: "\u0423\u0441\u043A\u043E\u0440\u0435\u043D\u0438\u0435"
+    key: _Sprint
+    hide: 1
