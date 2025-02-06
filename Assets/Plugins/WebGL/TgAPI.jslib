@@ -25,38 +25,26 @@
     },
 
     GetSafeAreaTop: function () {
-        if (!window.Telegram || !window.Telegram.WebApp) {
-            return window.Telegram.WebApp.safeAreaInset.top;
-        }
+        return window.Telegram.WebApp.safeAreaInset.top;
     },
 
     GetSafeAreaRight: function () {
-        if (!window.Telegram || !window.Telegram.WebApp) {
-            return window.Telegram.WebApp.safeAreaInset.right;
-        }
+        return window.Telegram.WebApp.safeAreaInset.right;
     },
 
     GetSafeAreaLeft: function () {
-        if (!window.Telegram || !window.Telegram.WebApp) {
-            return window.Telegram.WebApp.safeAreaInset.left;
-        }
+        return window.Telegram.WebApp.safeAreaInset.left;
     },
 
     GetContentSafeAreaTop: function () {
-        if (!window.Telegram || !window.Telegram.WebApp) {
-            return window.Telegram.WebApp.contentSafeAreaInset.top;
-        }
+        return window.Telegram.WebApp.contentSafeAreaInset.top;
     },
 
     GetContentSafeAreaRight: function () {
-        if (!window.Telegram || !window.Telegram.WebApp) {
-            return window.Telegram.WebApp.contentSafeAreaInset.right;
-        }
+        return window.Telegram.WebApp.contentSafeAreaInset.right;
     },
 
     GetContentSafeAreaLeft: function () {
-        if (!window.Telegram || !window.Telegram.WebApp) {
-            return window.Telegram.WebApp.contentSafeAreaInset.left;
-        }
+        return window.Telegram.WebApp.contentSafeAreaInset.left;
     },
 });
