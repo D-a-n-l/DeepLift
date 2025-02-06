@@ -263,6 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _typeActions: 1
   _keyCode: 115
+  _isControl: 1
   OnPressedFirst:
     m_PersistentCalls:
       m_Calls:
@@ -652,12 +653,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194610647}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0734f8d874c02446a0d63c92a34e565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: _TaskRoof
+  key: _Movement
 --- !u!114 &194610650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -949,12 +950,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361081600}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0734f8d874c02446a0d63c92a34e565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: _TaskRoof
+  key: _Sprint
 --- !u!114 &361081603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1371,6 +1372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _typeActions: 1
   _keyCode: 119
+  _isControl: 1
   OnPressedFirst:
     m_PersistentCalls:
       m_Calls:
@@ -1590,6 +1592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _typeActions: 0
   _keyCode: 27
+  _isControl: 0
   OnPressedFirst:
     m_PersistentCalls:
       m_Calls:
@@ -1616,6 +1619,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1969149315}
+        m_TargetAssemblyTypeName: ControlActionsByKeyCode, Assembly-CSharp
+        m_MethodName: SetIsCan
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 402361215}
         m_TargetAssemblyTypeName: ChangeTime, Assembly-CSharp
@@ -1655,6 +1670,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1969149315}
+        m_TargetAssemblyTypeName: ControlActionsByKeyCode, Assembly-CSharp
+        m_MethodName: SetIsCan
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 402361215}
         m_TargetAssemblyTypeName: ChangeTime, Assembly-CSharp
@@ -1793,6 +1820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _typeActions: 1
   _keyCode: 324
+  _isControl: 1
   OnPressedFirst:
     m_PersistentCalls:
       m_Calls:
@@ -1886,6 +1914,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _typeActions: 1
   _keyCode: 97
+  _isControl: 1
   OnPressedFirst:
     m_PersistentCalls:
       m_Calls:
@@ -1974,6 +2003,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _typeActions: 1
   _keyCode: 323
+  _isControl: 1
   OnPressedFirst:
     m_PersistentCalls:
       m_Calls:
@@ -2482,6 +2512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _typeActions: 1
   _keyCode: 100
+  _isControl: 1
   OnPressedFirst:
     m_PersistentCalls:
       m_Calls:
@@ -3172,12 +3203,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1933122133}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0734f8d874c02446a0d63c92a34e565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: _TaskRoof
+  key: _Shoot
 --- !u!114 &1933122136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3277,6 +3308,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1933122133}
   m_CullTransparentMesh: 1
+--- !u!1 &1969149314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1969149316}
+  - component: {fileID: 1969149315}
+  m_Layer: 0
+  m_Name: ControlActionsByKeyCode
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1969149315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969149314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1c8f122deb6a5f479667665bd4fd271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1969149316
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969149314}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2029553345 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8786947383328835088, guid: be4baafe7b81dcd40916935b353ce16b, type: 3}
@@ -3529,7 +3604,7 @@ PrefabInstance:
       objectReference: {fileID: 5885203935436937212}
     - target: {fileID: 2836030155407299732, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -14839204
+      value: -14986696
       objectReference: {fileID: 0}
     - target: {fileID: 2906555578986774441, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5959,3 +6034,4 @@ SceneRoots:
   - {fileID: 74940242}
   - {fileID: 843655160}
   - {fileID: 811634300}
+  - {fileID: 1969149316}

@@ -38,7 +38,7 @@ public class Sprint : MonoBehaviour,  IPointerDownHandler, IPointerUpHandler
 #if UNITY_WEBGL || UNITY_EDITOR
     private void Update()
     {
-        if (Application.isMobilePlatform == true)
+        if (ActionsBy.IsCan == false || Application.isMobilePlatform == true)
             return;
 
         if (Input.GetMouseButtonDown(1))

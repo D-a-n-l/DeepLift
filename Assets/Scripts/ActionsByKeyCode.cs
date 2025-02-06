@@ -9,6 +9,9 @@ public class ActionsByKeyCode : MonoBehaviour
     [SerializeField]
     private KeyCode _keyCode = KeyCode.Escape;
 
+    [SerializeField]
+    private bool _isControl = true;
+
     [Space(10)]
     [SerializeField]
     private UnityEvent OnPressedFirst;
@@ -21,6 +24,9 @@ public class ActionsByKeyCode : MonoBehaviour
 
     private void Update()
     {
+        if (_isControl == true && ActionsBy.IsCan == false)
+            return;
+
         if (_typeActions == TypeActions.ActionsByDown)
         {
 
