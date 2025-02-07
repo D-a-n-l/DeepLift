@@ -5543,6 +5543,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 1448512779392254686, guid: c80f253750adb3d41b11204b4632ea3a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627436640994846103, guid: c80f253750adb3d41b11204b4632ea3a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1627436640994846103, guid: c80f253750adb3d41b11204b4632ea3a, type: 3}
       propertyPath: showAdButton
       value: 
@@ -5844,6 +5852,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 383484958326244038, guid: a668a6cf199b66248b9a421920a9c866, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 383484958326244038, guid: a668a6cf199b66248b9a421920a9c866, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 383484958326244038, guid: a668a6cf199b66248b9a421920a9c866, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 383484958326244038, guid: a668a6cf199b66248b9a421920a9c866, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 383484958326244038, guid: a668a6cf199b66248b9a421920a9c866, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Continue
+      objectReference: {fileID: 0}
+    - target: {fileID: 383484958326244038, guid: a668a6cf199b66248b9a421920a9c866, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WebGLAd, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 383484958326244038, guid: a668a6cf199b66248b9a421920a9c866, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3621344614649110669, guid: a668a6cf199b66248b9a421920a9c866, type: 3}
       propertyPath: m_Camera
       value: 
@@ -6275,7 +6311,7 @@ PrefabInstance:
       objectReference: {fileID: 1270309237741261519}
     - target: {fileID: 2836030155407299732, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2735141.5
+      value: -2800213
       objectReference: {fileID: 0}
     - target: {fileID: 2906555578986774441, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchorMax.x

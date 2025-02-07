@@ -27,6 +27,10 @@ public class LoseGame : MonoBehaviour
     [SerializeField]
     private Canvas backgorund;
 
+    private bool _isUsedSecondLife = false;
+
+    public bool IsUsedSecondLife => _isUsedSecondLife;
+
     private void Awake()
     {
         if (Instance != null)
@@ -70,6 +74,8 @@ public class LoseGame : MonoBehaviour
     public void SecondLife()
     {
         ChangeTime.Set(1);
+
+        _isUsedSecondLife = true;
 
         canvas.enabled = false;
 

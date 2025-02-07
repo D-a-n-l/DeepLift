@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-using Unity.VisualScripting;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(RandomAnimations))]
 public class GameManager : MonoBehaviour
@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour
 
     private bool isPlayerStay = false;
 
+    public UnityEvent OnEnteredLift;
+
     private void Awake()
     {
         if (Instance != null)
@@ -96,6 +98,10 @@ public class GameManager : MonoBehaviour
     {
         if (col.TryGetComponent(out PlayerMovement player))
         {
+            OnEnteredLift?.Invoke();
+
+            ActionsBy.IsCan = false;
+
             player.GetComponent<Animator>().SetTrigger(namePlayerLift);
 
             player.SetSpeed(0f);

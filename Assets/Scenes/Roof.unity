@@ -3578,6 +3578,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Settings Volume
       objectReference: {fileID: 0}
+    - target: {fileID: 361505477598603614, guid: be120670cc6043a4bb787dfe85295878, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 652247723195725838, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -3604,7 +3608,7 @@ PrefabInstance:
       objectReference: {fileID: 5885203935436937212}
     - target: {fileID: 2836030155407299732, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -14986696
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2906555578986774441, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3621,6 +3625,14 @@ PrefabInstance:
     - target: {fileID: 2906555578986774441, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461315563222307897, guid: be120670cc6043a4bb787dfe85295878, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461315563222307897, guid: be120670cc6043a4bb787dfe85295878, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4716439841489163284, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_Pivot.x
@@ -3718,6 +3730,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6198604228881061649, guid: be120670cc6043a4bb787dfe85295878, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6595053941629371922, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -3803,7 +3819,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 361505477598603614, guid: be120670cc6043a4bb787dfe85295878, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be120670cc6043a4bb787dfe85295878, type: 3}
@@ -5403,7 +5420,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: -1
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 101
+  m_SortingOrder: 80
   m_TargetDisplay: 0
 --- !u!224 &5766968479007645490
 RectTransform:

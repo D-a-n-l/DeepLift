@@ -33,6 +33,13 @@ public class Sprint : MonoBehaviour,  IPointerDownHandler, IPointerUpHandler
             defaultSpeed = playerMovement.Speed;
 
         waitForSeconds = new WaitForSeconds(cooldown);
+
+        GameManager.Instance.OnEnteredLift.AddListener(() => 
+        {
+            StopAllCoroutines();
+
+            playerMovement.SetSpeed(0);
+        });
     }
 
 #if UNITY_WEBGL || UNITY_EDITOR
@@ -62,7 +69,7 @@ public class Sprint : MonoBehaviour,  IPointerDownHandler, IPointerUpHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         isPressed = true;
-            
+
         StartCoroutine(On());
     }
 

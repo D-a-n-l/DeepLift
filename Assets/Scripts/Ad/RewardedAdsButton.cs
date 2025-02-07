@@ -32,6 +32,9 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     // Call this public method when you want to get an ad ready to show.
     public void LoadAd()
     {
+        if (LoseGame.Instance.IsUsedSecondLife == true)
+            return;
+
         // IMPORTANT! Only load content AFTER initialization (in this example, initialization is handled in a different script).
         Debug.Log("Loading Ad: " + adUnitId);
 
