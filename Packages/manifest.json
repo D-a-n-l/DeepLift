@@ -1,20 +1,5 @@
 {
-  "scopedRegistries": [
-    {
-      "name": "io.embrace.sdk",
-      "url": "https://repo.embrace.io/repository/unity",
-      "scopes": [
-        "io.embrace"
-      ]
-    },
-    {
-      "name": "OpenUPM",
-      "url": "https://package.openupm.com",
-      "scopes": [
-        "com.needle.animation-utils"
-      ]
-    }
-  ],
+  "scopedRegistries": [],
   "dependencies": {
     "com.nighttraincode.nightpool": "https://github.com/MeeXaSiK/NightPool.git",
     "com.unity.2d.sprite": "1.0.0",
@@ -62,7 +47,6 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0",
-    "com.needle.animation-utils": "0.3.0-exp"
+    "com.unity.modules.xr": "1.0.0"
   }
 }

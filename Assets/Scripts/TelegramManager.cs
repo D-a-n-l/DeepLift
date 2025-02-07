@@ -10,7 +10,7 @@ public class TelegramManager : MonoBehaviour
     [SerializeField]
     private ChangeLevelManager levelManager;
 
-    private Firebase database;
+    private SimpleFirebaseUnity.Firebase database;
 
     private string tgUsers = "tg_users";
 
@@ -25,7 +25,7 @@ public class TelegramManager : MonoBehaviour
     {
         Instance = this;
 
-        database = Firebase.CreateNew("https://webdeeplift-default-rtdb.europe-west1.firebasedatabase.app/", "AIzaSyBBXnBzxqUZ_H1sHF4fX34Mcm_e27bv0GY");
+        database = SimpleFirebaseUnity.Firebase.CreateNew("https://webdeeplift-default-rtdb.europe-west1.firebasedatabase.app/", "AIzaSyBBXnBzxqUZ_H1sHF4fX34Mcm_e27bv0GY");
 
         Subscription();
 
@@ -77,7 +77,7 @@ public class TelegramManager : MonoBehaviour
         return levelCurrentUser;
     }
 
-    private void GetOKHandler(Firebase sender, DataSnapshot snapshot)
+    private void GetOKHandler(SimpleFirebaseUnity.Firebase sender, DataSnapshot snapshot)
     {
         TelegramUser user = new TelegramUser(0, 0);
 
@@ -100,7 +100,7 @@ public class TelegramManager : MonoBehaviour
         print("OK Handler " +levelCurrentUser);
     }
 
-    private void GetFailHandler(Firebase sender, FirebaseError err)
+    private void GetFailHandler(SimpleFirebaseUnity.Firebase sender, FirebaseError err)
     {
         Debug.Log("[ERR] Get from key: <" + sender.FullKey + ">,  " + err.Message + " (" + (int)err.Status + ")");
     }

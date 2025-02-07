@@ -26,7 +26,7 @@ public class SampleScript : MonoBehaviour
         StartCoroutine(Tests());
     }
 
-    void GetOKHandler(Firebase sender, DataSnapshot snapshot)
+    void GetOKHandler(SimpleFirebaseUnity.Firebase sender, DataSnapshot snapshot)
     {
         DebugLog("[OK] Get from key: <" + sender.FullKey + ">");
         DebugLog("[OK] Raw Json: " + snapshot.RawJson);
@@ -41,66 +41,66 @@ public class SampleScript : MonoBehaviour
             }
     }
 
-    void GetFailHandler(Firebase sender, FirebaseError err)
+    void GetFailHandler(SimpleFirebaseUnity.Firebase sender, FirebaseError err)
     {
         DebugError("[ERR] Get from key: <" + sender.FullKey + ">,  " + err.Message + " (" + (int)err.Status + ")");
     }
 
-    void SetOKHandler(Firebase sender, DataSnapshot snapshot)
+    void SetOKHandler(SimpleFirebaseUnity.Firebase sender, DataSnapshot snapshot)
     {
         DebugLog("[OK] Set from key: <" + sender.FullKey + ">");
     }
 
-    void SetFailHandler(Firebase sender, FirebaseError err)
+    void SetFailHandler(SimpleFirebaseUnity.Firebase sender, FirebaseError err)
     {
         DebugError("[ERR] Set from key: <" + sender.FullKey + ">, " + err.Message + " (" + (int)err.Status + ")");
     }
 
-    void UpdateOKHandler(Firebase sender, DataSnapshot snapshot)
+    void UpdateOKHandler(SimpleFirebaseUnity.Firebase sender, DataSnapshot snapshot)
     {
         DebugLog("[OK] Update from key: <" + sender.FullKey + ">");
     }
 
-    void UpdateFailHandler(Firebase sender, FirebaseError err)
+    void UpdateFailHandler(SimpleFirebaseUnity.Firebase sender, FirebaseError err)
     {
         DebugError("[ERR] Update from key: <" + sender.FullKey + ">, " + err.Message + " (" + (int)err.Status + ")");
     }
 
-    void DelOKHandler(Firebase sender, DataSnapshot snapshot)
+    void DelOKHandler(SimpleFirebaseUnity.Firebase sender, DataSnapshot snapshot)
     {
         DebugLog("[OK] Del from key: <" + sender.FullKey + ">");
     }
 
-    void DelFailHandler(Firebase sender, FirebaseError err)
+    void DelFailHandler(SimpleFirebaseUnity.Firebase sender, FirebaseError err)
     {
         DebugError("[ERR] Del from key: <" + sender.FullKey + ">, " + err.Message + " (" + (int)err.Status + ")");
     }
 
-    void PushOKHandler(Firebase sender, DataSnapshot snapshot)
+    void PushOKHandler(SimpleFirebaseUnity.Firebase sender, DataSnapshot snapshot)
     {
         DebugLog("[OK] Push from key: <" + sender.FullKey + ">");
     }
 
-    void PushFailHandler(Firebase sender, FirebaseError err)
+    void PushFailHandler(SimpleFirebaseUnity.Firebase sender, FirebaseError err)
     {
         DebugError("[ERR] Push from key: <" + sender.FullKey + ">, " + err.Message + " (" + (int)err.Status + ")");
     }
 
-    void GetRulesOKHandler(Firebase sender, DataSnapshot snapshot)
+    void GetRulesOKHandler(SimpleFirebaseUnity.Firebase sender, DataSnapshot snapshot)
     {
         DebugLog("[OK] GetRules");
         DebugLog("[OK] Raw Json: " + snapshot.RawJson);
     }
 
-    void GetRulesFailHandler(Firebase sender, FirebaseError err)
+    void GetRulesFailHandler(SimpleFirebaseUnity.Firebase sender, FirebaseError err)
     {
         DebugError("[ERR] GetRules,  " + err.Message + " (" + (int)err.Status + ")");
     }
 
-    void GetTimeStamp(Firebase sender, DataSnapshot snapshot)
+    void GetTimeStamp(SimpleFirebaseUnity.Firebase sender, DataSnapshot snapshot)
     {
         long timeStamp = snapshot.Value<long>();
-        DateTime dateTime = Firebase.TimeStampToDateTime(timeStamp);
+        DateTime dateTime = SimpleFirebaseUnity.Firebase.TimeStampToDateTime(timeStamp);
 
         DebugLog("[OK] Get on timestamp key: <" + sender.FullKey + ">");
         DebugLog("Date: " + timeStamp + " --> " + dateTime.ToString());
@@ -137,12 +137,12 @@ public class SampleScript : MonoBehaviour
     {
         // README
         DebugLog("This plugin simply wraps Firebase's RealTime Database REST API.\nPlease read here for better understanding of the API: https://firebase.google.com/docs/reference/rest/database/\n");
-              
+
         // Inits Firebase using Firebase Secret Key as Auth
         // The current provided implementation not yet including Auth Token Generation
         // If you're using this sample Firebase End, 
         // there's a possibility that your request conflicts with other simple-firebase-c# user's request
-        Firebase firebase = Firebase.CreateNew("https://simple-firebase-unity.firebaseio.com", "WQV9t78OywD8Pp7jvGuAi8K6g0MV8p9FAzkJ7rWK");
+        SimpleFirebaseUnity.Firebase firebase = SimpleFirebaseUnity.Firebase.CreateNew("https://simple-firebase-unity.firebaseio.com", "WQV9t78OywD8Pp7jvGuAi8K6g0MV8p9FAzkJ7rWK");
 
         // Init callbacks
         firebase.OnGetSuccess += GetOKHandler;
@@ -157,14 +157,14 @@ public class SampleScript : MonoBehaviour
         firebase.OnDeleteFailed += DelFailHandler;
 
         // Get child node from firebase, if false then all the callbacks are not inherited.
-        Firebase temporary = firebase.Child("temporary", true);
-        Firebase lastUpdate = firebase.Child("lastUpdate");
+        SimpleFirebaseUnity.Firebase temporary = firebase.Child("temporary", true);
+        SimpleFirebaseUnity.Firebase lastUpdate = firebase.Child("lastUpdate");
 
         lastUpdate.OnGetSuccess += GetTimeStamp;
 
         // Make observer on "last update" time stamp
         FirebaseObserver observer = new FirebaseObserver(lastUpdate, 1f);
-        observer.OnChange += (Firebase sender, DataSnapshot snapshot) =>
+        observer.OnChange += (SimpleFirebaseUnity.Firebase sender, DataSnapshot snapshot) =>
         {
             DebugLog("[OBSERVER] Last updated changed to: " + snapshot.Value<long>());
         };
