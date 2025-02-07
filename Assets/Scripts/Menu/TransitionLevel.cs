@@ -65,8 +65,8 @@ public class TransitionLevel : MonoBehaviour
     {
         SceneManager.LoadScene(level);
 
-        if (currentLevel > TelegramManager.Instance.GetLevel())
-            TelegramManager.Instance.SaveLevel(currentLevel);
+        //if (currentLevel > TelegramManager.Instance.GetLevel())
+        //    TelegramManager.Instance.SaveLevel(currentLevel);
 
         //if (currentLevel > PlayerPrefs.GetInt("Level"))
         //    PlayerPrefs.SetInt("Level", currentLevel);
@@ -103,8 +103,8 @@ public class TransitionLevel : MonoBehaviour
 
         SceneManager.LoadScene(currentLevel);
 
-        if (currentLevel > TelegramManager.Instance.GetLevel())
-            TelegramManager.Instance.SaveLevel(currentLevel);
+        //if (currentLevel > TelegramManager.Instance.GetLevel())
+        //    TelegramManager.Instance.SaveLevel(currentLevel);
         //if (currentLevel > PlayerPrefs.GetInt("Level"))
         //    PlayerPrefs.SetInt("Level", currentLevel);
 
