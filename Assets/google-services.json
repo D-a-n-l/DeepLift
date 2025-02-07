@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "406207147473",
+    "firebase_url": "https://webdeeplift-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "webdeeplift",
+    "storage_bucket": "webdeeplift.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406207147473:android:793f831bfb59eb2f9e84f0",
+        "android_client_info": {
+          "package_name": "com.Dvelop.DeepLift"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "406207147473-b170eh8jpf1s26bnemjgk9s51u736par.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClNXpU4X6MUnTz1SZpPu3Le77yR7zy_r8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "406207147473-b170eh8jpf1s26bnemjgk9s51u736par.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
