@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 97d2bd3730489e04093b2413e29b16bf
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 287608
+  packageName: 'Sign-In with any platform / Play ID [FREE]'
+  packageVersion: 1.8
+  assetPath: Assets/PlayId/Scripts/Data/JWT.cs
+  uploadId: 726114

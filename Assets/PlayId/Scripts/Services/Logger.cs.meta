@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e7e87363bdc8c7d42bc172f7ac94bb30
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 287608
+  packageName: 'Sign-In with any platform / Play ID [FREE]'
+  packageVersion: 1.8
+  assetPath: Assets/PlayId/Scripts/Services/Logger.cs
+  uploadId: 726114

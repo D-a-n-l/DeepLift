@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 96c0dded026bc914d8c8313c5e743101
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 287608
+  packageName: 'Sign-In with any platform / Play ID [FREE]'
+  packageVersion: 1.8
+  assetPath: Assets/PlayId/Examples/Leaderboards.cs
+  uploadId: 726114

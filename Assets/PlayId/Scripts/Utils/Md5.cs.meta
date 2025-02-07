@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 219347feb39223b4d99c3d3c1668fa6f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 287608
+  packageName: 'Sign-In with any platform / Play ID [FREE]'
+  packageVersion: 1.8
+  assetPath: Assets/PlayId/Scripts/Utils/Md5.cs
+  uploadId: 726114

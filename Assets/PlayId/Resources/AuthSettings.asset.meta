@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ad06131b57f03df44b71a1aca46d8b52
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 287608
+  packageName: 'Sign-In with any platform / Play ID [FREE]'
+  packageVersion: 1.8
+  assetPath: Assets/PlayId/Resources/AuthSettings.asset
+  uploadId: 726114

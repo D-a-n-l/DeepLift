@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4b9027c398e7f4db39e63e5c00a01253
+timeCreated: 1470279995
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 58337
+  packageName: Simple Firebase Unity (for Realtime-Database)
+  packageVersion: 1.1.1
+  assetPath: Assets/SimpleFirebaseUnity/README.html
+  uploadId: 258753

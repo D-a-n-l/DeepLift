@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 4184fcb8724b1d4428f2a89dff2a22f3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 287608
+  packageName: 'Sign-In with any platform / Play ID [FREE]'
+  packageVersion: 1.8
+  assetPath: Assets/PlayId/Scripts/Editor/ReadOnlyDrawer.cs
+  uploadId: 726114

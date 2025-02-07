@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 98c59e09f0cbd6148bb2175971c91ef9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 287608
+  packageName: 'Sign-In with any platform / Play ID [FREE]'
+  packageVersion: 1.8
+  assetPath: Assets/PlayId/Scripts/Data/TokenResponse.cs
+  uploadId: 726114
