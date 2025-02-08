@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using System.Collections.Generic;
 using Assets.PlayId.Scripts;
+using Newtonsoft.Json;
 
 public class TelegramManager : MonoBehaviour
 {
@@ -14,11 +15,13 @@ public class TelegramManager : MonoBehaviour
 
     private Firebase database;
 
-    private string tgUsers = "users";
+    private string tgUsers = "tg_users";
 
-    private int idCurrentUser;
+    private string usernameCurrentUser;
 
     private int levelCurrentUser;
+
+    private bool isHaveUser = false;
 
     private void Awake()
     {
@@ -28,22 +31,15 @@ public class TelegramManager : MonoBehaviour
 
         Subscription();
 
-        InitTgUser();
+        InitTgUser("");
 
         DontDestroyOnLoad(this);
     }
 
-    private void InitTgUser()
+    private void InitTgUser(string username)
     {
-        //int id_user = GetTelegramUserId();
-        //idCurrentUser = PlayIdServices.Instance.Auth.SavedUser.Id;
-        //database.Child($"{tgUsers}/{PlayIdServices.Instance.Auth.SavedUser.Platforms}/{idCurrentUser}", true).GetValue();
-
-        //TelegramUser user = new TelegramUser(id_user, 0);
-
-        //string userJson = JsonUtility.ToJson(user);
-
-        //database.Child($"{tg_users}/{id_user}").SetValue(userJson, true);
+        //usernameCurrentUser = username;
+        database.Child($"{tgUsers}", true).GetValue();
     }
 
     private void OnDisable()
@@ -65,38 +61,51 @@ public class TelegramManager : MonoBehaviour
 
     public void SaveLevel(int level)
     {
-        database.Child($"{tgUsers}/{idCurrentUser}/level").SetValue(level);
+        database.Child($"{tgUsers}/{usernameCurrentUser}/level").SetValue(level);
     }
 
     public int GetLevel()
     {
-        database.Child($"{tgUsers}/{idCurrentUser}/level").GetValue();
+        database.Child($"{tgUsers}/{usernameCurrentUser}/level").GetValue();
 
         print("Get level " + levelCurrentUser);
         return levelCurrentUser;
     }
 
-    private void GetOKHandler(Firebase sender, DataSnapshot snapshot)
+    private void GetOKHandler(SimpleFirebaseUnity.Firebase sender, DataSnapshot snapshot)
     {
-        TelegramUser user = new TelegramUser(0, 0);
+        TelegramUser user = new TelegramUser(0, "", 0);
 
-        try
+        Dictionary<string, TelegramUser> data = JsonConvert.DeserializeObject<Dictionary<string, TelegramUser>>(snapshot.RawJson);
+
+        string currentUsername = PlayIdServices.Instance.Auth.SavedUser.Email.Remove(0, 1);
+
+        foreach (var entry in data)
         {
-            user = JsonUtility.FromJson<TelegramUser>(snapshot.RawJson);
+            if (entry.Value.username == currentUsername)
+            {
+                user = new TelegramUser(entry.Value.id, entry.Value.username, entry.Value.level);
+
+                isHaveUser = true;
+                print("YYYYYYYEEEEEEESSSSSSSS");
+                break;
+            }
         }
-        catch
+
+        if (isHaveUser == false)
         {
-            user = new TelegramUser(idCurrentUser, 1);
+            user = new TelegramUser(PlayIdServices.Instance.Auth.SavedUser.Id, currentUsername, 1);
 
             string userJson = JsonUtility.ToJson(user);
 
-            database.Child($"{tgUsers}/{idCurrentUser}").SetValue(userJson, true);
+            database.Child($"{tgUsers}/{PlayIdServices.Instance.Auth.SavedUser.Id}").SetValue(userJson, true);
+            print("NOOOOOOOOOOOO");
         }
 
-        levelManager.UnlockLevels(user.level);
+        //levelManager.UnlockLevels(user.level);
 
-        levelCurrentUser = user.level;
-        print("OK Handler " +levelCurrentUser);
+        //levelCurrentUser = user.level;
+        //print("OK Handler " + levelCurrentUser);
     }
 
     private void GetFailHandler(Firebase sender, FirebaseError err)
@@ -109,11 +118,13 @@ public class TelegramManager : MonoBehaviour
 public class TelegramUser
 {
     public int id;
+    public string username;
     public int level;
 
-    public TelegramUser(int id, int level)
+    public TelegramUser(int id, string username, int level)
     {
         this.id = id;
+        this.username = username;
         this.level = level;
     }
 }

@@ -31,6 +31,11 @@ public class AndroidSignIn : MonoBehaviour
     {
         Debug.Log(success ? $"Hello, {user.Email}!" : error);
 
+        if (PlayIdServices.Instance.Auth.SavedUser.Platforms == Platform.Telegram)
+        {
+
+        }
+
         if (success)
         {
             var jwt = new JWT(user.TokenResponse.IdToken);
