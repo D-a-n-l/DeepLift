@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using Assets.PlayId.Scripts;
 
 public class TelegramManager : MonoBehaviour
 {
@@ -13,14 +14,11 @@ public class TelegramManager : MonoBehaviour
 
     private Firebase database;
 
-    private string tgUsers = "tg_users";
+    private string tgUsers = "users";
 
     private int idCurrentUser;
 
     private int levelCurrentUser;
-
-    [DllImport("__Internal")]
-    private static extern int GetTelegramUserId();
 
     private void Awake()
     {
@@ -38,8 +36,8 @@ public class TelegramManager : MonoBehaviour
     private void InitTgUser()
     {
         //int id_user = GetTelegramUserId();
-        idCurrentUser = GetTelegramUserId();
-        database.Child($"{tgUsers}/{idCurrentUser}", true).GetValue();
+        //idCurrentUser = PlayIdServices.Instance.Auth.SavedUser.Id;
+        //database.Child($"{tgUsers}/{PlayIdServices.Instance.Auth.SavedUser.Platforms}/{idCurrentUser}", true).GetValue();
 
         //TelegramUser user = new TelegramUser(id_user, 0);
 

@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 872c59c30a4e87c4282196f2835d5d0a, type: 3}
   m_Name: AppSettings
   m_EditorClassIdentifier: Assembly-CSharp:Assets.SimpleSignIn.PlayId.Scripts:SpriteCollection
-  SecretKey: 
-  ClientId: 00000000000000000000000000000000
-  Name: Example
+  SecretKey: a58d2df665bc408b92017acf5a2bea69
+  ClientId: 748b00799f4941bc95155b13aa10fba4
+  Name: DeepLift
   Icon: {fileID: 0}
   RedirectUriWhitelist:
-  - '*'
-  Leaderboards:
-  - gold
-  - exp
-  RemoteConfig: '{"difficulty":10,"reward":5}'
-  UserCount: 59
+  - deeplift://oauth2/playid
+  Leaderboards: []
+  RemoteConfig: 
+  PricingPlan: 0
+  UserCount: 0
