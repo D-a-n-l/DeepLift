@@ -22,7 +22,7 @@ namespace Assets.PlayId.Examples
             PlayIdServices.Instance.Auth.SignIn(OnSignIn, caching: false);
         }
 
-        void OnSignIn(bool success, string error, User user)
+        void OnSignIn(bool success, string error, Scripts.Data.User user)
         {
             Output.text = success ? $"Hello, {user.Name}!" : error;
 
@@ -73,7 +73,7 @@ namespace Assets.PlayId.Examples
                 PlayIdServices.Instance.Auth.Link(OnLinkPlatform);
             }
 
-            void OnLinkPlatform(bool success, string error, User user)
+            void OnLinkPlatform(bool success, string error, Scripts.Data.User user)
             {
                 Output.text = success ? $"Hello, {user.Platforms}!" : error;
             }
@@ -92,7 +92,7 @@ namespace Assets.PlayId.Examples
                 playId.Auth.Unlink(OnUnlinkPlatform, Platform.Google);
             }
 
-            void OnUnlinkPlatform(bool success, string error, User user)
+            void OnUnlinkPlatform(bool success, string error, Scripts.Data.User user)
             {
                 Output.text = success ? $"Hello, {user.Platforms}!" : error;
             }

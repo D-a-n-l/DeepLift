@@ -10,11 +10,11 @@ namespace Assets.PlayId.Scripts.Services
         /// <summary>
         /// Async sign-in.
         /// </summary>
-        public async Task<User> SignInAsync()
+        public async Task<Data.User> SignInAsync()
         {
             var completed = false;
             string error = null;
-            User user = null;
+            Data.User user = null;
 
             SignIn((success, e, result) =>
             {

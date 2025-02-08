@@ -17,6 +17,10 @@ public class TelegramManager : MonoBehaviour
 
     private string tgUsers = "tg_users";
 
+    private string googleUsers = "google_users";
+
+    private string vkUsers = "vk_users";
+
     private string usernameCurrentUser;
 
     private int levelCurrentUser;
@@ -31,15 +35,26 @@ public class TelegramManager : MonoBehaviour
 
         Subscription();
 
-        InitTgUser("");
-
         DontDestroyOnLoad(this);
     }
 
-    private void InitTgUser(string username)
+    public void InitTgUser()
     {
         //usernameCurrentUser = username;
         database.Child($"{tgUsers}", true).GetValue();
+    }
+
+    public void InitGoogleUser()
+    {
+        //usernameCurrentUser = username;
+
+        database.Child($"{googleUsers}", true).GetValue();
+    }
+
+    public void InitVKUser()
+    {
+        //usernameCurrentUser = username;
+        database.Child($"{vkUsers}", true).GetValue();
     }
 
     private void OnDisable()
@@ -74,32 +89,48 @@ public class TelegramManager : MonoBehaviour
 
     private void GetOKHandler(SimpleFirebaseUnity.Firebase sender, DataSnapshot snapshot)
     {
-        TelegramUser user = new TelegramUser(0, "", 0);
+        User user = new User(0, "", 0);
 
-        Dictionary<string, TelegramUser> data = JsonConvert.DeserializeObject<Dictionary<string, TelegramUser>>(snapshot.RawJson);
+        string currentUsername = PlayIdServices.Instance.Auth.SavedUser.Email;
 
-        string currentUsername = PlayIdServices.Instance.Auth.SavedUser.Email.Remove(0, 1);
+        if (PlayIdServices.Instance.Auth.SavedUser.Platforms == Assets.PlayId.Scripts.Enums.Platform.Telegram)
+            currentUsername = PlayIdServices.Instance.Auth.SavedUser.Email.Remove(0, 1);
 
-        foreach (var entry in data)
+        try
         {
-            if (entry.Value.username == currentUsername)
-            {
-                user = new TelegramUser(entry.Value.id, entry.Value.username, entry.Value.level);
+            Dictionary<string, User> data = JsonConvert.DeserializeObject<Dictionary<string, User>>(snapshot.RawJson);
 
-                isHaveUser = true;
-                print("YYYYYYYEEEEEEESSSSSSSS");
-                break;
+            foreach (var entry in data)
+            {
+                if (entry.Value.username == currentUsername)
+                {
+                    user = new User(entry.Value.id, entry.Value.username, entry.Value.level);
+
+                    isHaveUser = true;
+                    print("YYYYYYYEEEEEEESSSSSSSS");
+                    break;
+                }
             }
         }
-
-        if (isHaveUser == false)
+        catch
         {
-            user = new TelegramUser(PlayIdServices.Instance.Auth.SavedUser.Id, currentUsername, 1);
+            if (isHaveUser == false)
+            {
+                user = new User(PlayIdServices.Instance.Auth.SavedUser.Id, currentUsername, 1);
 
-            string userJson = JsonUtility.ToJson(user);
+                string userJson = JsonUtility.ToJson(user);
 
-            database.Child($"{tgUsers}/{PlayIdServices.Instance.Auth.SavedUser.Id}").SetValue(userJson, true);
-            print("NOOOOOOOOOOOO");
+                string users = "";
+
+                if (PlayIdServices.Instance.Auth.SavedUser.Platforms == Assets.PlayId.Scripts.Enums.Platform.Google)
+                    users = googleUsers;
+                else if (PlayIdServices.Instance.Auth.SavedUser.Platforms == Assets.PlayId.Scripts.Enums.Platform.Telegram)
+                    users = tgUsers;
+                else if (PlayIdServices.Instance.Auth.SavedUser.Platforms == Assets.PlayId.Scripts.Enums.Platform.VK)
+                    users = vkUsers;
+
+                database.Child($"{users}/{PlayIdServices.Instance.Auth.SavedUser.Id}").SetValue(userJson, true);
+            }
         }
 
         //levelManager.UnlockLevels(user.level);
@@ -115,13 +146,13 @@ public class TelegramManager : MonoBehaviour
 }
 
 [Serializable]
-public class TelegramUser
+public class User
 {
     public int id;
     public string username;
     public int level;
 
-    public TelegramUser(int id, string username, int level)
+    public User(int id, string username, int level)
     {
         this.id = id;
         this.username = username;

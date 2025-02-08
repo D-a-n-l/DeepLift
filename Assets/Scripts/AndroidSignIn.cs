@@ -27,13 +27,21 @@ public class AndroidSignIn : MonoBehaviour
         PlayIdServices.Instance.Auth.SignOut(revokeAccessToken: false);
     }
 
-    void OnSignIn(bool success, string error, User user)
+    void OnSignIn(bool success, string error, Assets.PlayId.Scripts.Data.User user)
     {
         Debug.Log(success ? $"Hello, {user.Email}!" : error);
 
         if (PlayIdServices.Instance.Auth.SavedUser.Platforms == Platform.Telegram)
         {
-
+            TelegramManager.Instance.InitTgUser();
+        }
+        else if (PlayIdServices.Instance.Auth.SavedUser.Platforms == Platform.Google)
+        {
+            TelegramManager.Instance.InitGoogleUser();
+        }
+        else if (PlayIdServices.Instance.Auth.SavedUser.Platforms == Platform.VK)
+        {
+            TelegramManager.Instance.InitVKUser();
         }
 
         if (success)

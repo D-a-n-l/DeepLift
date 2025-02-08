@@ -15,7 +15,7 @@ namespace Assets.PlayId.Examples
         {
             PlayIdServices.Instance.Auth.SignIn(OnSignIn);
 
-            void OnSignIn(bool success, string error, User user)
+            void OnSignIn(bool success, string error, Scripts.Data.User user)
             {
                 if (success)
                 {
@@ -40,7 +40,7 @@ namespace Assets.PlayId.Examples
         {
             PlayIdServices.Instance.Auth.SignIn(OnSignIn);
 
-            void OnSignIn(bool success, string error, User user)
+            void OnSignIn(bool success, string error, Scripts.Data.User user)
             {
                 if (success)
                 {

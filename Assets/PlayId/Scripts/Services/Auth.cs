@@ -29,7 +29,7 @@ namespace Assets.PlayId.Scripts.Services
         #endif
 
         private readonly AuthSettings _settings;
-        private Action<bool, string, User> _callback;
+        private Action<bool, string, Data.User> _callback;
         private bool _tokenResponse;
         private UniWebViewSafeBrowsing _webView;
 
@@ -62,7 +62,7 @@ namespace Assets.PlayId.Scripts.Services
             #endif
         }
 
-        public void SignIn(Action<bool, string, User> callback, Platform platforms = Platform.Any, bool caching = true)
+        public void SignIn(Action<bool, string, Data.User> callback, Platform platforms = Platform.Any, bool caching = true)
         {
             _callback = callback;
             _tokenResponse = false;
@@ -228,7 +228,7 @@ namespace Assets.PlayId.Scripts.Services
         /// This can be called on app startup to continue oauth.
         /// In some scenarios, the app may be terminated while the user performs sign-in on Google website.
         /// </summary>
-        public void TryResume(Action<bool, string, User> callback)
+        public void TryResume(Action<bool, string, Data.User> callback)
         {
             _callback = callback;
 
@@ -311,7 +311,7 @@ namespace Assets.PlayId.Scripts.Services
             _callback(true, null, SavedUser);
         }
 
-        public void RequestUserInfo(string accessToken, Action<bool, string, User> callback)
+        public void RequestUserInfo(string accessToken, Action<bool, string, Data.User> callback)
         {
             var request = UnityWebRequest.PostWwwForm($"{UserEndpoint}/info", "");
 
@@ -325,7 +325,7 @@ namespace Assets.PlayId.Scripts.Services
                 {
                     Log($"User={request.downloadHandler.text}");
 
-                    var user = JsonConvert.DeserializeObject<User>(request.downloadHandler.text);
+                    var user = JsonConvert.DeserializeObject<Data.User>(request.downloadHandler.text);
 
                     SavedUser.Id = user.Id;
                     SavedUser.Name = user.Name;
@@ -398,7 +398,7 @@ namespace Assets.PlayId.Scripts.Services
             };
         }
 
-        public void Link(Action<bool, string, User> callback, Platform platforms = Platform.Any)
+        public void Link(Action<bool, string, Data.User> callback, Platform platforms = Platform.Any)
         {
             if (SavedUser == null) throw new Exception("Not signed in.");
 
@@ -408,7 +408,7 @@ namespace Assets.PlayId.Scripts.Services
             Authenticate(platforms, link: true);
         }
 
-        public void Unlink(Action<bool, string, User> callback, Platform platform)
+        public void Unlink(Action<bool, string, Data.User> callback, Platform platform)
         {
             if (SavedUser == null || !SavedUser.Platforms.HasFlag(platform)) throw new Exception($"Not signed in with {platform}.");
 
