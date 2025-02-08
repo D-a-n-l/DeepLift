@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 using System;
 using UnityEngine;
+using System.Web;
 
 public class TelegramManager : MonoBehaviour
 {
@@ -16,10 +17,27 @@ public class TelegramManager : MonoBehaviour
 
     private int idCurrentUser;
 
+    private string usernameCurrentUser;
+
     private int levelCurrentUser;
 
     [DllImport("__Internal")]
     private static extern int GetTelegramUserId();
+
+    string GetUsernameFromUrl()
+    {
+        string url = Application.absoluteURL;
+        Uri uri = new Uri(url);
+        string query = uri.Query;
+
+        if (!string.IsNullOrEmpty(query))
+        {
+            var parameters = HttpUtility.ParseQueryString(query);
+            return parameters["username"];
+        }
+
+        return null;
+    }
 
     private void Awake()
     {
@@ -38,6 +56,7 @@ public class TelegramManager : MonoBehaviour
     {
         //int id_user = GetTelegramUserId();
         idCurrentUser = GetTelegramUserId();
+        usernameCurrentUser = GetUsernameFromUrl();
         database.Child($"{tgUsers}/{idCurrentUser}", true).GetValue();
 
         //TelegramUser user = new TelegramUser(id_user, 0);
@@ -79,7 +98,7 @@ public class TelegramManager : MonoBehaviour
 
     private void GetOKHandler(SimpleFirebaseUnity.Firebase sender, DataSnapshot snapshot)
     {
-        TelegramUser user = new TelegramUser(0, 0);
+        TelegramUser user = new TelegramUser(0, "", 0);
 
         try
         {
@@ -87,7 +106,7 @@ public class TelegramManager : MonoBehaviour
         }
         catch
         {
-            user = new TelegramUser(idCurrentUser, 1);
+            user = new TelegramUser(idCurrentUser, usernameCurrentUser,1);
 
             string userJson = JsonUtility.ToJson(user);
 
@@ -110,11 +129,13 @@ public class TelegramManager : MonoBehaviour
 public class TelegramUser
 {
     public int id;
+    public string username;
     public int level;
 
-    public TelegramUser(int id, int level)
+    public TelegramUser(int id, string username, int level)
     {
         this.id = id;
+        this.username = username;
         this.level = level;
     }
 }

@@ -18,6 +18,24 @@
         return user.id;
     },
 
+    GetTelegramUsername: function () {
+        if (!window.Telegram || !window.Telegram.WebApp) {
+            console.error("Telegram WebApp API не найден!");
+            return 0;
+        }
+
+        let tg = window.Telegram.WebApp;
+        let user = tg.initDataUnsafe.user;
+
+        if (!user || !user.id) {
+            console.warn("ID пользователя недоступен.");
+            return 0;
+        }
+
+        console.log("ID пользователя:", user.username);
+        return user.first_name;
+    },
+
     SetLockOrientation: function () {
         if (!window.Telegram || !window.Telegram.WebApp) {
             window.Telegram.WebApp.lockOrientation();
