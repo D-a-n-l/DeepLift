@@ -3,6 +3,9 @@ using System.Runtime.InteropServices;
 using System;
 using UnityEngine;
 using System.Web;
+using Models;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 public class TelegramManager : MonoBehaviour
 {
@@ -57,7 +60,7 @@ public class TelegramManager : MonoBehaviour
         //int id_user = GetTelegramUserId();
         idCurrentUser = GetTelegramUserId();
         usernameCurrentUser = GetUsernameFromUrl();
-        database.Child($"{tgUsers}/{idCurrentUser}", true).GetValue();
+        database.Child($"{tgUsers}", true).GetValue();
 
         //TelegramUser user = new TelegramUser(id_user, 0);
 
@@ -98,15 +101,36 @@ public class TelegramManager : MonoBehaviour
 
     private void GetOKHandler(SimpleFirebaseUnity.Firebase sender, DataSnapshot snapshot)
     {
-        TelegramUser user = new TelegramUser(0, "", 0);
+        User user = new User(0, "", 0);
+
+        Dictionary<string, User> data = JsonConvert.DeserializeObject<Dictionary<string, User>>(snapshot.RawJson);
 
         try
         {
-            user = JsonUtility.FromJson<TelegramUser>(snapshot.RawJson);
+            user = JsonUtility.FromJson<User>(snapshot.RawJson);
+
+            foreach (var entry in data)
+            {
+                if (entry.Value.username == usernameCurrentUser)
+                {
+                    user = new User(idCurrentUser, entry.Value.username, entry.Value.level);
+
+                    if (entry.Value.id != idCurrentUser)
+                    {
+                        database.Child($"{tgUsers}/{entry.Value.id}").Delete();
+
+                        string userJson = JsonUtility.ToJson(user);
+
+                        database.Child($"{tgUsers}/{idCurrentUser}").SetValue(userJson, true);
+                    }
+
+                    break;
+                }
+            }
         }
         catch
         {
-            user = new TelegramUser(idCurrentUser, usernameCurrentUser,1);
+            user = new User(idCurrentUser, usernameCurrentUser,1);
 
             string userJson = JsonUtility.ToJson(user);
 
@@ -126,13 +150,13 @@ public class TelegramManager : MonoBehaviour
 }
 
 [Serializable]
-public class TelegramUser
+public class User
 {
     public int id;
     public string username;
     public int level;
 
-    public TelegramUser(int id, string username, int level)
+    public User(int id, string username, int level)
     {
         this.id = id;
         this.username = username;
