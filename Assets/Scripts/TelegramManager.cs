@@ -27,6 +27,8 @@ public class TelegramManager : MonoBehaviour
 
     private bool isHaveUser = false;
 
+    private string users = "";
+
     private void Awake()
     {
         Instance = this;
@@ -42,6 +44,8 @@ public class TelegramManager : MonoBehaviour
     {
         //usernameCurrentUser = username;
         database.Child($"{tgUsers}", true).GetValue();
+
+        users = tgUsers;
     }
 
     public void InitGoogleUser()
@@ -49,12 +53,16 @@ public class TelegramManager : MonoBehaviour
         //usernameCurrentUser = username;
 
         database.Child($"{googleUsers}", true).GetValue();
+
+        users = googleUsers;
     }
 
     public void InitVKUser()
     {
         //usernameCurrentUser = username;
         database.Child($"{vkUsers}", true).GetValue();
+
+        users = vkUsers;
     }
 
     private void OnDisable()
@@ -89,6 +97,8 @@ public class TelegramManager : MonoBehaviour
 
     private void GetOKHandler(SimpleFirebaseUnity.Firebase sender, DataSnapshot snapshot)
     {
+        Debug.Log("[OK] Get from key: <" + sender.FullKey + ">");
+        print(PlayIdServices.Instance.Auth.SavedUser.Platforms);
         User user = new User(0, "", 0);
 
         string currentUsername = PlayIdServices.Instance.Auth.SavedUser.Email;
@@ -107,7 +117,7 @@ public class TelegramManager : MonoBehaviour
                     user = new User(entry.Value.id, entry.Value.username, entry.Value.level);
 
                     isHaveUser = true;
-                    print("YYYYYYYEEEEEEESSSSSSSS");
+
                     break;
                 }
             }
@@ -120,15 +130,7 @@ public class TelegramManager : MonoBehaviour
 
                 string userJson = JsonUtility.ToJson(user);
 
-                string users = "";
-
-                if (PlayIdServices.Instance.Auth.SavedUser.Platforms == Assets.PlayId.Scripts.Enums.Platform.Google)
-                    users = googleUsers;
-                else if (PlayIdServices.Instance.Auth.SavedUser.Platforms == Assets.PlayId.Scripts.Enums.Platform.Telegram)
-                    users = tgUsers;
-                else if (PlayIdServices.Instance.Auth.SavedUser.Platforms == Assets.PlayId.Scripts.Enums.Platform.VK)
-                    users = vkUsers;
-
+                print("NOOOOOOOOOOOOO");
                 database.Child($"{users}/{PlayIdServices.Instance.Auth.SavedUser.Id}").SetValue(userJson, true);
             }
         }
