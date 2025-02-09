@@ -5,15 +5,27 @@ using UnityEngine;
 using Assets.PlayId.Scripts.Data;
 using UnityEngine.SceneManagement;
 using NaughtyAttributes;
+using UnityEngine.Events;
 
 public class AndroidSignIn : MonoBehaviour
 {
+    [SerializeField]
+    public UnityEvent OnSignedInGoogle;
+
+    [SerializeField]
+    public UnityEvent OnSignedInTg;
+
+    [SerializeField]
+    public UnityEvent OnSignedInVK;
+
+    [SerializeField]
+    public UnityEvent OnSignedInAnon;
 
     private string platform;
 
     private void Start()
     {
-        if (PlayIdServices.Instance.Auth.SavedUser != null || PlayerPrefs.GetInt("Anonimus") == 1)
+        if (PlayIdServices.Instance.Auth.SavedUser != null || PlayerPrefs.GetInt("Anon") == 1)
         {
             SceneManager.LoadScene("Menu");
         }
@@ -25,7 +37,7 @@ public class AndroidSignIn : MonoBehaviour
         PlayIdServices.Instance.Auth.SignOut(revokeAccessToken: false);
     }
 
-    void OnSignIn(bool success, string error, Assets.PlayId.Scripts.Data.User user)
+    private void OnSignIn(bool success, string error, Assets.PlayId.Scripts.Data.User user)
     {
         Debug.Log(success ? $"Hello, {user.Email}!" : error);
 
@@ -40,17 +52,21 @@ public class AndroidSignIn : MonoBehaviour
             if (platform == Platform.Google.ToString())
             {
                 TelegramManager.Instance.InitGoogleUser();
+
+                OnSignedInGoogle?.Invoke();
             }
             else if (platform == Platform.Telegram.ToString())
             {
                 TelegramManager.Instance.InitTgUser();
+
+                OnSignedInTg?.Invoke();
             }
             else if (platform == Platform.VK.ToString())//idk VK == Discord
             {
                 TelegramManager.Instance.InitVKUser();
-            }
 
-            SceneManager.LoadScene("Menu");
+                OnSignedInVK?.Invoke();
+            }
         }
     }
 
@@ -75,12 +91,12 @@ public class AndroidSignIn : MonoBehaviour
         platform = Platform.VK.ToString();
     }
 
-    public void SignInAnonimus()
+    public void SignInAnon()
     {
         //предупредительное окно
 
-        PlayerPrefs.SetInt("Anonimus", 1);
+        PlayerPrefs.SetInt("Anon", 1);
 
-        SceneManager.LoadScene("Menu");
+        OnSignedInAnon?.Invoke();
     }
 }
