@@ -1,0 +1,2041 @@
+fileFormatVersion: 2
+guid: a12f8e952744af74181fca5d2f05aa2c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3588036134993579876
+    second: LiftMainGoogle-Sheet_0
+  - first:
+      213: -7703848463875369282
+    second: LiftMainGoogle-Sheet_1
+  - first:
+      213: -3050399586163832163
+    second: LiftMainGoogle-Sheet_2
+  - first:
+      213: 4232895306966003560
+    second: LiftMainGoogle-Sheet_3
+  - first:
+      213: -6055412754982806096
+    second: LiftMainGoogle-Sheet_4
+  - first:
+      213: -502539487039500117
+    second: LiftMainGoogle-Sheet_5
+  - first:
+      213: 2279913850771577959
+    second: LiftMainGoogle-Sheet_6
+  - first:
+      213: 3703405303298267757
+    second: LiftMainGoogle-Sheet_7
+  - first:
+      213: -4442620199017188674
+    second: LiftMainGoogle-Sheet_8
+  - first:
+      213: 5063662588763261803
+    second: LiftMainGoogle-Sheet_9
+  - first:
+      213: -2749494107659373178
+    second: LiftMainGoogle-Sheet_10
+  - first:
+      213: 8575162141721692024
+    second: LiftMainGoogle-Sheet_11
+  - first:
+      213: -7527203524055405139
+    second: LiftMainGoogle-Sheet_12
+  - first:
+      213: 1497995014573048631
+    second: LiftMainGoogle-Sheet_13
+  - first:
+      213: -4793937252141931525
+    second: LiftMainGoogle-Sheet_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 15
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a878070db20123945a05cb9774043e3b
+      internalID: -3588036134993579876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 896
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ffd54069e6289f4bbda856b0d806c86
+      internalID: -7703848463875369282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 896
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dda6c1d7a6286f547bfb052916ca2471
+      internalID: -3050399586163832163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 896
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 240016d1556bfa542be5e5de2f32570f
+      internalID: 4232895306966003560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 896
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0389f86330234004b9e3e2e348fc310d
+      internalID: -6055412754982806096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 896
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9663aa28b41e05a45965bddc30312ba7
+      internalID: -502539487039500117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 896
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 412f8b9938512f0479494064b23eb373
+      internalID: 2279913850771577959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 896
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2380c49568ae1014f87dae626a926c53
+      internalID: 3703405303298267757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 896
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bce2e9f4cfe0b2d4e99604832f1d702b
+      internalID: -4442620199017188674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1053
+        y: 896
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37901aafb3a791b478b444fb6114fa43
+      internalID: 5063662588763261803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 896
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 157b0a31c70deec4894c857f93559628
+      internalID: -2749494107659373178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 896
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bef3c0c3567de1543a82b0841364bbb2
+      internalID: 8575162141721692024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 896
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd473c359132e54980f7a597675a1ba
+      internalID: -7527203524055405139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1521
+        y: 896
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef7853bff4ec89e4d8bfac46a2a50753
+      internalID: 1497995014573048631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 896
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8252d50487786d4499b5969888de7a32
+      internalID: -4793937252141931525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1755
+        y: 896
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d59d625f5b5fda4e88b1f7c7fa979b9
+      internalID: -1503024636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 896
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 435d9ecaf710e7d43a07a1b080fae4b1
+      internalID: -1163941116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dc63d7893fece645a6bc907a0dcbc5e
+      internalID: -795896638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 768
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b2e7753be0dc5643b9d5ce258c9a528
+      internalID: -1145469116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 768
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e9710741cb53f64da5f94854ae13b64
+      internalID: 850607506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 768
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c6694ac0ea75ee47ab613522092d562
+      internalID: -1204308166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 768
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e1a26f64472b73448418c560fa42e2d
+      internalID: -1556108854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 768
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5894904842cda9e4a8af6748929be1ab
+      internalID: -445191546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 768
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef95314dc4e80b4399d737ccdf277c8
+      internalID: 1050269514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 768
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b819debec287ae94dba8a4175c4d846e
+      internalID: 1645851639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 768
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6f86326f1f1f3f479d62476519a7afe
+      internalID: 83196613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 1053
+        y: 768
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1387413225f9f1b4bb7a761d31bd8fd1
+      internalID: 260063723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 768
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99a6ba344727b464c88825079e011f6e
+      internalID: -1751237676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 768
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c90ed925f7e4a2841a93b19a539081b0
+      internalID: 1434550635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 768
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f65da48843fb24095bdbc735287caa
+      internalID: 1130147614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 1521
+        y: 768
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f72347c3272037b47bec69602638ece8
+      internalID: 439877904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 768
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 288d6f672ae1e044a87593aaec5b04e0
+      internalID: -1004842780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 1755
+        y: 768
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18c1dcdccb067f145b31a9ff811595d1
+      internalID: -360815056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 768
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a56895580c2aee6469d2352b307f1e57
+      internalID: -567153265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c47dcb869070bb4ea6f92409f49fb1e
+      internalID: -692229943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 640
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4481ebc75e802da4bb2d21895901ca09
+      internalID: -1687287365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 640
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7a24d6b95df65c498774abd15194079
+      internalID: 2114637610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 640
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7567e4aab624db843901636043cd824f
+      internalID: 1246350659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 640
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ebdfe8d604294846b4bd4b97104d203
+      internalID: 1724515326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 640
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b82cfe7b9dce554db97637d70e23d5f
+      internalID: 1070048148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 640
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c82c9d34e9d8f44abad513c35623045
+      internalID: 1162359082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 640
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbce9e6f9285bba46a1836bfab8d9897
+      internalID: -339510366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 640
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e02778cb54ae3f04890d7c805297c82b
+      internalID: 1215588006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 1053
+        y: 640
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81eba59bac37e7d4a9e4f28a01ad1eec
+      internalID: 59872640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 640
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f46c3e083bfc207458a459fc7652b183
+      internalID: -241534058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 640
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd762a876dccde041bd2e0eb12aa9135
+      internalID: 1202081941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 640
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40c4fc54dd3dacb479d655a709f06703
+      internalID: 1784296522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 1521
+        y: 640
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f1a4b2c9a644f44e90998948ebceb4f
+      internalID: -1739919249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 640
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5a79e4558040e845a7c057b0ce1b82a
+      internalID: -333376641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 1755
+        y: 640
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cb886dd14b599b409b1346d007ce181
+      internalID: 1262863617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 640
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c476a94116a7ac47b0e7dc1e8e0a550
+      internalID: 2124180923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dd0c2ae7e2a70a499b5447a0dc8a3a1
+      internalID: 539021536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 512
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e66c0b286edb324d9eb4b91e6350996
+      internalID: -221822398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 512
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c4686476638b394ca666b7f65b72349
+      internalID: -239099452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 512
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c128ef00f5e7bd54c83942877ba05940
+      internalID: -226188312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 512
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12cdcb13dadef8c49a1f7e549f594fbe
+      internalID: -546768532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 512
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1c3a6f58307d2b45aadf766b7e48750
+      internalID: 1998930144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 512
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a757beee23761bf47a4cd0f7ad1b280d
+      internalID: 2022444577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 512
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98497fb8f8c568e4abe645b0b3d210e2
+      internalID: 627031123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 512
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a294ca3ac52164ba250ce36a6c2ffe
+      internalID: -285871822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 1053
+        y: 512
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3205bd59b312c6948bfb9cabccab4727
+      internalID: -1864379224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 512
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 784bb0a5d451e8e4c9c0793de0ebca50
+      internalID: 1567375764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 512
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d02d2325bd2ab504b855e872ee07dcd4
+      internalID: 2123110819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 512
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73ea9ef4c55bd0d42b19375e5f62a7b2
+      internalID: -53520336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 1521
+        y: 512
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56766d4963a47674fbf2c2d61db0703d
+      internalID: -1232844203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 512
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4d26c6955cbaae44aa5b693d50ad3cb
+      internalID: -1487253346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 1755
+        y: 512
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eaeddf4d45522641b2bdc7343ac6f26
+      internalID: 275570531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 512
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 843bc6db8d098df46a5bd2b4eea85dd2
+      internalID: 1720550128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dea41b5df8f20cb4aaa827731da6c369
+      internalID: -2026747835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 384
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40111eaee75077b4089f864da5be5ffe
+      internalID: 646807552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 384
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb6c07fbef5627e438260aeb7b3cf343
+      internalID: 1193509333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 384
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ce6560b865ce944496199190bedec3e
+      internalID: 874517980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_72
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 384
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34cd9651e323f2a4a84b0829e1927372
+      internalID: 398943581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_73
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 384
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a1df84c8a76064ba34e3b77f1f3dd9
+      internalID: 1985670821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_74
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 384
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3d9ee54f5acaf3458613640b946e24c
+      internalID: -455173359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_75
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 384
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c4b726879c30b4389135a89f73c6a8
+      internalID: -1917669474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_76
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 384
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d239f4aff6832e438880c4ab5240b4d
+      internalID: 469726103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_77
+      rect:
+        serializedVersion: 2
+        x: 1053
+        y: 384
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 496982fc0e41b5448a185765e2069115
+      internalID: 1150115490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_78
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 384
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0299145f87bebc4b834f091c06030a8
+      internalID: -29102144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiftMainGoogle-Sheet_79
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 384
+        width: 116
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0b4aff7628122944b549414a6276426
+      internalID: 1850830663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      LiftMainGoogle-Sheet_0: -3588036134993579876
+      LiftMainGoogle-Sheet_1: -7703848463875369282
+      LiftMainGoogle-Sheet_10: -2749494107659373178
+      LiftMainGoogle-Sheet_11: 8575162141721692024
+      LiftMainGoogle-Sheet_12: -7527203524055405139
+      LiftMainGoogle-Sheet_13: 1497995014573048631
+      LiftMainGoogle-Sheet_14: -4793937252141931525
+      LiftMainGoogle-Sheet_15: -1503024636
+      LiftMainGoogle-Sheet_16: -1163941116
+      LiftMainGoogle-Sheet_17: -795896638
+      LiftMainGoogle-Sheet_18: -1145469116
+      LiftMainGoogle-Sheet_19: 850607506
+      LiftMainGoogle-Sheet_2: -3050399586163832163
+      LiftMainGoogle-Sheet_20: -1204308166
+      LiftMainGoogle-Sheet_21: -1556108854
+      LiftMainGoogle-Sheet_22: -445191546
+      LiftMainGoogle-Sheet_23: 1050269514
+      LiftMainGoogle-Sheet_24: 1645851639
+      LiftMainGoogle-Sheet_25: 83196613
+      LiftMainGoogle-Sheet_26: 260063723
+      LiftMainGoogle-Sheet_27: -1751237676
+      LiftMainGoogle-Sheet_28: 1434550635
+      LiftMainGoogle-Sheet_29: 1130147614
+      LiftMainGoogle-Sheet_3: 4232895306966003560
+      LiftMainGoogle-Sheet_30: 439877904
+      LiftMainGoogle-Sheet_31: -1004842780
+      LiftMainGoogle-Sheet_32: -360815056
+      LiftMainGoogle-Sheet_33: -567153265
+      LiftMainGoogle-Sheet_34: -692229943
+      LiftMainGoogle-Sheet_35: -1687287365
+      LiftMainGoogle-Sheet_36: 2114637610
+      LiftMainGoogle-Sheet_37: 1246350659
+      LiftMainGoogle-Sheet_38: 1724515326
+      LiftMainGoogle-Sheet_39: 1070048148
+      LiftMainGoogle-Sheet_4: -6055412754982806096
+      LiftMainGoogle-Sheet_40: 1162359082
+      LiftMainGoogle-Sheet_41: -339510366
+      LiftMainGoogle-Sheet_42: 1215588006
+      LiftMainGoogle-Sheet_43: 59872640
+      LiftMainGoogle-Sheet_44: -241534058
+      LiftMainGoogle-Sheet_45: 1202081941
+      LiftMainGoogle-Sheet_46: 1784296522
+      LiftMainGoogle-Sheet_47: -1739919249
+      LiftMainGoogle-Sheet_48: -333376641
+      LiftMainGoogle-Sheet_49: 1262863617
+      LiftMainGoogle-Sheet_5: -502539487039500117
+      LiftMainGoogle-Sheet_50: 2124180923
+      LiftMainGoogle-Sheet_51: 539021536
+      LiftMainGoogle-Sheet_52: -221822398
+      LiftMainGoogle-Sheet_53: -239099452
+      LiftMainGoogle-Sheet_54: -226188312
+      LiftMainGoogle-Sheet_55: -546768532
+      LiftMainGoogle-Sheet_56: 1998930144
+      LiftMainGoogle-Sheet_57: 2022444577
+      LiftMainGoogle-Sheet_58: 627031123
+      LiftMainGoogle-Sheet_59: -285871822
+      LiftMainGoogle-Sheet_6: 2279913850771577959
+      LiftMainGoogle-Sheet_60: -1864379224
+      LiftMainGoogle-Sheet_61: 1567375764
+      LiftMainGoogle-Sheet_62: 2123110819
+      LiftMainGoogle-Sheet_63: -53520336
+      LiftMainGoogle-Sheet_64: -1232844203
+      LiftMainGoogle-Sheet_65: -1487253346
+      LiftMainGoogle-Sheet_66: 275570531
+      LiftMainGoogle-Sheet_67: 1720550128
+      LiftMainGoogle-Sheet_68: -2026747835
+      LiftMainGoogle-Sheet_69: 646807552
+      LiftMainGoogle-Sheet_7: 3703405303298267757
+      LiftMainGoogle-Sheet_70: 1193509333
+      LiftMainGoogle-Sheet_71: 874517980
+      LiftMainGoogle-Sheet_72: 398943581
+      LiftMainGoogle-Sheet_73: 1985670821
+      LiftMainGoogle-Sheet_74: -455173359
+      LiftMainGoogle-Sheet_75: -1917669474
+      LiftMainGoogle-Sheet_76: 469726103
+      LiftMainGoogle-Sheet_77: 1150115490
+      LiftMainGoogle-Sheet_78: -29102144
+      LiftMainGoogle-Sheet_79: 1850830663
+      LiftMainGoogle-Sheet_8: -4442620199017188674
+      LiftMainGoogle-Sheet_9: 5063662588763261803
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

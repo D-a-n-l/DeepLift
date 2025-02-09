@@ -15,7 +15,7 @@ public class AndroidSignIn : MonoBehaviour
     {
         if (PlayIdServices.Instance.Auth.SavedUser != null || PlayerPrefs.GetInt("Anonimus") == 1)
         {
-            //SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("Menu");
         }
     }
 
@@ -50,7 +50,7 @@ public class AndroidSignIn : MonoBehaviour
                 TelegramManager.Instance.InitVKUser();
             }
 
-            //SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("Menu");
         }
     }
 
@@ -80,5 +80,7 @@ public class AndroidSignIn : MonoBehaviour
         //предупредительное окно
 
         PlayerPrefs.SetInt("Anonimus", 1);
+
+        SceneManager.LoadScene("Menu");
     }
 }

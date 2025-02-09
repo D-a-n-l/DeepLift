@@ -5,6 +5,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using Assets.PlayId.Scripts;
 using Newtonsoft.Json;
+using NaughtyAttributes;
 
 public class TelegramManager : MonoBehaviour
 {
@@ -68,6 +69,12 @@ public class TelegramManager : MonoBehaviour
     private void OnDisable()
     {
         Unsubscription();
+    }
+
+    [Button]
+    public void Del()
+    {
+        PlayerPrefs.DeleteKey("Anonimus");
     }
 
     private void Subscription()
