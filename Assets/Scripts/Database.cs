@@ -11,9 +11,6 @@ public class Database : MonoBehaviour
 {
     public static Database Instance;
 
-    [SerializeField]
-    private ChangeLevelManager levelManager;
-
     private Firebase database;
 
     private string tgUsers = "tg_users";
@@ -22,9 +19,11 @@ public class Database : MonoBehaviour
 
     private string vkUsers = "vk_users";
 
-    private string usernameCurrentUser;
+    private int id;
 
-    private int levelCurrentUser;
+    private int level;
+
+    public int Level => level;
 
     private bool isHaveUser = false;
 
@@ -39,6 +38,21 @@ public class Database : MonoBehaviour
         Subscription();
 
         DontDestroyOnLoad(this);
+
+        if (PlayIdServices.Instance.Auth.SavedUser != null || PlayerPrefs.HasKey(DataBasePlayerPrefs.ANON))
+            InitAuth();
+    }
+
+    public void InitAuth()
+    {
+        if (PlayerPrefs.GetInt(DataBasePlayerPrefs.GOOGLE) == 1)
+            InitGoogleUser();
+        else if (PlayerPrefs.GetInt(DataBasePlayerPrefs.TG) == 1)
+            InitTgUser();
+        else if (PlayerPrefs.GetInt(DataBasePlayerPrefs.VK) == 1)
+            InitVKUser();
+        else
+            GetLevel();
     }
 
     public void InitTgUser()
@@ -81,15 +95,20 @@ public class Database : MonoBehaviour
 
     public void SaveLevel(int level)
     {
-        database.Child($"{tgUsers}/{usernameCurrentUser}/level").SetValue(level);
+        if (PlayerPrefs.HasKey(DataBasePlayerPrefs.ANON))
+            PlayerPrefs.SetInt(DataBasePlayerPrefs.ANON_LEVEL, level);
+        else
+            database.Child($"{users}/{id}/level").SetValue(level);
     }
 
     public int GetLevel()
     {
-        database.Child($"{tgUsers}/{usernameCurrentUser}/level").GetValue();
+        if (PlayerPrefs.HasKey(DataBasePlayerPrefs.ANON))
+            return level = PlayerPrefs.GetInt(DataBasePlayerPrefs.ANON_LEVEL, level);
+        else
+            database.Child($"{users}/{id}/level").GetValue();
 
-        print("Get level " + levelCurrentUser);
-        return levelCurrentUser;
+        return level;
     }
 
     private void GetOKHandler(SimpleFirebaseUnity.Firebase sender, DataSnapshot snapshot)
@@ -100,7 +119,7 @@ public class Database : MonoBehaviour
 
         if (PlayIdServices.Instance.Auth.SavedUser.Platforms == Assets.PlayId.Scripts.Enums.Platform.Telegram)
             currentUsername = PlayIdServices.Instance.Auth.SavedUser.Email.Remove(0, 1);
-        print(snapshot.RawJson);
+
         try
         {
             Dictionary<string, User> data = JsonConvert.DeserializeObject<Dictionary<string, User>>(snapshot.RawJson);
@@ -112,29 +131,26 @@ public class Database : MonoBehaviour
                     user = new User(entry.Value.id, entry.Value.username, entry.Value.level);
 
                     isHaveUser = true;
-                    print("YESSE");
+
                     break;
                 }
             }
         }
-        catch (Exception e)
+        catch
         {
-            print(e);
             if (isHaveUser == false)
             {
                 user = new User(PlayIdServices.Instance.Auth.SavedUser.Id, currentUsername, 1);
 
                 string userJson = JsonUtility.ToJson(user);
 
-                print("NOOOOOOOOOOOOO");
                 database.Child($"{users}/{PlayIdServices.Instance.Auth.SavedUser.Id}").SetValue(userJson, true);
             }
         }
 
-        //levelManager.UnlockLevels(user.level);
+        id = user.id;
 
-        //levelCurrentUser = user.level;
-        //print("OK Handler " + levelCurrentUser);
+        level = user.level;
     }
 
     private void GetFailHandler(Firebase sender, FirebaseError err)

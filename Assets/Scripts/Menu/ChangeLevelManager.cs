@@ -12,7 +12,7 @@ public class ChangeLevelManager : MonoBehaviour
     [SerializeField]
     private float delayStartTransitionLevel;
 
-    private void Start()
+    private void Awake()
     {
         Init();
     }
@@ -27,9 +27,9 @@ public class ChangeLevelManager : MonoBehaviour
         }
     }
 
-    public void UnlockLevels(int unlockLevels)
+    public void UnlockLevels()
     {
-        for (int i = unlockLevels; i < buttons.Length; i++)
+        for (int i = Database.Instance.Level; i < buttons.Length; i++)
         {
             buttons[i].button.interactable = false;
 

@@ -9,9 +9,6 @@ public class TransitionLevel : MonoBehaviour
     private Canvas canvasTransitionNextLevel;
 
     [SerializeField]
-    private Canvas canvasComplete;
-
-    [SerializeField]
     private Animator counter;
 
     [Header("Triggers")]
@@ -28,6 +25,8 @@ public class TransitionLevel : MonoBehaviour
 
     private int currentLevel;
 
+    private bool isJustTransition;
+
     private void Start()
     {
         animator = GetComponent<RandomAnimations>();
@@ -43,8 +42,6 @@ public class TransitionLevel : MonoBehaviour
 
             if (currentLevel >= SceneManager.sceneCountInBuildSettings)
             {
-                //canvasComplete.enabled = true;
-
                 ChangeTime.Set(0);
 
                 return;
@@ -61,15 +58,30 @@ public class TransitionLevel : MonoBehaviour
         SetTrigger(isNext);
     }
 
+    public void JustTransition()
+    {
+        canvasTransitionNextLevel.enabled = true;
+
+        currentLevel = SceneManager.GetActiveScene().buildIndex + 1;
+
+        if (currentLevel >= SceneManager.sceneCountInBuildSettings)
+        {
+            ChangeTime.Set(0);
+
+            return;
+        }
+
+        SetTrigger(false);
+
+        isJustTransition = true;
+    }
+
     public void LoadLevelChoiceNoDelayNoAnim(int level)
     {
         SceneManager.LoadScene(level);
 
         if (currentLevel > Database.Instance.GetLevel())
             Database.Instance.SaveLevel(currentLevel);
-
-        //if (currentLevel > PlayerPrefs.GetInt("Level"))
-        //    PlayerPrefs.SetInt("Level", currentLevel);
 
         if (Time.timeScale == 0)
             ChangeTime.Set(1);
@@ -103,10 +115,10 @@ public class TransitionLevel : MonoBehaviour
 
         SceneManager.LoadScene(currentLevel);
 
-        if (currentLevel > Database.Instance.GetLevel())
+        if (isJustTransition == true)
+            isJustTransition = false;
+        else if (currentLevel > Database.Instance.GetLevel())
             Database.Instance.SaveLevel(currentLevel);
-        //if (currentLevel > PlayerPrefs.GetInt("Level"))
-        //    PlayerPrefs.SetInt("Level", currentLevel);
 
         if (Time.timeScale == 0)
             ChangeTime.Set(1);
@@ -123,25 +135,4 @@ public class TransitionLevel : MonoBehaviour
         else
             counter.SetBool(nameCounterDown, true);
     }
-
-    //public void TransitionNext(int isGoMenu)
-    //{
-    //    if (SceneManager.GetActiveScene().name == "Floor10")
-    //    {
-    //        completeGame.enabled = true;
-    //    }
-    //    else
-    //    {
-    //        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-
-    //        if (isGoMenu == 0)
-    //            SceneManager.LoadScene(0);
-    //        else
-    //        {
-    //            SceneManager.LoadScene(currentSceneIndex + 1);
-
-    //            PlayerPrefs.SetInt("scene", currentSceneIndex + 1);
-    //        }
-    //    }
-    //}
 }

@@ -2436,8 +2436,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 172260066}
         m_TargetAssemblyTypeName: TransitionLevel, Assembly-CSharp
-        m_MethodName: LoadLevel
-        m_Mode: 6
+        m_MethodName: JustTransition
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2932,8 +2932,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 172260066}
         m_TargetAssemblyTypeName: TransitionLevel, Assembly-CSharp
-        m_MethodName: LoadLevel
-        m_Mode: 6
+        m_MethodName: JustTransition
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3809,8 +3809,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 172260066}
         m_TargetAssemblyTypeName: TransitionLevel, Assembly-CSharp
-        m_MethodName: LoadLevel
-        m_Mode: 6
+        m_MethodName: JustTransition
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4804,7 +4804,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a36010581e1a5f4d924c96304905baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelManager: {fileID: 0}
 --- !u!4 &1819252539
 Transform:
   m_ObjectHideFlags: 0
@@ -8027,8 +8026,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 172260066}
         m_TargetAssemblyTypeName: TransitionLevel, Assembly-CSharp
-        m_MethodName: LoadLevel
-        m_Mode: 6
+        m_MethodName: JustTransition
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
