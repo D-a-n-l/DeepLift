@@ -10,6 +10,9 @@ using UnityEngine.Events;
 public class AndroidSignIn : MonoBehaviour
 {
     [SerializeField]
+    private string nameSceneBeforeAuth;
+
+    [SerializeField]
     public UnityEvent OnSignedInGoogle;
 
     [SerializeField]
@@ -23,12 +26,10 @@ public class AndroidSignIn : MonoBehaviour
 
     private string platform;
 
-    private void Start()
+    private void Awake()
     {
         if (PlayIdServices.Instance.Auth.SavedUser != null || PlayerPrefs.GetInt("Anon") == 1)
-        {
-            SceneManager.LoadScene("Menu");
-        }
+            SceneManager.LoadSceneAsync(nameSceneBeforeAuth);
     }
 
     [Button]
@@ -39,15 +40,11 @@ public class AndroidSignIn : MonoBehaviour
 
     private void OnSignIn(bool success, string error, Assets.PlayId.Scripts.Data.User user)
     {
-        Debug.Log(success ? $"Hello, {user.Email}!" : error);
-
         if (success)
         {
             var jwt = new JWT(user.TokenResponse.IdToken);
 
             jwt.ValidateSignature(PlayIdServices.Instance.Auth.SavedUser.ClientId);
-
-            //Debug.Log("\nId Token (JWT) validated.");
 
             if (platform == Platform.Google.ToString())
             {
@@ -93,8 +90,6 @@ public class AndroidSignIn : MonoBehaviour
 
     public void SignInAnon()
     {
-        //предупредительное окно
-
         PlayerPrefs.SetInt("Anon", 1);
 
         OnSignedInAnon?.Invoke();
