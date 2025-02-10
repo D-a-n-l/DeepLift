@@ -6,8 +6,8 @@ public class ControllerCameraSize : MonoBehaviour
     [SerializeField] 
     private Vector2 defaultResolution = new(1920, 1080);
 
-    [SerializeField, Range(0, 1)]
-    private float widthOrHeight = .5f;
+    [Range(0f, 1f)]
+    public float widthOrHeight = 0.5f;
 
     private Camera mainCamera;
 

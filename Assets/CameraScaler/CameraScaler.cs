@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.Cinemachine;
+using UnityEngine;
 
 namespace EmeraldPowder.CameraScaler
 {
@@ -10,9 +11,13 @@ namespace EmeraldPowder.CameraScaler
         public Vector2 ReferenceResolution = new Vector2(720, 1280);
 
         public WorkingMode Mode = WorkingMode.ConstantWidth;
+
+        [Range(0f, 1f)]
         public float MatchWidthOrHeight = 0.5f;
 
         private Camera componentCamera;
+        private CinemachineVirtualCamera virtualCamera;
+
         private float targetAspect;
         private float cameraZoom = 1;
 
@@ -58,7 +63,7 @@ namespace EmeraldPowder.CameraScaler
             horizontalFov = CalcVerticalFov(initialFov, 1 / targetAspect);
         }
 
-        private void Update()
+        private void Start()
         {
             if (!Mathf.Approximately(previousUpdateAspect, componentCamera.aspect) ||
                 previousUpdateMode != Mode ||
