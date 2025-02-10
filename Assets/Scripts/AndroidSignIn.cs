@@ -36,6 +36,9 @@ public class AndroidSignIn : MonoBehaviour
     public void SignOut()
     {
         PlayIdServices.Instance.Auth.SignOut(revokeAccessToken: false);
+
+        if (PlayerPrefs.HasKey("Anon") == true)
+            PlayerPrefs.DeleteKey("Anon");
     }
 
     private void OnSignIn(bool success, string error, Assets.PlayId.Scripts.Data.User user)
@@ -48,19 +51,19 @@ public class AndroidSignIn : MonoBehaviour
 
             if (platform == Platform.Google.ToString())
             {
-                TelegramManager.Instance.InitGoogleUser();
+                Database.Instance.InitGoogleUser();
 
                 OnSignedInGoogle?.Invoke();
             }
             else if (platform == Platform.Telegram.ToString())
             {
-                TelegramManager.Instance.InitTgUser();
+                Database.Instance.InitTgUser();
 
                 OnSignedInTg?.Invoke();
             }
             else if (platform == Platform.VK.ToString())//idk VK == Discord
             {
-                TelegramManager.Instance.InitVKUser();
+                Database.Instance.InitVKUser();
 
                 OnSignedInVK?.Invoke();
             }

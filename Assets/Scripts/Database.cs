@@ -7,9 +7,9 @@ using Assets.PlayId.Scripts;
 using Newtonsoft.Json;
 using NaughtyAttributes;
 
-public class TelegramManager : MonoBehaviour
+public class Database : MonoBehaviour
 {
-    public static TelegramManager Instance;
+    public static Database Instance;
 
     [SerializeField]
     private ChangeLevelManager levelManager;
@@ -43,7 +43,6 @@ public class TelegramManager : MonoBehaviour
 
     public void InitTgUser()
     {
-        //usernameCurrentUser = username;
         database.Child($"{tgUsers}", true).GetValue();
 
         users = tgUsers;
@@ -51,8 +50,6 @@ public class TelegramManager : MonoBehaviour
 
     public void InitGoogleUser()
     {
-        //usernameCurrentUser = username;
-
         database.Child($"{googleUsers}", true).GetValue();
 
         users = googleUsers;
@@ -60,7 +57,6 @@ public class TelegramManager : MonoBehaviour
 
     public void InitVKUser()
     {
-        //usernameCurrentUser = username;
         database.Child($"{vkUsers}", true).GetValue();
 
         users = vkUsers;
@@ -69,12 +65,6 @@ public class TelegramManager : MonoBehaviour
     private void OnDisable()
     {
         Unsubscription();
-    }
-
-    [Button]
-    public void Del()
-    {
-        PlayerPrefs.DeleteKey("Anonimus");
     }
 
     private void Subscription()
@@ -104,15 +94,13 @@ public class TelegramManager : MonoBehaviour
 
     private void GetOKHandler(SimpleFirebaseUnity.Firebase sender, DataSnapshot snapshot)
     {
-        Debug.Log("[OK] Get from key: <" + sender.FullKey + ">");
-        print(PlayIdServices.Instance.Auth.SavedUser.Platforms);
         User user = new User(0, "", 0);
 
         string currentUsername = PlayIdServices.Instance.Auth.SavedUser.Email;
 
         if (PlayIdServices.Instance.Auth.SavedUser.Platforms == Assets.PlayId.Scripts.Enums.Platform.Telegram)
             currentUsername = PlayIdServices.Instance.Auth.SavedUser.Email.Remove(0, 1);
-
+        print(snapshot.RawJson);
         try
         {
             Dictionary<string, User> data = JsonConvert.DeserializeObject<Dictionary<string, User>>(snapshot.RawJson);
@@ -124,13 +112,14 @@ public class TelegramManager : MonoBehaviour
                     user = new User(entry.Value.id, entry.Value.username, entry.Value.level);
 
                     isHaveUser = true;
-
+                    print("YESSE");
                     break;
                 }
             }
         }
-        catch
+        catch (Exception e)
         {
+            print(e);
             if (isHaveUser == false)
             {
                 user = new User(PlayIdServices.Instance.Auth.SavedUser.Id, currentUsername, 1);
