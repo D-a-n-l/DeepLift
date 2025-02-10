@@ -1139,7 +1139,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 2340, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
@@ -7259,15 +7259,15 @@ PrefabInstance:
       objectReference: {fileID: 2413780444398336324}
     - target: {fileID: 2932247580250014754, guid: c80f253750adb3d41b11204b4632ea3a, type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.078431375
+      value: 0.039215688
       objectReference: {fileID: 0}
     - target: {fileID: 2932247580250014754, guid: c80f253750adb3d41b11204b4632ea3a, type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.14117648
+      value: 0.07058824
       objectReference: {fileID: 0}
     - target: {fileID: 2932247580250014754, guid: c80f253750adb3d41b11204b4632ea3a, type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 0.1254902
+      value: 0.0627451
       objectReference: {fileID: 0}
     - target: {fileID: 3772485835541905182, guid: c80f253750adb3d41b11204b4632ea3a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8283,7 +8283,7 @@ PrefabInstance:
       objectReference: {fileID: 1270309237741261519}
     - target: {fileID: 2836030155407299732, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -64377940
+      value: -23523.5
       objectReference: {fileID: 0}
     - target: {fileID: 2906555578986774441, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchorMax.x
@@ -8351,23 +8351,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4716439841489163284, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4716439841489163284, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4716439841489163284, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4716439841489163284, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 9.182896
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4716439841489163284, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.2562242
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4716439841489163284, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8445,6 +8445,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1538486035182364876}
+    - target: {fileID: 8547332518282137808, guid: be120670cc6043a4bb787dfe85295878, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8619278031904698371, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -8533,6 +8537,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1538486035182364876}
+    - target: {fileID: 414777849178270257, guid: 9f6f6ab8b1ae38d4b9c4d1e8c3b209d7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1162717803607174096, guid: 9f6f6ab8b1ae38d4b9c4d1e8c3b209d7, type: 3}
       propertyPath: m_Name
       value: Settings Buttons
@@ -8599,23 +8607,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7299657385336347095, guid: 9f6f6ab8b1ae38d4b9c4d1e8c3b209d7, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7299657385336347095, guid: 9f6f6ab8b1ae38d4b9c4d1e8c3b209d7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7299657385336347095, guid: 9f6f6ab8b1ae38d4b9c4d1e8c3b209d7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7299657385336347095, guid: 9f6f6ab8b1ae38d4b9c4d1e8c3b209d7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 17.801754
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7299657385336347095, guid: 9f6f6ab8b1ae38d4b9c4d1e8c3b209d7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.4767694
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7299657385336347095, guid: 9f6f6ab8b1ae38d4b9c4d1e8c3b209d7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9152,7 +9160,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 2340, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
@@ -11200,23 +11208,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3061223721847271717, guid: 61786267645532646ae4da3f5cc1365d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3061223721847271717, guid: 61786267645532646ae4da3f5cc1365d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3061223721847271717, guid: 61786267645532646ae4da3f5cc1365d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3061223721847271717, guid: 61786267645532646ae4da3f5cc1365d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 9.182896
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3061223721847271717, guid: 61786267645532646ae4da3f5cc1365d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.2562242
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3061223721847271717, guid: 61786267645532646ae4da3f5cc1365d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11238,6 +11246,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1538486035182364876}
+    - target: {fileID: 4853408328557004860, guid: 61786267645532646ae4da3f5cc1365d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11709,7 +11721,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 2340, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
@@ -12837,7 +12849,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 2340, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
@@ -12971,6 +12983,22 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 1451517928097795729}
+    - target: {fileID: 4218546813600205660, guid: 7e560141a0367ea49a1ff78eb635dcf0, type: 3}
+      propertyPath: Priority.Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4218546813600205660, guid: 7e560141a0367ea49a1ff78eb635dcf0, type: 3}
+      propertyPath: Priority.m_Value
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4218546813600205660, guid: 7e560141a0367ea49a1ff78eb635dcf0, type: 3}
+      propertyPath: m_LegacyPriority
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4218546813600205660, guid: 7e560141a0367ea49a1ff78eb635dcf0, type: 3}
+      propertyPath: m_StreamingVersion
+      value: 20241001
+      objectReference: {fileID: 0}
     - target: {fileID: 8621665449979259367, guid: 7e560141a0367ea49a1ff78eb635dcf0, type: 3}
       propertyPath: m_Name
       value: CinemachineCam
@@ -13183,10 +13211,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasTask
       objectReference: {fileID: 0}
+    - target: {fileID: 3824270377860410213, guid: 97137b0930e356340a55807e94f48726, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5558796863649255377, guid: 97137b0930e356340a55807e94f48726, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1538486035182364876}
+    - target: {fileID: 5558796863649255377, guid: 97137b0930e356340a55807e94f48726, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
