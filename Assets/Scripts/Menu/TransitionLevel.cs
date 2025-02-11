@@ -57,6 +57,10 @@ public class TransitionLevel : MonoBehaviour
                 currentLevel = SceneManager.GetActiveScene().buildIndex - 1;
         }
 
+        loadScene = SceneManager.LoadSceneAsync(currentLevel);
+
+        loadScene.allowSceneActivation = false;
+
         SetTrigger(isNext);
     }
 
