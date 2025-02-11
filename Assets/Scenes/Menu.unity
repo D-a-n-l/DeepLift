@@ -1170,34 +1170,34 @@ MonoBehaviour:
   buttons:
   - button: {fileID: 1490387775}
     image: {fileID: 1391727164}
-    numberLevel: 1
+    numberLevel: 2
   - button: {fileID: 251027784}
     image: {fileID: 1148593401}
-    numberLevel: 2
+    numberLevel: 3
   - button: {fileID: 1987665818}
     image: {fileID: 1294615034}
-    numberLevel: 3
+    numberLevel: 4
   - button: {fileID: 1426721561}
     image: {fileID: 1655939732}
-    numberLevel: 4
+    numberLevel: 5
   - button: {fileID: 1688442447}
     image: {fileID: 1569713139}
-    numberLevel: 5
+    numberLevel: 6
   - button: {fileID: 392903445}
     image: {fileID: 1876229728}
-    numberLevel: 6
+    numberLevel: 7
   - button: {fileID: 1556161106}
     image: {fileID: 538762170}
-    numberLevel: 7
+    numberLevel: 8
   - button: {fileID: 1305165711}
     image: {fileID: 783209548}
-    numberLevel: 8
+    numberLevel: 9
   - button: {fileID: 2101361917}
     image: {fileID: 1886372738}
-    numberLevel: 9
+    numberLevel: 10
   - button: {fileID: 1691484962}
     image: {fileID: 875180627}
-    numberLevel: 10
+    numberLevel: 11
   transitionLevel: {fileID: 1709392111}
   delayStartTransitionLevel: 1
 --- !u!114 &434416096
@@ -7438,7 +7438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2836030155407299732, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -8474390
+      value: -8482040
       objectReference: {fileID: 0}
     - target: {fileID: 2906555578986774441, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchorMax.x
