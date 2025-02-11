@@ -33,6 +33,13 @@ public class Sprint : MonoBehaviour,  IPointerDownHandler, IPointerUpHandler
             defaultSpeed = playerMovement.Speed;
 
         waitForSeconds = new WaitForSeconds(cooldown);
+
+        GameManager.Instance.OnEnteredLift.AddListener(() =>
+        {
+            StopAllCoroutines();
+
+            playerMovement.SetSpeed(0);
+        });
     }
 
     public void OnPointerDown(PointerEventData eventData)
