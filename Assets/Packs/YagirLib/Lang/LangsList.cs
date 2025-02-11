@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class WordKey : Word
@@ -104,7 +106,22 @@ public class LangsList : MonoBehaviour
         {
             print("Set Translation Asset!");
         }
-        //SetLanguage(1);
+
+        if (PlayerPrefs.HasKey("Language") == false)
+        {
+            if (Application.systemLanguage == SystemLanguage.Russian)
+            {
+                SetLanguage(1, true);
+
+                PlayerPrefs.SetInt("Language", 1);
+            }
+            else
+            {
+                SetLanguage(0, true);
+
+                PlayerPrefs.SetInt("Language", 0);
+            }
+        }
     }
 
     public static string GetWord(string key)

@@ -1323,10 +1323,10 @@ MonoBehaviour:
     _prefab: Assets/Prefab/Object/Settings Background.prefab
   - _gameObject: {fileID: 1400810003}
     _prefab: Assets/UniWebView/Prefab/UniWebViewSafeBrowsing.prefab
-  - _gameObject: {fileID: 1370501041}
-    _prefab: Assets/Prefab/Object/Languages.prefab
   - _gameObject: {fileID: 172260065}
     _prefab: Assets/Prefab/Object/AnimTransition.prefab
+  - _gameObject: {fileID: 1370501041}
+    _prefab: Assets/Prefab/Object/Languages.prefab
 --- !u!4 &584743538
 Transform:
   m_ObjectHideFlags: 11
@@ -8170,8 +8170,8 @@ SceneRoots:
   - {fileID: 1630296287}
   - {fileID: 584743538}
   - {fileID: 1474779559}
+  - {fileID: 172260064}
   - {fileID: 1819252539}
   - {fileID: 771364317}
   - {fileID: 1370501040}
   - {fileID: 755185222}
-  - {fileID: 172260064}
