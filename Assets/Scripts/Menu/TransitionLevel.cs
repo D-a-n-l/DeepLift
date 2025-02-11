@@ -23,6 +23,8 @@ public class TransitionLevel : MonoBehaviour
 
     private RandomAnimations animator;
 
+    private AsyncOperation loadScene;
+
     private int currentLevel;
 
     private bool isJustTransition;
@@ -70,6 +72,10 @@ public class TransitionLevel : MonoBehaviour
         SetTrigger(isNext);
 
         isJustTransition = true;
+
+        loadScene = SceneManager.LoadSceneAsync(currentLevel);
+
+        loadScene.allowSceneActivation = false;
     }
 
     public void LoadLevelChoiceNoDelayNoAnim(int level)
@@ -102,6 +108,10 @@ public class TransitionLevel : MonoBehaviour
         SetTrigger(false);
 
         currentLevel = level;
+
+        loadScene = SceneManager.LoadSceneAsync(currentLevel);
+
+        loadScene.allowSceneActivation = false;
     }
 
     public void EndAnimation()
@@ -109,7 +119,7 @@ public class TransitionLevel : MonoBehaviour
         if (currentLevel >= SceneManager.sceneCountInBuildSettings)
             return;
 
-        SceneManager.LoadScene(currentLevel);
+        //SceneManager.LoadScene(currentLevel);
 
         if (isJustTransition == true)
             isJustTransition = false;
@@ -118,6 +128,8 @@ public class TransitionLevel : MonoBehaviour
 
         if (Time.timeScale == 0)
             ChangeTime.Set(1);
+
+        loadScene.allowSceneActivation = true;
     }
 
     private void SetTrigger(bool isNext)
