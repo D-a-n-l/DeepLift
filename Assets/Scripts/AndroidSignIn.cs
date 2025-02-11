@@ -32,7 +32,7 @@ public class AndroidSignIn : MonoBehaviour
     }
 
     [Button]
-    public void SignOut()
+    public static void SignOut()
     {
         PlayIdServices.Instance.Auth.SignOut(revokeAccessToken: false);
 

@@ -58,20 +58,16 @@ public class TransitionLevel : MonoBehaviour
         SetTrigger(isNext);
     }
 
-    public void JustTransition()
+    public void JustTransition(bool isNext)
     {
         canvasTransitionNextLevel.enabled = true;
 
-        currentLevel = SceneManager.GetActiveScene().buildIndex + 1;
+        if (isNext == true)
+            currentLevel = SceneManager.GetActiveScene().buildIndex + 1;
+        else
+            currentLevel = SceneManager.GetActiveScene().buildIndex - 1;
 
-        if (currentLevel >= SceneManager.sceneCountInBuildSettings)
-        {
-            ChangeTime.Set(0);
-
-            return;
-        }
-
-        SetTrigger(false);
+        SetTrigger(isNext);
 
         isJustTransition = true;
     }
