@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(TMP_Dropdown))]
-public class ChangeLanguages : MonoBehaviour
+public class ChangeLanguagesDropdown : MonoBehaviour
 {
     [SerializeField]
     private string nameKey;
