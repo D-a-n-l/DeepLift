@@ -1,4 +1,3 @@
-using Assets.PlayId.Examples;
 using Assets.PlayId.Scripts.Enums;
 using Assets.PlayId.Scripts;
 using UnityEngine;
@@ -60,28 +59,24 @@ public class AndroidSignIn : MonoBehaviour
 
             if (platform == Platform.Google.ToString())
             {
-                Database.Instance.InitGoogleUser();
-
                 OnSignedInGoogle?.Invoke();
 
                 PlayerPrefs.SetInt(DataBasePlayerPrefs.GOOGLE, 1);
             }
             else if (platform == Platform.Telegram.ToString())
             {
-                Database.Instance.InitTgUser();
-
                 OnSignedInTg?.Invoke();
 
                 PlayerPrefs.SetInt(DataBasePlayerPrefs.TG, 1);
             }
-            else if (platform == Platform.VK.ToString())//idk VK == Discord
+            else if (platform == Platform.VK.ToString())
             {
-                Database.Instance.InitVKUser();
-
                 OnSignedInVK?.Invoke();
 
                 PlayerPrefs.SetInt(DataBasePlayerPrefs.VK, 1);
             }
+
+            Database.Instance.InitAuth();
         }
     }
 
@@ -111,6 +106,8 @@ public class AndroidSignIn : MonoBehaviour
         PlayerPrefs.SetInt(DataBasePlayerPrefs.ANON, 1);
 
         PlayerPrefs.SetInt(DataBasePlayerPrefs.ANON_LEVEL, 1);
+
+        Database.Instance.InitAuth();
 
         OnSignedInAnon?.Invoke();
     }

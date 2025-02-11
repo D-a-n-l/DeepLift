@@ -1,11 +1,9 @@
 ﻿using SimpleFirebaseUnity;
-using System.Runtime.InteropServices;
 using System;
 using UnityEngine;
 using System.Collections.Generic;
 using Assets.PlayId.Scripts;
 using Newtonsoft.Json;
-using NaughtyAttributes;
 
 public class Database : MonoBehaviour
 {
@@ -13,31 +11,31 @@ public class Database : MonoBehaviour
 
     private Firebase database;
 
-    private string tgUsers = "tg_users";
-
-    private string googleUsers = "google_users";
-
-    private string vkUsers = "vk_users";
-
-    private int id;
+    public int Level => level;
 
     private int level;
 
-    public int Level => level;
+    private int id;
 
     private bool isHaveUser = false;
 
     private string users = "";
 
+    private const string tgUsers = "tg_users";
+
+    private const string googleUsers = "google_users";
+
+    private const string vkUsers = "vk_users";
+
     private void Awake()
     {
         Instance = this;
 
+        DontDestroyOnLoad(this);
+
         database = Firebase.CreateNew("https://webdeeplift-default-rtdb.europe-west1.firebasedatabase.app/", "AIzaSyBBXnBzxqUZ_H1sHF4fX34Mcm_e27bv0GY");
 
         Subscription();
-
-        DontDestroyOnLoad(this);
 
         if (PlayIdServices.Instance.Auth.SavedUser != null || PlayerPrefs.HasKey(DataBasePlayerPrefs.ANON))
             InitAuth();
@@ -55,18 +53,18 @@ public class Database : MonoBehaviour
             GetLevel();
     }
 
-    public void InitTgUser()
-    {
-        database.Child($"{tgUsers}", true).GetValue();
-
-        users = tgUsers;
-    }
-
     public void InitGoogleUser()
     {
         database.Child($"{googleUsers}", true).GetValue();
 
         users = googleUsers;
+    }
+
+    public void InitTgUser()
+    {
+        database.Child($"{tgUsers}", true).GetValue();
+
+        users = tgUsers;
     }
 
     public void InitVKUser()
@@ -95,6 +93,8 @@ public class Database : MonoBehaviour
 
     public void SaveLevel(int level)
     {
+        level--;//because LevelManager
+
         if (PlayerPrefs.HasKey(DataBasePlayerPrefs.ANON))
             PlayerPrefs.SetInt(DataBasePlayerPrefs.ANON_LEVEL, level);
         else
