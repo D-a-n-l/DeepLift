@@ -9,7 +9,7 @@ public class ChangeLanguagesDropdown : MonoBehaviour
 
     private TMP_Dropdown dropdown;
 
-    private void Start()
+    private void Awake()
     {
         dropdown = GetComponent<TMP_Dropdown>();
 

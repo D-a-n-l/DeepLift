@@ -8,7 +8,7 @@ public class ControlAllButtons : MonoBehaviour
     [SerializeField]
     private PresetBt[] buttons;
 
-    private void Start()
+    private void Start()//Invoke Sound bugs, when Init SliderChanging
     {
         if (buttons != null)
         {
@@ -17,13 +17,13 @@ public class ControlAllButtons : MonoBehaviour
                 int index = i;
 
                 if (buttons[i].button != null)
-                    buttons[index].button.onClick.AddListener(delegate{buttons[index].unityEvent.Invoke();});
+                    buttons[index].button.onClick.AddListener(buttons[index].unityEvent.Invoke);
                 else if (buttons[i].slider != null)
-                    buttons[index].slider.onValueChanged.AddListener(delegate{buttons[index].unityEvent.Invoke();});
+                    buttons[index].slider.onValueChanged.AddListener((_) => buttons[index].unityEvent.Invoke());
                 else if (buttons[i].toggle != null)
-                    buttons[index].toggle.onValueChanged.AddListener(delegate{buttons[index].unityEvent.Invoke();});
+                    buttons[index].toggle.onValueChanged.AddListener((_) => buttons[index].unityEvent.Invoke());
                 else if (buttons[i].tmpDropdown != null)
-                    buttons[index].tmpDropdown.onValueChanged.AddListener(delegate{buttons[index].unityEvent.Invoke();});
+                    buttons[index].tmpDropdown.onValueChanged.AddListener((_) => buttons[index].unityEvent.Invoke());
             }
         }
     }
