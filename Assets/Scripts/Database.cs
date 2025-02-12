@@ -113,7 +113,7 @@ public class Database : MonoBehaviour
 
     private void GetOKHandler(SimpleFirebaseUnity.Firebase sender, DataSnapshot snapshot)
     {
-        User user = new User(0, "", 0);
+        User user = new User(0, "", 1);
 
         string currentUsername = PlayIdServices.Instance.Auth.SavedUser.Email;
 
@@ -136,16 +136,18 @@ public class Database : MonoBehaviour
                 }
             }
         }
-        catch
+        catch(Exception e)
         {
-            if (isHaveUser == false)
-            {
-                user = new User(PlayIdServices.Instance.Auth.SavedUser.Id, currentUsername, 1);
+            Debug.LogError(e);
+        }
 
-                string userJson = JsonUtility.ToJson(user);
+        if (isHaveUser == false)
+        {
+            user = new User(PlayIdServices.Instance.Auth.SavedUser.Id, currentUsername, 1);
 
-                database.Child($"{users}/{PlayIdServices.Instance.Auth.SavedUser.Id}").SetValue(userJson, true);
-            }
+            string userJson = JsonUtility.ToJson(user);
+
+            database.Child($"{users}/{PlayIdServices.Instance.Auth.SavedUser.Id}").SetValue(userJson, true);
         }
 
         id = user.id;
