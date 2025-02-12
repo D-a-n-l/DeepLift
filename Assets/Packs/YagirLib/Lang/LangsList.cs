@@ -122,6 +122,8 @@ public class LangsList : MonoBehaviour
                 PlayerPrefs.SetInt("Language", 0);
             }
         }
+        else
+            SetLanguage(PlayerPrefs.GetInt("Language"), true);
     }
 
     public static string GetWord(string key)
