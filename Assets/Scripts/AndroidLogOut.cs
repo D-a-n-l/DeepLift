@@ -8,6 +8,11 @@ public class AndroidLogOut : MonoBehaviour
 
     private void Start()
     {
-        button.onClick.AddListener(AndroidSignIn.SignOut);
+        button.onClick.AddListener(() => 
+        { 
+            AndroidSignIn.SignOut();
+
+            CheckClick.IsCan = true;
+        });
     }
 }

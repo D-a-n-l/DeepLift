@@ -120,8 +120,8 @@ namespace Assets.PlayId.Scripts.Services
 
 #else
 
-            //Application.OpenURL(url);
-            OpenWeb(url);
+            Application.OpenURL(url);
+            //OpenWeb(url);
             #endif
         }
 

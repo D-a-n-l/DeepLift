@@ -78,6 +78,8 @@ public class AndroidSignIn : MonoBehaviour
 
             Database.Instance.InitAuth();
         }
+        else
+            CheckClick.IsCan = true;
     }
 
     public void SignInGoogle()
