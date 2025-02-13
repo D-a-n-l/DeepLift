@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 public class ChangeOrderLayerByY : MonoBehaviour
 {
@@ -19,7 +18,7 @@ public class ChangeOrderLayerByY : MonoBehaviour
         if (isUpdate == true)
             return;
 
-        InvokeRepeating(nameof(Set), 0.5f, 5f);
+        InvokeRepeating(nameof(Set), 0.1f, 5f);
     }
 
     private void Update()
