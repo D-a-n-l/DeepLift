@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
 
             buttons.enabled = false;
 
-            sprite.spriteRenderer.sortingOrder = sprite.newSortingOrder;
+            //sprite.spriteRenderer.sortingOrder = sprite.newSortingOrder;
 
             isPlayerStay = true;
 
