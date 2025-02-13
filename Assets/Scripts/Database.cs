@@ -33,9 +33,12 @@ public class Database : MonoBehaviour
 
         DontDestroyOnLoad(this);
 
-        database = Firebase.CreateNew("https://webdeeplift-default-rtdb.europe-west1.firebasedatabase.app/", "AIzaSyBBXnBzxqUZ_H1sHF4fX34Mcm_e27bv0GY");
+        if (PlayerPrefs.HasKey(DataBasePlayerPrefs.ANON) == false)
+        {
+            database = Firebase.CreateNew("https://webdeeplift-default-rtdb.europe-west1.firebasedatabase.app/", "AIzaSyBBXnBzxqUZ_H1sHF4fX34Mcm_e27bv0GY");
 
-        Subscription();
+            Subscription();
+        }
 
         if (PlayIdServices.Instance.Auth.SavedUser != null || PlayerPrefs.HasKey(DataBasePlayerPrefs.ANON))
             InitAuth();
@@ -76,6 +79,9 @@ public class Database : MonoBehaviour
 
     private void OnDisable()
     {
+        if (PlayerPrefs.HasKey(DataBasePlayerPrefs.ANON) == true)
+            return;
+
         Unsubscription();
     }
 
