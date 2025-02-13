@@ -1232,7 +1232,7 @@ Canvas:
   m_GameObject: {fileID: 517180636}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 1538486035182364876}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1243,7 +1243,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1805268515
   m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &517180639
@@ -7866,7 +7866,7 @@ PrefabInstance:
       objectReference: {fileID: 1270309237741261519}
     - target: {fileID: 2836030155407299732, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -38340036
+      value: -38354932
       objectReference: {fileID: 0}
     - target: {fileID: 2906555578986774441, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchorMax.x
@@ -9715,7 +9715,7 @@ Canvas:
   m_GameObject: {fileID: 2446397282435023440}
   m_Enabled: 0
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 1538486035182364876}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -9726,7 +9726,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: -1
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1805268515
   m_SortingOrder: 104
   m_TargetDisplay: 0
 --- !u!224 &6217498218463473915
@@ -10932,7 +10932,7 @@ Canvas:
   m_GameObject: {fileID: 7658924072994137553}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 1538486035182364876}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -10943,7 +10943,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1805268515
   m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &7658924072994137557
@@ -13954,7 +13954,7 @@ Canvas:
   m_GameObject: {fileID: 759357483899477460}
   m_Enabled: 0
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 1538486035182364876}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -13965,7 +13965,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: -1
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1805268515
   m_SortingOrder: 300
   m_TargetDisplay: 0
 --- !u!1660057539 &9223372036854775807
