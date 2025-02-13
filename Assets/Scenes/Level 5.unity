@@ -1450,6 +1450,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &522949355 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 177529220115320187, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
+  m_PrefabInstance: {fileID: 1451517928097795727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &558220395 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6607658715890031953, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
@@ -3595,9 +3600,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1171213297 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7552478084424998172, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
+  m_PrefabInstance: {fileID: 1451517928097795727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!212 &1177433801 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 2086142018863740933, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
+  m_PrefabInstance: {fileID: 1451517928097795727}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1177433804 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 983762799331069412, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
   m_PrefabInstance: {fileID: 1451517928097795727}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1287695555
@@ -4330,6 +4345,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 527657389681939192}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1698424235 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 9016418505435820247, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
+  m_PrefabInstance: {fileID: 1451517928097795727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1724988395
 GameObject:
   m_ObjectHideFlags: 0
@@ -5766,6 +5786,30 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1538486035182364876}
+    - target: {fileID: 5927248897894091004, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
+      propertyPath: colliders.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927248897894091004, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
+      propertyPath: 'colliders.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1451517928097795742}
+    - target: {fileID: 5927248897894091004, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
+      propertyPath: 'colliders.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1698424235}
+    - target: {fileID: 5927248897894091004, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
+      propertyPath: 'colliders.Array.data[2]'
+      value: 
+      objectReference: {fileID: 522949355}
+    - target: {fileID: 5927248897894091004, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
+      propertyPath: 'colliders.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1177433804}
+    - target: {fileID: 5927248897894091004, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
+      propertyPath: 'colliders.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1171213297}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5837,6 +5881,11 @@ MonoBehaviour:
 --- !u!1 &1451517928097795737 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4271464081136954033, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
+  m_PrefabInstance: {fileID: 1451517928097795727}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1451517928097795742 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 1297632741621259242, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
   m_PrefabInstance: {fileID: 1451517928097795727}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1453596978845742794
@@ -6953,7 +7002,7 @@ PrefabInstance:
       objectReference: {fileID: 1270309237741261519}
     - target: {fileID: 2836030155407299732, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -46332804
+      value: -46355908
       objectReference: {fileID: 0}
     - target: {fileID: 2906555578986774441, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchorMax.x
@@ -7448,7 +7497,6 @@ MonoBehaviour:
   nameCounterUp: Up
   nameCounterDown: Down
   buttons: {fileID: 1270309237741261520}
-  liftFg: {fileID: 5224049724352672349}
   mainPlayerSprite: {fileID: 1177433801}
   OnEnteredLift:
     m_PersistentCalls:

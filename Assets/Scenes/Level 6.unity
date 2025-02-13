@@ -758,6 +758,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271011822}
   m_CullTransparentMesh: 1
+--- !u!212 &307752610 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2086142018863740933, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
+  m_PrefabInstance: {fileID: 1451517928097795727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &317036141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1222,7 +1227,7 @@ Canvas:
   m_GameObject: {fileID: 517180636}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1538486035182364876}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -7534,7 +7539,7 @@ PrefabInstance:
       objectReference: {fileID: 1270309237741261519}
     - target: {fileID: 2836030155407299732, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -46577828
+      value: -46597588
       objectReference: {fileID: 0}
     - target: {fileID: 2906555578986774441, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchorMax.x
@@ -8108,10 +8113,10 @@ MonoBehaviour:
   nameCounterUp: Up
   nameCounterDown: Down
   buttons: {fileID: 1270309237741261520}
-  sprite:
-    spriteRenderer: {fileID: 5224049724352672349}
-    newSortingOrder: 9
-    defaultSortingOrder: 4
+  mainPlayerSprite: {fileID: 307752610}
+  OnEnteredLift:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4457915321237478778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9243,7 +9248,7 @@ PrefabInstance:
     - target: {fileID: 1262438562856182697, guid: 69d2b914b923ef149bf85cecaec06abd, type: 3}
       propertyPath: poolsPreset
       value: 
-      objectReference: {fileID: 11400000, guid: 5d8cb093fdc0bf847b7b355b30047378, type: 2}
+      objectReference: {fileID: 11400000, guid: dfe1c9890c476d5458da777a62c4504b, type: 2}
     - target: {fileID: 1262438562856182697, guid: 69d2b914b923ef149bf85cecaec06abd, type: 3}
       propertyPath: preloadPoolsType
       value: 1
@@ -9404,7 +9409,7 @@ Canvas:
   m_GameObject: {fileID: 2446397282435023440}
   m_Enabled: 0
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1538486035182364876}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -10714,7 +10719,7 @@ Canvas:
   m_GameObject: {fileID: 7658924072994137553}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1538486035182364876}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -13677,7 +13682,7 @@ Canvas:
   m_GameObject: {fileID: 759357483899477460}
   m_Enabled: 0
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1538486035182364876}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
