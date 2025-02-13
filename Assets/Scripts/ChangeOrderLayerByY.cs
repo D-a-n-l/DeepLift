@@ -16,6 +16,9 @@ public class ChangeOrderLayerByY : MonoBehaviour
 
     private void OnEnable()
     {
+        if (isUpdate == true)
+            return;
+
         InvokeRepeating(nameof(Set), 0.5f, 5f);
     }
 

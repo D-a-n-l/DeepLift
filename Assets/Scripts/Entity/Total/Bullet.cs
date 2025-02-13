@@ -91,16 +91,14 @@ public class Bullet : MonoBehaviour
 
                 if (player != null && Vector2.Distance(player.transform.position, transform.position) > distanceToPlayer)
                 {
-                    //sprite.spriteRenderer.sortingOrder = sprite.newSortingOrder;
-
                     isReady = false;
+
                     collider2d.enabled = isReady;
                 }
                 else
                 {
-                    //sprite.spriteRenderer.sortingOrder = sprite.defaultSortingOrder;
-
                     isReady = false;
+
                     collider2d.enabled = isReady;
                 }
             }
