@@ -1084,6 +1084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliders:
+  - {fileID: 1297632741621259242}
   - {fileID: 9016418505435820247}
   - {fileID: 177529220115320187}
   - {fileID: 983762799331069412}
