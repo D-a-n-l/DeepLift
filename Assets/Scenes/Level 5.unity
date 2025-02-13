@@ -1635,6 +1635,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &631990038 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4768086981104900559, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
+  m_PrefabInstance: {fileID: 1451517928097795727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &695244891
 GameObject:
   m_ObjectHideFlags: 0
@@ -3595,6 +3600,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1177433799 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8416710294178097213, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
+  m_PrefabInstance: {fileID: 1451517928097795727}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1177433801 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2086142018863740933, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
+  m_PrefabInstance: {fileID: 1451517928097795727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1287695555
 GameObject:
   m_ObjectHideFlags: 0
@@ -4064,6 +4079,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &1495461607 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 196358598882683293, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
+  m_PrefabInstance: {fileID: 1451517928097795727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1501071945
 GameObject:
   m_ObjectHideFlags: 0
@@ -5768,7 +5788,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4271464081136954033, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1451517928097795742}
   m_SourcePrefab: {fileID: 100100000, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
 --- !u!114 &1451517928097795728 stripped
 MonoBehaviour:
@@ -5838,6 +5861,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4271464081136954033, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
   m_PrefabInstance: {fileID: 1451517928097795727}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1451517928097795742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451517928097795737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf3e4cc2a9e1b7449bb64ad6c32ab425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  root: {fileID: 1177433799}
+  isUpdate: 1
+  sprites:
+  - spriteRenderer: {fileID: 631990038}
+    offset: 1
+  - spriteRenderer: {fileID: 1495461607}
+    offset: 0
+  - spriteRenderer: {fileID: 1177433801}
+    offset: 0
 --- !u!114 &1453596978845742794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6956,7 +7000,7 @@ PrefabInstance:
       objectReference: {fileID: 1270309237741261519}
     - target: {fileID: 2836030155407299732, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -44688468
+      value: -45566724
       objectReference: {fileID: 0}
     - target: {fileID: 2906555578986774441, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchorMax.x
@@ -7451,10 +7495,8 @@ MonoBehaviour:
   nameCounterUp: Up
   nameCounterDown: Down
   buttons: {fileID: 1270309237741261520}
-  sprite:
-    spriteRenderer: {fileID: 5224049724352672349}
-    newSortingOrder: 9
-    defaultSortingOrder: 4
+  liftFg: {fileID: 5224049724352672349}
+  mainPlayerSprite: {fileID: 1177433801}
   OnEnteredLift:
     m_PersistentCalls:
       m_Calls: []
@@ -8751,7 +8793,7 @@ PrefabInstance:
     - target: {fileID: 1262438562856182697, guid: 69d2b914b923ef149bf85cecaec06abd, type: 3}
       propertyPath: poolsPreset
       value: 
-      objectReference: {fileID: 11400000, guid: 5d8cb093fdc0bf847b7b355b30047378, type: 2}
+      objectReference: {fileID: 11400000, guid: 83df38dc2323daa4c8a0cab0583b3888, type: 2}
     - target: {fileID: 1262438562856182697, guid: 69d2b914b923ef149bf85cecaec06abd, type: 3}
       propertyPath: preloadPoolsType
       value: 1

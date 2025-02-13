@@ -49,7 +49,10 @@ public class GameManager : MonoBehaviour
     private Canvas buttons;
 
     [SerializeField]
-    private PresetSpriteRenderer sprite;
+    private SpriteRenderer liftFg;
+
+    [SerializeField]
+    private SpriteRenderer mainPlayerSprite;
 
     private RandomAnimations animator;
 
@@ -108,7 +111,7 @@ public class GameManager : MonoBehaviour
 
             buttons.enabled = false;
 
-            //sprite.spriteRenderer.sortingOrder = sprite.newSortingOrder;
+            liftFg.sortingOrder = mainPlayerSprite.sortingOrder + 1;
 
             isPlayerStay = true;
 
