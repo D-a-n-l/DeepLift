@@ -5507,14 +5507,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1538486035182364876}
-    - target: {fileID: 3963771184934940640, guid: 051882b41fccb324599bb3303cd93770, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3963771184934940640, guid: 051882b41fccb324599bb3303cd93770, type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4221669217845906902, guid: 051882b41fccb324599bb3303cd93770, type: 3}
       propertyPath: particles.Array.data[0].spawnPosition
       value: 
@@ -6344,14 +6336,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1538486035182364876}
-    - target: {fileID: 3621344614649110669, guid: a668a6cf199b66248b9a421920a9c866, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3621344614649110669, guid: a668a6cf199b66248b9a421920a9c866, type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4343121811069294318, guid: a668a6cf199b66248b9a421920a9c866, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -6969,7 +6953,7 @@ PrefabInstance:
       objectReference: {fileID: 1270309237741261519}
     - target: {fileID: 2836030155407299732, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -46316996
+      value: -46332804
       objectReference: {fileID: 0}
     - target: {fileID: 2906555578986774441, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchorMax.x
@@ -7131,10 +7115,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1538486035182364876}
-    - target: {fileID: 8547332518282137808, guid: be120670cc6043a4bb787dfe85295878, type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8619278031904698371, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -7223,10 +7203,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1538486035182364876}
-    - target: {fileID: 414777849178270257, guid: 9f6f6ab8b1ae38d4b9c4d1e8c3b209d7, type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1162717803607174096, guid: 9f6f6ab8b1ae38d4b9c4d1e8c3b209d7, type: 3}
       propertyPath: m_Name
       value: Settings Buttons
@@ -8405,10 +8381,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1538486035182364876}
-    - target: {fileID: 5006579449575282434, guid: 8bbf3fb9f9bdcff4ba154fdf171cf97f, type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5856202125411731983, guid: 8bbf3fb9f9bdcff4ba154fdf171cf97f, type: 3}
       propertyPath: m_Name
       value: MenuButtons
@@ -9547,10 +9519,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1538486035182364876}
-    - target: {fileID: 4582630604266184548, guid: b57417f6467c86149a4deebe413694e4, type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4671731512447165411, guid: b57417f6467c86149a4deebe413694e4, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -9934,10 +9902,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1538486035182364876}
-    - target: {fileID: 4853408328557004860, guid: 61786267645532646ae4da3f5cc1365d, type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12504,14 +12468,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasTask
       objectReference: {fileID: 0}
+    - target: {fileID: 3824270377860410213, guid: 97137b0930e356340a55807e94f48726, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5558796863649255377, guid: 97137b0930e356340a55807e94f48726, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1538486035182364876}
-    - target: {fileID: 5558796863649255377, guid: 97137b0930e356340a55807e94f48726, type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
