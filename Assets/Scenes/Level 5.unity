@@ -1329,7 +1329,7 @@ Canvas:
   m_GameObject: {fileID: 517180636}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1538486035182364876}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1635,11 +1635,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!212 &631990038 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 4768086981104900559, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
-  m_PrefabInstance: {fileID: 1451517928097795727}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &695244891
 GameObject:
   m_ObjectHideFlags: 0
@@ -3600,11 +3595,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1177433799 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8416710294178097213, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
-  m_PrefabInstance: {fileID: 1451517928097795727}
-  m_PrefabAsset: {fileID: 0}
 --- !u!212 &1177433801 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 2086142018863740933, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
@@ -4079,11 +4069,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!212 &1495461607 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 196358598882683293, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
-  m_PrefabInstance: {fileID: 1451517928097795727}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1501071945
 GameObject:
   m_ObjectHideFlags: 0
@@ -5522,6 +5507,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1538486035182364876}
+    - target: {fileID: 3963771184934940640, guid: 051882b41fccb324599bb3303cd93770, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3963771184934940640, guid: 051882b41fccb324599bb3303cd93770, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4221669217845906902, guid: 051882b41fccb324599bb3303cd93770, type: 3}
       propertyPath: particles.Array.data[0].spawnPosition
       value: 
@@ -5721,10 +5714,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1037009197722545094, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
-      propertyPath: maxHealth
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 2152227034998806728, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
       propertyPath: joystick
       value: 
@@ -5788,10 +5777,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4271464081136954033, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1451517928097795742}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
 --- !u!114 &1451517928097795728 stripped
 MonoBehaviour:
@@ -5861,27 +5847,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4271464081136954033, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
   m_PrefabInstance: {fileID: 1451517928097795727}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1451517928097795742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1451517928097795737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf3e4cc2a9e1b7449bb64ad6c32ab425, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  root: {fileID: 1177433799}
-  isUpdate: 1
-  sprites:
-  - spriteRenderer: {fileID: 631990038}
-    offset: 1
-  - spriteRenderer: {fileID: 1495461607}
-    offset: 0
-  - spriteRenderer: {fileID: 1177433801}
-    offset: 0
 --- !u!114 &1453596978845742794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6381,6 +6346,10 @@ PrefabInstance:
       objectReference: {fileID: 1538486035182364876}
     - target: {fileID: 3621344614649110669, guid: a668a6cf199b66248b9a421920a9c866, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3621344614649110669, guid: a668a6cf199b66248b9a421920a9c866, type: 3}
+      propertyPath: m_RenderMode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4343121811069294318, guid: a668a6cf199b66248b9a421920a9c866, type: 3}
@@ -7000,7 +6969,7 @@ PrefabInstance:
       objectReference: {fileID: 1270309237741261519}
     - target: {fileID: 2836030155407299732, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -45566724
+      value: -46316996
       objectReference: {fileID: 0}
     - target: {fileID: 2906555578986774441, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchorMax.x
@@ -7162,6 +7131,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1538486035182364876}
+    - target: {fileID: 8547332518282137808, guid: be120670cc6043a4bb787dfe85295878, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8619278031904698371, guid: be120670cc6043a4bb787dfe85295878, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -7250,6 +7223,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1538486035182364876}
+    - target: {fileID: 414777849178270257, guid: 9f6f6ab8b1ae38d4b9c4d1e8c3b209d7, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1162717803607174096, guid: 9f6f6ab8b1ae38d4b9c4d1e8c3b209d7, type: 3}
       propertyPath: m_Name
       value: Settings Buttons
@@ -8428,6 +8405,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1538486035182364876}
+    - target: {fileID: 5006579449575282434, guid: 8bbf3fb9f9bdcff4ba154fdf171cf97f, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5856202125411731983, guid: 8bbf3fb9f9bdcff4ba154fdf171cf97f, type: 3}
       propertyPath: m_Name
       value: MenuButtons
@@ -9000,7 +8981,7 @@ Canvas:
   m_GameObject: {fileID: 2446397282435023440}
   m_Enabled: 0
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1538486035182364876}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -9566,6 +9547,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1538486035182364876}
+    - target: {fileID: 4582630604266184548, guid: b57417f6467c86149a4deebe413694e4, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4671731512447165411, guid: b57417f6467c86149a4deebe413694e4, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -9949,6 +9934,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1538486035182364876}
+    - target: {fileID: 4853408328557004860, guid: 61786267645532646ae4da3f5cc1365d, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10377,7 +10366,7 @@ Canvas:
   m_GameObject: {fileID: 7658924072994137553}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1538486035182364876}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -12519,6 +12508,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1538486035182364876}
+    - target: {fileID: 5558796863649255377, guid: 97137b0930e356340a55807e94f48726, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13451,7 +13444,7 @@ Canvas:
   m_GameObject: {fileID: 759357483899477460}
   m_Enabled: 0
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1538486035182364876}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
