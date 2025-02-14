@@ -3,18 +3,17 @@ using System.Runtime.InteropServices;
 using System;
 using UnityEngine;
 using System.Web;
-using Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 
-public class TelegramManager : MonoBehaviour
+public class Database : MonoBehaviour
 {
-    public static TelegramManager Instance;
+    public static Database Instance;
 
     [SerializeField]
     private ChangeLevelManager levelManager;
 
-    private SimpleFirebaseUnity.Firebase database;
+    private Firebase database;
 
     private string tgUsers = "tg_users";
 
@@ -27,46 +26,49 @@ public class TelegramManager : MonoBehaviour
     [DllImport("__Internal")]
     private static extern int GetTelegramUserId();
 
-    string GetUsernameFromUrl()
+    private void Awake()
+    {
+        Instance = this;
+
+        DontDestroyOnLoad(this);
+
+        Subscription();
+
+        StartInit();
+    }
+
+    public void StartInit()
+    {
+        database = Firebase.CreateNew("https://webdeeplift-default-rtdb.europe-west1.firebasedatabase.app/", "AIzaSyBBXnBzxqUZ_H1sHF4fX34Mcm_e27bv0GY");
+
+        InitUser();
+    }
+
+    private void InitUser()
+    {
+        idCurrentUser = GetTelegramUserId();
+
+        usernameCurrentUser = GetUsernameFromUrl();
+
+        database.Child($"{tgUsers}", true).GetValue();
+    }
+
+    private string GetUsernameFromUrl()
     {
         string url = Application.absoluteURL;
+
         Uri uri = new Uri(url);
+
         string query = uri.Query;
 
         if (!string.IsNullOrEmpty(query))
         {
             var parameters = HttpUtility.ParseQueryString(query);
+
             return parameters["username"];
         }
 
         return null;
-    }
-
-    private void Awake()
-    {
-        Instance = this;
-
-        database = SimpleFirebaseUnity.Firebase.CreateNew("https://webdeeplift-default-rtdb.europe-west1.firebasedatabase.app/", "AIzaSyBBXnBzxqUZ_H1sHF4fX34Mcm_e27bv0GY");
-
-        Subscription();
-
-        InitTgUser();
-
-        DontDestroyOnLoad(this);
-    }
-
-    private void InitTgUser()
-    {
-        //int id_user = GetTelegramUserId();
-        idCurrentUser = GetTelegramUserId();
-        usernameCurrentUser = GetUsernameFromUrl();
-        database.Child($"{tgUsers}", true).GetValue();
-
-        //TelegramUser user = new TelegramUser(id_user, 0);
-
-        //string userJson = JsonUtility.ToJson(user);
-
-        //database.Child($"{tg_users}/{id_user}").SetValue(userJson, true);
     }
 
     private void OnDisable()
@@ -95,11 +97,10 @@ public class TelegramManager : MonoBehaviour
     {
         database.Child($"{tgUsers}/{idCurrentUser}/level").GetValue();
 
-        print("Get level " + levelCurrentUser);
         return levelCurrentUser;
     }
 
-    private void GetOKHandler(SimpleFirebaseUnity.Firebase sender, DataSnapshot snapshot)
+    private void GetOKHandler(Firebase sender, DataSnapshot snapshot)
     {
         User user = new User(0, "", 0);
 
@@ -140,10 +141,9 @@ public class TelegramManager : MonoBehaviour
         levelManager.UnlockLevels(user.level);
 
         levelCurrentUser = user.level;
-        print("OK Handler " +levelCurrentUser);
     }
 
-    private void GetFailHandler(SimpleFirebaseUnity.Firebase sender, FirebaseError err)
+    private void GetFailHandler(Firebase sender, FirebaseError err)
     {
         Debug.Log("[ERR] Get from key: <" + sender.FullKey + ">,  " + err.Message + " (" + (int)err.Status + ")");
     }
@@ -153,13 +153,17 @@ public class TelegramManager : MonoBehaviour
 public class User
 {
     public int id;
+
     public string username;
+
     public int level;
 
     public User(int id, string username, int level)
     {
         this.id = id;
+
         this.username = username;
+
         this.level = level;
     }
 }
