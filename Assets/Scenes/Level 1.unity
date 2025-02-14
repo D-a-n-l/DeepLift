@@ -4290,6 +4290,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 861927906}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1762498858 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2086142018863740933, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
+  m_PrefabInstance: {fileID: 1451517928097795727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1781855742
 GameObject:
   m_ObjectHideFlags: 0
@@ -7564,7 +7569,7 @@ MonoBehaviour:
   nameCounterUp: Up
   nameCounterDown: Down
   buttons: {fileID: 1270309237741261520}
-  spritePlayer: {fileID: 0}
+  spritePlayer: {fileID: 1762498858}
   OnEnteredLift:
     m_PersistentCalls:
       m_Calls: []
@@ -7912,7 +7917,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: 2096288957, guid: 7be71e0aedf0a5a4a80d5187864ea559, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
