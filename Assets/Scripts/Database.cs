@@ -23,6 +23,8 @@ public class Database : MonoBehaviour
 
     private int levelCurrentUser;
 
+    private bool isHaveUser = false;
+
     [DllImport("__Internal")]
     private static extern int GetTelegramUserId();
 
@@ -32,9 +34,9 @@ public class Database : MonoBehaviour
 
         DontDestroyOnLoad(this);
 
-        Subscription();
-
         StartInit();
+
+        Subscription();
     }
 
     public void StartInit()
@@ -90,6 +92,8 @@ public class Database : MonoBehaviour
 
     public void SaveLevel(int level)
     {
+        level--;
+
         database.Child($"{tgUsers}/{idCurrentUser}/level").SetValue(level);
     }
 
@@ -102,7 +106,7 @@ public class Database : MonoBehaviour
 
     private void GetOKHandler(Firebase sender, DataSnapshot snapshot)
     {
-        User user = new User(0, "", 0);
+        User user = new User(0, "", 1);
 
         Dictionary<string, User> data = JsonConvert.DeserializeObject<Dictionary<string, User>>(snapshot.RawJson);
 
@@ -123,15 +127,22 @@ public class Database : MonoBehaviour
                         string userJson = JsonUtility.ToJson(user);
 
                         database.Child($"{tgUsers}/{idCurrentUser}").SetValue(userJson, true);
-                    }
 
-                    break;
+                        isHaveUser = true;
+
+                        break;
+                    }
                 }
             }
         }
-        catch
+        catch (Exception e)
         {
-            user = new User(idCurrentUser, usernameCurrentUser,1);
+            Debug.LogError(e);
+        }
+
+        if (isHaveUser == false)
+        {
+            user = new User(idCurrentUser, usernameCurrentUser, 1);
 
             string userJson = JsonUtility.ToJson(user);
 
