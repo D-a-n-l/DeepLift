@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     private Canvas buttons;
 
     [SerializeField]
-    private SpriteRenderer spritePlayer;
+    private SpriteRenderer mainPlayerSprite;
 
     private RandomAnimations animator;
 
@@ -108,11 +108,13 @@ public class GameManager : MonoBehaviour
 
             player.GetComponent<SwitchOffColliders>().Set(false);
 
+            player.GetComponent<ChangeOrderLayerByY>().enabled = false;
+
             healthBar.SetActive(false);
 
             buttons.enabled = false;
 
-            spritePlayer.sortingOrder = 4;
+            mainPlayerSprite.sortingOrder = 4;
 
             isPlayerStay = true;
 
