@@ -48,6 +48,8 @@ public class CheckInternet : MonoBehaviour
                 {
                     ChangeTime.Set(1);
 
+                    Database.Instance.InitAuth();
+
                     OnEnabledInternet?.Invoke();
                 }
                 else

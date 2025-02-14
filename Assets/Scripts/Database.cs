@@ -4,12 +4,15 @@ using UnityEngine;
 using System.Collections.Generic;
 using Assets.PlayId.Scripts;
 using Newtonsoft.Json;
+using Unity.VisualScripting;
 
 public class Database : MonoBehaviour
 {
     public static Database Instance;
 
     private Firebase database;
+
+    public Firebase DB => database;
 
     public int Level => level;
 
@@ -34,11 +37,14 @@ public class Database : MonoBehaviour
         DontDestroyOnLoad(this);
 
         if (PlayerPrefs.HasKey(DataBasePlayerPrefs.ANON) == false)
-        {
-            database = Firebase.CreateNew("https://webdeeplift-default-rtdb.europe-west1.firebasedatabase.app/", "AIzaSyBBXnBzxqUZ_H1sHF4fX34Mcm_e27bv0GY");
+            StartInit();
+    }
 
-            Subscription();
-        }
+    public void StartInit()
+    {
+        database = Firebase.CreateNew("https://webdeeplift-default-rtdb.europe-west1.firebasedatabase.app/", "AIzaSyBBXnBzxqUZ_H1sHF4fX34Mcm_e27bv0GY");
+
+        Subscription();
 
         if (PlayIdServices.Instance.Auth.SavedUser != null || PlayerPrefs.HasKey(DataBasePlayerPrefs.ANON))
             InitAuth();
