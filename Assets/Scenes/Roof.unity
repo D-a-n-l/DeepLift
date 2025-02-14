@@ -1187,6 +1187,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6129598909351062147, guid: be4baafe7b81dcd40916935b353ce16b, type: 3}
   m_PrefabInstance: {fileID: 1237695245}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &642921305 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2086142018863740933, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
+  m_PrefabInstance: {fileID: 6054338557990686177}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &684694912
 GameObject:
   m_ObjectHideFlags: 0
@@ -2173,6 +2178,10 @@ PrefabInstance:
       propertyPath: followingTarget
       value: 
       objectReference: {fileID: 631392202996098605}
+    - target: {fileID: 911596780653211124, guid: be4baafe7b81dcd40916935b353ce16b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1634154984056067120, guid: be4baafe7b81dcd40916935b353ce16b, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -2338,9 +2347,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8786947383328835088, guid: be4baafe7b81dcd40916935b353ce16b, type: 3}
+      propertyPath: spritePlayer
+      value: 
+      objectReference: {fileID: 642921305}
+    - target: {fileID: 8786947383328835088, guid: be4baafe7b81dcd40916935b353ce16b, type: 3}
       propertyPath: transitionLevel
       value: 
       objectReference: {fileID: 3022469008818782721}
+    - target: {fileID: 8786947383328835088, guid: be4baafe7b81dcd40916935b353ce16b, type: 3}
+      propertyPath: mainPlayerSprite
+      value: 
+      objectReference: {fileID: 642921305}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
