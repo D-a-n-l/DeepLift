@@ -7569,7 +7569,7 @@ MonoBehaviour:
   nameCounterUp: Up
   nameCounterDown: Down
   buttons: {fileID: 1270309237741261520}
-  spritePlayer: {fileID: 1762498858}
+  mainPlayerSprite: {fileID: 1762498858}
   OnEnteredLift:
     m_PersistentCalls:
       m_Calls: []
