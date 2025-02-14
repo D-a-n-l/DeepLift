@@ -10593,7 +10593,7 @@ PrefabInstance:
     - target: {fileID: 1262438562856182697, guid: 69d2b914b923ef149bf85cecaec06abd, type: 3}
       propertyPath: poolsPreset
       value: 
-      objectReference: {fileID: 11400000, guid: 5d8cb093fdc0bf847b7b355b30047378, type: 2}
+      objectReference: {fileID: 11400000, guid: 0eacc327d8046e2439d752dfb2e12724, type: 2}
     - target: {fileID: 1262438562856182697, guid: 69d2b914b923ef149bf85cecaec06abd, type: 3}
       propertyPath: preloadPoolsType
       value: 1
