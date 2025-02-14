@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     private Canvas buttons;
 
     [SerializeField]
-    private PresetSpriteRenderer sprite;
+    private SpriteRenderer spritePlayer;
 
     private RandomAnimations animator;
 
@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
 
             buttons.enabled = false;
 
-            sprite.spriteRenderer.sortingOrder = sprite.newSortingOrder;
+            spritePlayer.sortingOrder = 4;
 
             isPlayerStay = true;
 
