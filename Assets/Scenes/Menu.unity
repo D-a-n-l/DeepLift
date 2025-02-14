@@ -685,12 +685,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 269550033}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c97afc556caea1c44969477eb7ddec74, type: 3}
+  m_Script: {fileID: 11500000, guid: 41e1d49bed5b14a40a5dd3936e4e5032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConformX: 1
-  ConformY: 1
-  Logging: 0
 --- !u!224 &351603368 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6162945283293809919, guid: be120670cc6043a4bb787dfe85295878, type: 3}
@@ -2708,7 +2705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83ac1bd62a7236429d91de2a981781f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelManager: {fileID: 0}
+  levelManager: {fileID: 434416095}
 --- !u!1 &1114509302
 GameObject:
   m_ObjectHideFlags: 0
@@ -4604,12 +4601,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1627685426}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c97afc556caea1c44969477eb7ddec74, type: 3}
+  m_Script: {fileID: 11500000, guid: 41e1d49bed5b14a40a5dd3936e4e5032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConformX: 1
-  ConformY: 1
-  Logging: 0
 --- !u!1 &1655910607
 GameObject:
   m_ObjectHideFlags: 0
