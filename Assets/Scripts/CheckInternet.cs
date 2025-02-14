@@ -1,0 +1,64 @@
+using UnityEngine;
+using UnityEngine.Events;
+using System.Collections;
+
+public class CheckInternet : MonoBehaviour
+{
+    [SerializeField]
+    private float checkInterval = 5f;
+
+    [Space(10)]
+    [SerializeField] 
+    private UnityEvent OnEnabledInternet;
+
+    [SerializeField] 
+    private UnityEvent OnDisabledInternet;
+
+    private WaitForSecondsRealtime wait;
+
+    private bool isConnected = true;
+
+    private void Start()
+    {
+        wait = new WaitForSecondsRealtime(checkInterval);
+
+        DontDestroyOnLoad(this);
+
+        StartCoroutine(CheckInternetCoroutine());
+    }
+
+    private IEnumerator CheckInternetCoroutine()
+    {
+        while (true)
+        {
+            bool newConnectionState = IsInternetAvailable();
+
+            if (newConnectionState != isConnected)
+            {
+                isConnected = newConnectionState;
+
+                if (isConnected)
+                {
+                    ChangeTime.Set(1);
+
+                    //Database.Instance.InitAuth();
+
+                    OnEnabledInternet?.Invoke();
+                }
+                else
+                {
+                    ChangeTime.Set(0);
+
+                    OnDisabledInternet?.Invoke();
+                }
+            }
+
+            yield return wait;
+        }
+    }
+
+    private bool IsInternetAvailable()
+    {
+        return Application.internetReachability != NetworkReachability.NotReachable;
+    }
+}
