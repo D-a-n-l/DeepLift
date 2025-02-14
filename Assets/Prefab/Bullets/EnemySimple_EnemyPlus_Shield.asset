@@ -10,12 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1675ca1885e647e88c4e999d1164b08c, type: 3}
-  m_Name: EnemySimple_Shield
+  m_Name: EnemySimple_EnemyPlus_Shield
   m_EditorClassIdentifier: 
   _poolPresets:
   - _name: Enemy Simple
     _enabled: 1
     _prefab: {fileID: 3106572320392075313, guid: 257d30e984acc86429fb2c4f9c1f8e08, type: 3}
+    _behaviourOnCapacityReached: 3
+    _despawnType: 2
+    _callbacksType: 1
+    _capacity: 30
+    _preloadSize: 30
+    _dontDestroyOnLoad: 0
+    _warnings: 0
+  - _name: Enemy Simple Plus
+    _enabled: 1
+    _prefab: {fileID: 2857951423085333796, guid: b41c405b4545c6442a7a897371393d7a, type: 3}
     _behaviourOnCapacityReached: 3
     _despawnType: 2
     _callbacksType: 1
