@@ -1536,7 +1536,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1805268515
   m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &517180639
@@ -6278,6 +6278,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &1844104288 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2086142018863740933, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
+  m_PrefabInstance: {fileID: 1451517928097795727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1858977331
 GameObject:
   m_ObjectHideFlags: 0
@@ -7436,7 +7441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1037009197722545094, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
       propertyPath: maxHealth
-      value: 1000
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2152227034998806728, guid: d52f28aa606fee44080497d5972a0c58, type: 3}
       propertyPath: joystick
@@ -9481,10 +9486,7 @@ MonoBehaviour:
   nameCounterUp: Up
   nameCounterDown: Down
   buttons: {fileID: 1270309237741261520}
-  sprite:
-    spriteRenderer: {fileID: 5224049724352672349}
-    newSortingOrder: 9
-    defaultSortingOrder: 4
+  mainPlayerSprite: {fileID: 1844104288}
   OnEnteredLift:
     m_PersistentCalls:
       m_Calls: []
@@ -10000,7 +10002,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: 2096288957, guid: 7be71e0aedf0a5a4a80d5187864ea559, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10732,7 +10734,7 @@ PrefabInstance:
     - target: {fileID: 1262438562856182697, guid: 69d2b914b923ef149bf85cecaec06abd, type: 3}
       propertyPath: poolsPreset
       value: 
-      objectReference: {fileID: 11400000, guid: 5d8cb093fdc0bf847b7b355b30047378, type: 2}
+      objectReference: {fileID: 11400000, guid: cfa0f78dadc927a48a1b7797e5a7ba4e, type: 2}
     - target: {fileID: 1262438562856182697, guid: 69d2b914b923ef149bf85cecaec06abd, type: 3}
       propertyPath: preloadPoolsType
       value: 1
@@ -10883,7 +10885,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: -1
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1805268515
   m_SortingOrder: 104
   m_TargetDisplay: 0
 --- !u!224 &6217498218463473915
@@ -12226,7 +12228,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1805268515
   m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &7658924072994137557
@@ -14795,7 +14797,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: -1
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1805268515
   m_SortingOrder: 300
   m_TargetDisplay: 0
 --- !u!1 &9124092385124259190
