@@ -35,13 +35,13 @@ public class Database : MonoBehaviour
         DontDestroyOnLoad(this);
 
         StartInit();
-
-        Subscription();
     }
 
     public void StartInit()
     {
         database = Firebase.CreateNew("https://webdeeplift-default-rtdb.europe-west1.firebasedatabase.app/", "AIzaSyBBXnBzxqUZ_H1sHF4fX34Mcm_e27bv0GY");
+
+        Subscription();
 
         InitUser();
     }
@@ -106,25 +106,25 @@ public class Database : MonoBehaviour
 
     private void GetOKHandler(Firebase sender, DataSnapshot snapshot)
     {
-        User user = new User(0, "", 1);
-
-        Dictionary<string, User> data = JsonConvert.DeserializeObject<Dictionary<string, User>>(snapshot.RawJson);
+        User user = new User(0, 1, "");
 
         try
         {
+            Dictionary<string, User> data = JsonConvert.DeserializeObject<Dictionary<string, User>>(snapshot.RawJson);
+
             user = JsonUtility.FromJson<User>(snapshot.RawJson);
 
             foreach (var entry in data)
             {
                 if (entry.Value.username == usernameCurrentUser)
                 {
-                    user = new User(idCurrentUser, entry.Value.username, entry.Value.level);
+                    user = new User(idCurrentUser, entry.Value.level, usernameCurrentUser);
 
                     if (entry.Value.id != idCurrentUser)
                     {
-                        database.Child($"{tgUsers}/{entry.Value.id}").Delete();
-
                         string userJson = JsonUtility.ToJson(user);
+
+                        database.Child($"{tgUsers}/{entry.Value.id}").Delete();
 
                         database.Child($"{tgUsers}/{idCurrentUser}").SetValue(userJson, true);
 
@@ -137,12 +137,12 @@ public class Database : MonoBehaviour
         }
         catch (Exception e)
         {
-            Debug.LogError(e);
+            Debug.Log(e);
         }
 
         if (isHaveUser == false)
         {
-            user = new User(idCurrentUser, usernameCurrentUser, 1);
+            user = new User(idCurrentUser, 1, usernameCurrentUser);
 
             string userJson = JsonUtility.ToJson(user);
 
@@ -165,16 +165,16 @@ public class User
 {
     public int id;
 
-    public string username;
-
     public int level;
 
-    public User(int id, string username, int level)
+    public string username;
+
+    public User(int id, int level, string username)
     {
         this.id = id;
 
-        this.username = username;
-
         this.level = level;
+
+        this.username = username;
     }
 }
