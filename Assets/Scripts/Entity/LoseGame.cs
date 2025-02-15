@@ -4,9 +4,6 @@ public class LoseGame : MonoBehaviour
 {
     public static LoseGame Instance;
 
-    [SerializeField]
-    private RewardedAdsButton rewardedAdsButton;
-
     [Space(5)]
     [SerializeField]
     private HealthControl player;
@@ -50,8 +47,6 @@ public class LoseGame : MonoBehaviour
     private void EnableMenu()
     {
         ChangeTime.Set(0);
-
-        rewardedAdsButton.LoadAd();
 
         switchOffColliders.Set(false);
 
