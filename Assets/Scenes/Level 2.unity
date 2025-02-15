@@ -4122,11 +4122,11 @@ MonoBehaviour:
   - _gameObject: {fileID: 5978604129346964880}
     _prefab: Assets/Prefab/Object/NightPoolGlobal.prefab
   - _gameObject: {fileID: 848920879}
-    _prefab: Assets/Scripts/ActionsByKeyCode.prefab
+    _prefab: Assets/Prefab/WebGL/ActionsByKeyCode.prefab
   - _gameObject: {fileID: 728574069}
-    _prefab: Assets/Scripts/ControlActionsByKeyCode.prefab
+    _prefab: Assets/Prefab/WebGL/ControlActionsByKeyCode.prefab
   - _gameObject: {fileID: 194817553}
-    _prefab: Assets/Scripts/DisabledObjectsByPlatform.prefab
+    _prefab: Assets/Prefab/WebGL/DisabledObjectsByPlatform.prefab
 --- !u!4 &1161327779
 Transform:
   m_ObjectHideFlags: 11
@@ -7115,7 +7115,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1448512779392254686, guid: c80f253750adb3d41b11204b4632ea3a, type: 3}
+    - {fileID: 1627436640994846103, guid: c80f253750adb3d41b11204b4632ea3a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7125,17 +7127,6 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 2932247580250014754, guid: c80f253750adb3d41b11204b4632ea3a, type: 3}
   m_PrefabInstance: {fileID: 1538486035182364875}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1538486035182364877 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1627436640994846103, guid: c80f253750adb3d41b11204b4632ea3a, type: 3}
-  m_PrefabInstance: {fileID: 1538486035182364875}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538486035182364878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e7c289877957e743ac7f94198d5d5ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1538486035182364878 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1324702592409130752, guid: c80f253750adb3d41b11204b4632ea3a, type: 3}
@@ -7621,7 +7612,7 @@ PrefabInstance:
     - target: {fileID: 5255308605630003127, guid: a668a6cf199b66248b9a421920a9c866, type: 3}
       propertyPath: rewardedAdsButton
       value: 
-      objectReference: {fileID: 1538486035182364877}
+      objectReference: {fileID: 0}
     - target: {fileID: 5255308605630003127, guid: a668a6cf199b66248b9a421920a9c866, type: 3}
       propertyPath: switchOffColliders
       value: 
