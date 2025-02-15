@@ -6,7 +6,7 @@ public class ToggleChanging : SliderChanging
 {
     private Toggle toggle;
 
-    private void Start()
+    private void Awake()
     {
         toggle = GetComponent<Toggle>();
 
