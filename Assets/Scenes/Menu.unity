@@ -2634,7 +2634,7 @@ MonoBehaviour:
   - _gameObject: {fileID: 1881239619}
     _prefab: Assets/Prefab/Object/AnimTransition.prefab
   - _gameObject: {fileID: 922735024}
-    _prefab: Assets/Scripts/DisabledObjectsByPlatform.prefab
+    _prefab: Assets/Prefab/WebGL/DisabledObjectsByPlatform.prefab
 --- !u!4 &1051918986
 Transform:
   m_ObjectHideFlags: 11
