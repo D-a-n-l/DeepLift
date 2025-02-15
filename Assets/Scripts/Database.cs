@@ -118,20 +118,18 @@ public class Database : MonoBehaviour
             {
                 if (entry.Value.username == usernameCurrentUser)
                 {
-                    user = new User(idCurrentUser, entry.Value.level, usernameCurrentUser);
-
                     if (entry.Value.id != idCurrentUser)
-                    {
-                        string userJson = JsonUtility.ToJson(user);
-
                         database.Child($"{tgUsers}/{entry.Value.id}").Delete();
 
-                        database.Child($"{tgUsers}/{idCurrentUser}").SetValue(userJson, true);
+                    user = new User(idCurrentUser, entry.Value.level, usernameCurrentUser);
 
-                        isHaveUser = true;
+                    string userJson = JsonUtility.ToJson(user);
 
-                        break;
-                    }
+                    database.Child($"{tgUsers}/{idCurrentUser}").SetValue(userJson, true);
+
+                    isHaveUser = true;
+
+                    break;
                 }
             }
         }
