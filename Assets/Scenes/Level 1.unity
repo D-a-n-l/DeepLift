@@ -3572,11 +3572,11 @@ MonoBehaviour:
   - _gameObject: {fileID: 5978604129346964880}
     _prefab: Assets/Prefab/Object/NightPoolGlobal.prefab
   - _gameObject: {fileID: 1894426997}
-    _prefab: Assets/Scripts/DisabledObjectsByPlatform.prefab
+    _prefab: Assets/Prefab/WebGL/DisabledObjectsByPlatform.prefab
   - _gameObject: {fileID: 402893889}
-    _prefab: Assets/Scripts/ActionsByKeyCode.prefab
+    _prefab: Assets/Prefab/WebGL/ActionsByKeyCode.prefab
   - _gameObject: {fileID: 976243279}
-    _prefab: Assets/Scripts/ControlActionsByKeyCode.prefab
+    _prefab: Assets/Prefab/WebGL/ControlActionsByKeyCode.prefab
 --- !u!4 &1161327779
 Transform:
   m_ObjectHideFlags: 11
@@ -5948,17 +5948,6 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 2932247580250014754, guid: c80f253750adb3d41b11204b4632ea3a, type: 3}
   m_PrefabInstance: {fileID: 1538486035182364875}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1538486035182364877 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1627436640994846103, guid: c80f253750adb3d41b11204b4632ea3a, type: 3}
-  m_PrefabInstance: {fileID: 1538486035182364875}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538486035182364878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e7c289877957e743ac7f94198d5d5ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1538486035182364878 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1324702592409130752, guid: c80f253750adb3d41b11204b4632ea3a, type: 3}
@@ -6190,21 +6179,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1907077820532423980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6301274789015040375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c97afc556caea1c44969477eb7ddec74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ConformX: 1
-  ConformY: 1
-  Logging: 0
 --- !u!108 &1980106470250500213
 Light:
   m_ObjectHideFlags: 0
@@ -6608,7 +6582,7 @@ PrefabInstance:
     - target: {fileID: 5255308605630003127, guid: a668a6cf199b66248b9a421920a9c866, type: 3}
       propertyPath: rewardedAdsButton
       value: 
-      objectReference: {fileID: 1538486035182364877}
+      objectReference: {fileID: 0}
     - target: {fileID: 5255308605630003127, guid: a668a6cf199b66248b9a421920a9c866, type: 3}
       propertyPath: switchOffColliders
       value: 
@@ -8777,7 +8751,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6773339462983416422}
-  - component: {fileID: 1907077820532423980}
   m_Layer: 5
   m_Name: Main
   m_TagString: Untagged
