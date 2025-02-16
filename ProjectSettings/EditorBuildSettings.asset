@@ -41,6 +41,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 9.unity
     guid: a4755be97ef1e0f479c578fb81530c9c
-  m_configObjects:
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 354ced3c1cbd3474098a49e5d1df17bc, type: 2}
+  m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
