@@ -37,6 +37,9 @@ public class Database : MonoBehaviour
 
         if (PlayerPrefs.HasKey(DataBasePlayerPrefs.ANON) == false)
             StartInit();
+
+        if (PlayerPrefs.HasKey(DataBasePlayerPrefs.ANON))
+            InitAuth();
     }
 
     public void StartInit()
