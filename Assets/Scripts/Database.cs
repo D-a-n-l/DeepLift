@@ -41,7 +41,7 @@ public class Database : MonoBehaviour
 
     public void StartInit()
     {
-        database = Firebase.CreateNew("https://webdeeplift-default-rtdb.europe-west1.firebasedatabase.app/", "AIzaSyBBXnBzxqUZ_H1sHF4fX34Mcm_e27bv0GY");
+        database = Firebase.CreateNew("https://deeplift-98a9c-default-rtdb.europe-west1.firebasedatabase.app/");
 
         Subscription();
 
