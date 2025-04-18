@@ -11,6 +11,9 @@ public class Database : MonoBehaviour
     public static Database Instance;
 
     [SerializeField]
+    private string url;
+
+    [SerializeField]
     private ChangeLevelManager levelManager;
 
     private Firebase database;
@@ -39,7 +42,7 @@ public class Database : MonoBehaviour
 
     public void StartInit()
     {
-        database = Firebase.CreateNew("https://deeplift-98a9c-default-rtdb.europe-west1.firebasedatabase.app/");
+        database = Firebase.CreateNew(url);
 
         Subscription();
 
@@ -116,10 +119,10 @@ public class Database : MonoBehaviour
 
             foreach (var entry in data)
             {
-                if (entry.Value.username == usernameCurrentUser)
+                if (entry.Value.id == idCurrentUser)
                 {
-                    if (entry.Value.id != idCurrentUser)
-                        database.Child($"{tgUsers}/{entry.Value.id}").Delete();
+                    if (entry.Value.username != usernameCurrentUser)
+                        database.Child($"{tgUsers}/{entry.Value.username}").Delete();
 
                     user = new User(idCurrentUser, entry.Value.level, usernameCurrentUser);
 

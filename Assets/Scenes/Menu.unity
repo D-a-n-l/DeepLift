@@ -2705,6 +2705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83ac1bd62a7236429d91de2a981781f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  url: https://deeplift-98a9c-default-rtdb.europe-west1.firebasedatabase.app/
   levelManager: {fileID: 434416095}
 --- !u!1 &1114509302
 GameObject:
