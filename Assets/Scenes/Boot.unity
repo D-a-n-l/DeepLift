@@ -4876,6 +4876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a36010581e1a5f4d924c96304905baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  url: https://deeplift-98a9c-default-rtdb.europe-west1.firebasedatabase.app/
 --- !u!4 &1819252539
 Transform:
   m_ObjectHideFlags: 0

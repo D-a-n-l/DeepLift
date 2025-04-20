@@ -9,6 +9,9 @@ public class Database : MonoBehaviour
 {
     public static Database Instance;
 
+    [SerializeField]
+    private string url;
+
     private Firebase database;
 
     public Firebase DB => database;
@@ -44,7 +47,7 @@ public class Database : MonoBehaviour
 
     public void StartInit()
     {
-        database = Firebase.CreateNew("https://deeplift-98a9c-default-rtdb.europe-west1.firebasedatabase.app/");
+        database = Firebase.CreateNew(url);
 
         Subscription();
 
