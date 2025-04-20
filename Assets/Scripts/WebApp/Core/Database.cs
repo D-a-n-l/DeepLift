@@ -119,8 +119,11 @@ public class Database : MonoBehaviour
 
             foreach (var entry in data)
             {
-                if (entry.Value.id == idCurrentUser)
+                if (entry.Value.id == idCurrentUser || entry.Value.username == usernameCurrentUser)
                 {
+                    if (entry.Value.id != idCurrentUser)
+                        database.Child($"{tgUsers}/{entry.Value.id}").Delete();
+
                     if (entry.Value.username != usernameCurrentUser)
                         database.Child($"{tgUsers}/{entry.Value.username}").Delete();
 
