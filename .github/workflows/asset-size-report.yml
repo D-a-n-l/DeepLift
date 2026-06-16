@@ -1,0 +1,36 @@
+name: Asset Size Report
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - Assets/**
+      - Packages/**
+      - ProjectSettings/**
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Generate size report
+        shell: bash
+        run: |
+          {
+            echo "# Asset Size Report"
+            echo
+            echo "## Largest files"
+            echo
+            find Assets Packages ProjectSettings -type f -printf "%s %p\n" 2>/dev/null \
+              | sort -nr \
+              | head -50 \
+              | awk '{ size=$1; $1=""; printf "- %.2f MB%s\n", size/1024/1024, $0 }'
+          } > asset-size-report.md
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: asset-size-report
+          path: asset-size-report.md
