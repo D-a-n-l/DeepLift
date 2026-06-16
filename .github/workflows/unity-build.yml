@@ -1,0 +1,50 @@
+name: Unity Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: Branch, commit SHA or tag
+        required: true
+        default: main
+      targetPlatform:
+        description: Unity target platform
+        required: true
+        default: Android
+        type: choice
+        options:
+          - Android
+          - WebGL
+          - StandaloneWindows64
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
+          lfs: true
+
+      - uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-${{ runner.os }}-${{ inputs.targetPlatform }}-${{ hashFiles('ProjectSettings/ProjectVersion.txt') }}
+          restore-keys: |
+            Library-${{ runner.os }}-${{ inputs.targetPlatform }}-
+            Library-${{ runner.os }}-
+
+      - uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+          UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+        with:
+          targetPlatform: ${{ inputs.targetPlatform }}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ inputs.targetPlatform }}-${{ github.run_number }}
+          path: build/${{ inputs.targetPlatform }}
+          if-no-files-found: error
