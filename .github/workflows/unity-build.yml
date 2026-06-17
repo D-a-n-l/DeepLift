@@ -17,13 +17,25 @@ on:
           - WebGL
           - StandaloneWindows64
       preBuildScript:
-        description: Optional pre-build script path. Empty value uses .github/scripts/pre-build-<platform>.sh when it exists.
-        required: false
-        default: ""
+        description: Optional pre-build script
+        required: true
+        default: __none__
+        type: choice
+        options:
+          - __none__
+          - .github/scripts/pre-build-Android.sh
+          - .github/scripts/pre-build-WebGL.sh
+          - .github/scripts/pre-build-StandaloneWindows64.sh
       uploadScript:
-        description: Optional upload script path. Empty value uses .github/scripts/upload-<platform>.sh when it exists.
-        required: false
-        default: ""
+        description: Optional upload script
+        required: true
+        default: __none__
+        type: choice
+        options:
+          - __none__
+          - .github/scripts/upload-Android.sh
+          - .github/scripts/upload-WebGL.sh
+          - .github/scripts/upload-StandaloneWindows64.sh
 
 jobs:
   build:
@@ -49,15 +61,17 @@ jobs:
           BUILD_REF: ${{ inputs.ref }}
         run: |
           SCRIPT="${{ inputs.preBuildScript }}"
-          if [ -z "$SCRIPT" ]; then
-            SCRIPT=".github/scripts/pre-build-${{ inputs.targetPlatform }}.sh"
+          if [ "$SCRIPT" = "__none__" ]; then
+            echo "Pre-build script disabled."
+            exit 0
           fi
 
           if [ -f "$SCRIPT" ]; then
             chmod +x "$SCRIPT"
             "$SCRIPT"
           else
-            echo "Pre-build script not found, skipping: $SCRIPT"
+            echo "Pre-build script not found: $SCRIPT"
+            exit 1
           fi
 
       - uses: game-ci/unity-builder@v4
@@ -84,13 +98,15 @@ jobs:
           GITHUB_RUN_NUMBER: ${{ github.run_number }}
         run: |
           SCRIPT="${{ inputs.uploadScript }}"
-          if [ -z "$SCRIPT" ]; then
-            SCRIPT=".github/scripts/upload-${{ inputs.targetPlatform }}.sh"
+          if [ "$SCRIPT" = "__none__" ]; then
+            echo "Upload script disabled."
+            exit 0
           fi
 
           if [ -f "$SCRIPT" ]; then
             chmod +x "$SCRIPT"
             "$SCRIPT"
           else
-            echo "Upload script not found, skipping: $SCRIPT"
+            echo "Upload script not found: $SCRIPT"
+            exit 1
           fi
