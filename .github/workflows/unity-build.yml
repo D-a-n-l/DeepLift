@@ -16,6 +16,14 @@ on:
           - Android
           - WebGL
           - StandaloneWindows64
+      preBuildScript:
+        description: Optional pre-build script path. Empty value uses .github/scripts/pre-build-<platform>.sh when it exists.
+        required: false
+        default: ""
+      uploadScript:
+        description: Optional upload script path. Empty value uses .github/scripts/upload-<platform>.sh when it exists.
+        required: false
+        default: ""
 
 jobs:
   build:
@@ -34,6 +42,24 @@ jobs:
             Library-${{ runner.os }}-${{ inputs.targetPlatform }}-
             Library-${{ runner.os }}-
 
+      - name: Run pre-build script
+        shell: bash
+        env:
+          TARGET_PLATFORM: ${{ inputs.targetPlatform }}
+          BUILD_REF: ${{ inputs.ref }}
+        run: |
+          SCRIPT="${{ inputs.preBuildScript }}"
+          if [ -z "$SCRIPT" ]; then
+            SCRIPT=".github/scripts/pre-build-${{ inputs.targetPlatform }}.sh"
+          fi
+
+          if [ -f "$SCRIPT" ]; then
+            chmod +x "$SCRIPT"
+            "$SCRIPT"
+          else
+            echo "Pre-build script not found, skipping: $SCRIPT"
+          fi
+
       - uses: game-ci/unity-builder@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
@@ -48,3 +74,23 @@ jobs:
           name: build-${{ inputs.targetPlatform }}-${{ github.run_number }}
           path: build/${{ inputs.targetPlatform }}
           if-no-files-found: error
+
+      - name: Run upload script
+        shell: bash
+        env:
+          TARGET_PLATFORM: ${{ inputs.targetPlatform }}
+          BUILD_REF: ${{ inputs.ref }}
+          BUILD_PATH: build/${{ inputs.targetPlatform }}
+          GITHUB_RUN_NUMBER: ${{ github.run_number }}
+        run: |
+          SCRIPT="${{ inputs.uploadScript }}"
+          if [ -z "$SCRIPT" ]; then
+            SCRIPT=".github/scripts/upload-${{ inputs.targetPlatform }}.sh"
+          fi
+
+          if [ -f "$SCRIPT" ]; then
+            chmod +x "$SCRIPT"
+            "$SCRIPT"
+          else
+            echo "Upload script not found, skipping: $SCRIPT"
+          fi
