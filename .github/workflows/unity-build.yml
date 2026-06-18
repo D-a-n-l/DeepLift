@@ -22,10 +22,15 @@ on:
         default: false
         type: boolean
       useUpload:
-        description: Run .github/scripts/upload.sh
+        description: Run external upload script after GitHub artifact upload
         required: true
         default: false
         type: boolean
+      uploadTarget:
+        description: External upload destination for .github/scripts/upload.sh
+        required: true
+        default: __none__
+        type: string
 
 jobs:
   build:
@@ -86,9 +91,10 @@ jobs:
           BUILD_REF: ${{ inputs.ref }}
           BUILD_PATH: build/${{ inputs.targetPlatform }}
           GITHUB_RUN_NUMBER: ${{ github.run_number }}
+          UPLOAD_TARGET: ${{ inputs.uploadTarget }}
         run: |
-          if [ "${{ inputs.useUpload }}" != "true" ]; then
-            echo "Upload script disabled."
+          if [ "${{ inputs.useUpload }}" != "true" ] || [ "${{ inputs.uploadTarget }}" = "__none__" ]; then
+            echo "External upload script disabled. GitHub artifact upload has already completed."
             exit 0
           fi
 
